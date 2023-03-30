@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/vendor/normalize.css';
+@import './assets/vendor/fonts/fonts.css';
+
 *,
 *::before,
 *::after {
@@ -48,8 +50,6 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   /*box-sizing: content-box;*/
-
-  border: 1px solid red;
 }
 
 .button {
