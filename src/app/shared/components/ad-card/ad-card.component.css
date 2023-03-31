@@ -1,0 +1,64 @@
+.ad-card {
+  width: 100%;
+  max-width: 306px;
+  max-height: 336px;
+  overflow: hidden;
+}
+.ad-card__title {
+  max-width: 100%;
+  margin: 8px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #3b82f6;
+}
+.ad-card__price {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1e293b;
+}
+.ad-card__additional-info {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748b;
+}
+.ad-card__additional-info_inline {
+  display: inline;
+}
+.ad-card__photo-container {
+  height: 240px;
+  max-width: 100%;
+  display: flex;
+  border-radius: 4px;
+  transition: ease-out 0.2s;
+  will-change: transform;
+  background-position: center;
+  background-size: cover;
+}
+.ad-card__photo-container:hover {
+  transition: ease-in 0.1s;
+  opacity: 0.9;
+  cursor: pointer;
+}
+.ad-card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/*# sourceMappingURL=ad-card.component.css.map */

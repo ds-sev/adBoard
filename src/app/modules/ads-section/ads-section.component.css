@@ -1,0 +1,42 @@
+.ads-section__title {
+  margin: 32px 0 24px 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1e293b;
+}
+@media screen and (max-width: 466px) {
+  .ads-section__title {
+    margin-top: 14px;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+}
+
+.ad-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+  grid-auto-rows: auto;
+}
+@media screen and (max-width: 1014px) {
+  .ad-cards {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 18px;
+    row-gap: 24px;
+  }
+}
+@media screen and (max-width: 673px) {
+  .ad-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 466px) {
+  .ad-cards {
+    justify-items: center;
+    grid-template-columns: 100%;
+  }
+}
+
+/*# sourceMappingURL=ads-section.component.css.map */

@@ -3,21 +3,26 @@ import { CommonModule } from '@angular/common'
 import { Routes, RouterModule } from '@angular/router'
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component'
-import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
+
 import { NewAdComponent } from './pages/new-ad/new-ad.component'
 import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
-import { MyAdsComponent } from './pages/my-ads/my-ads.component'
+
+import { AdsSectionComponent } from './modules/ads-section/ads-section.component'
+import {
+  RecommendationsComponent
+} from './modules/ads-section/components/recommendations/recommendations.component'
+import { MyAdsComponent } from './modules/ads-section/components/my-ads/my-ads.component'
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
+  {path: '', component: AdsSectionComponent},
   {path: 'recommendations', component: RecommendationsComponent},
   {path: 'my-ads', component: MyAdsComponent},
   {path: 'new-ad', component: NewAdComponent},
   {path: 'ad/:id', component: AdDetailsComponent},
   {path: 'account-settings', component: AccountSettingsComponent},
 
-  {path: '**', redirectTo: '', component: RecommendationsComponent},
+  {path: '**', redirectTo: '', component: AppComponent},
 ]
 
 @NgModule({
