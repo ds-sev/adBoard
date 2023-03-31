@@ -9,24 +9,24 @@ import { Subscription } from 'rxjs'
   templateUrl: './ads-section.component.html',
   styleUrls: ['./ads-section.component.scss']
 })
-export class AdsSectionComponent implements OnInit {
-  ads!: IAd[];
-adsSubscription!: Subscription
-  constructor(private _adService: AdsService) {
-  }
-
-  ngOnInit(): void {
-
-  this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
-    this.ads = data
-  })
-    // this._adService.getAdsList()
-    // .subscribe(response => {
-    //   // this.ads = response.data
-    // } )
-  }
-
-  ngOnDestroy() {
-  if (this.adsSubscription) this.adsSubscription.unsubscribe()
-  }
+export class AdsSectionComponent{
+//   ads!: IAd[];
+// adsSubscription!: Subscription
+//   constructor(private _adService: AdsService) {
+//   }
+//
+//   ngOnInit(): void {
+//
+//   this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
+//     this.ads = data
+//   })
+//     // this._adService.getAdsList()
+//     // .subscribe(response => {
+//     //   // this.ads = response.data
+//     // } )
+//   }
+//
+//   ngOnDestroy() {
+//   if (this.adsSubscription) this.adsSubscription.unsubscribe()
+//   }
 }
