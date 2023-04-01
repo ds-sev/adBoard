@@ -2,12 +2,33 @@
   <header class="header">
     <div class="header__container _container">
       <div class="header__buttons-container">
-        <a class="header__button-login button">
+        <a class="header__button-login button" (click)="showDialog()">
           <img class="header__button-login-icon" src="../../../../assets/images/icons/login-icon.svg" alt="login">
           <span class="button__text_hide">Войти</span></a>
-        <button class="header__button-new-ad button"><span class="button__text_hide">Новое объявление</span><img
+        <button class="header__button-new-ad button" (click)="showDialog()"><span class="button__text_hide">Новое
+          объявление</span><img
           class="header__button-add-icon" src="../../../../assets/images/icons/new-ad-icon.svg" alt="new-ad-icon">
         </button>
       </div>
     </div>
+    <app-test></app-test>
   </header>
+
+<!--   <app-dialog-box></app-dialog-box> -->
+
+  <p-dialog header="Авторизация" [(visible)]="visible" [blockScroll]="true"
+            [draggable]="false" [resizable]="false" [modal]="true" [dismissableMask]="true">
+    <form action="" class="dialog-box__form">
+    <input name="phone" type="phone" placeholder="Номер телефона" #inputRef>
+      {{inputRef.value}}
+      <input name="password" type="password" placeholder="Пароль">
+
+      <div class="form__assistance">
+        <p-checkbox label="Запомнить меня" [(ngModel)]="checked"/>
+        <a href="#">Забыли пароль?</a>
+      </div>
+
+      <button pButton label="Войти"></button>
+    </form>
+
+  </p-dialog>

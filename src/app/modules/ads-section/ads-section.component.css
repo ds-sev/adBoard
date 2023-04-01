@@ -39,4 +39,8 @@
   }
 }
 
+.ad-card-container {
+  overflow: hidden;
+}
+
 /*# sourceMappingURL=ads-section.component.css.map */

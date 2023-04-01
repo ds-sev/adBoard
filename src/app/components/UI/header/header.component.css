@@ -55,4 +55,43 @@
   }
 }
 
+.login-modal {
+  width: 416px;
+  height: 200px;
+}
+
+.dialog-box__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dialog-box__form :first-child {
+  margin-bottom: 16px;
+}
+.dialog-box__form input {
+  padding: 12px;
+  width: 368px;
+  height: 48px;
+  border: 1px solid rgb(203, 213, 225);
+  border-radius: 4px;
+}
+.dialog-box__form .form__assistance {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dialog-box__form button {
+  width: 127px;
+  height: 48px;
+  border-radius: 4px;
+  font-style: normal;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 /*# sourceMappingURL=header.component.css.map */

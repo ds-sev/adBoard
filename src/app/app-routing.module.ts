@@ -13,6 +13,7 @@ import {
   RecommendationsComponent
 } from './modules/ads-section/components/recommendations/recommendations.component'
 import { MyAdsComponent } from './modules/ads-section/components/my-ads/my-ads.component'
+import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.component'
 
 const routes: Routes = [
   {path: '', component: AdsSectionComponent},
@@ -21,6 +22,9 @@ const routes: Routes = [
   {path: 'new-ad', component: NewAdComponent},
   {path: 'ad/:id', component: AdDetailsComponent},
   {path: 'account-settings', component: AccountSettingsComponent},
+
+
+  {path: 'dialog', component: DialogBoxComponent},
 
   {path: '**', redirectTo: '', component: AppComponent},
 ]

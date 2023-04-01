@@ -18,26 +18,30 @@ import { AdsService } from '../../../services/ads.service'
 //
 // }
 
-export class AdCardComponent implements OnInit {
-  ads!: IAd[];
-  adsSubscription!: Subscription
-  constructor(private _adService: AdsService) {
-  }
+// export class AdCardComponent implements OnInit {
+export class AdCardComponent {
+  @Input() public ad!: IAd
 
-  ngOnInit(): void {
-
-    this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
-      this.ads = data
-    })
-    // this._adService.getAdsList()
-    // .subscribe(response => {
-    //   // this.ads = response.data
-    // } )
-  }
-
-  ngOnDestroy() {
-    if (this.adsSubscription) this.adsSubscription.unsubscribe()
-  }
+  // // ads!: IAd[];
+  // adsSubscription!: Subscription
+  // constructor(private _adService: AdsService) {
+  // }
+  //
+  // ngOnInit(): void {
+  //
+  //   this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
+  //     this.ads = data
+  //   })
+  //   // this._adService.getAdsList()
+  //   // .subscribe(response => {
+  //   //   // this.ads = response.data
+  //   // } )
+  // }
+  //
+  // ngOnDestroy() {
+  //   if (this.adsSubscription) this.adsSubscription.unsubscribe()
+  // }
 }
+
 
 

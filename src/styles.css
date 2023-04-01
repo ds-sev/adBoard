@@ -14,6 +14,7 @@
 
 a {
   text-decoration: none;
+  color: #3B82F6;
 }
 
 ul,
@@ -50,6 +51,7 @@ body {
   max-width: 1296px;
   margin: 0 auto;
   padding: 0 15px;
+  box-sizing: content-box;
 }
 
 .button {

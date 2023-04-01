@@ -17,7 +17,12 @@ import { NewAdComponent } from './pages/new-ad/new-ad.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
 import { AppRoutingModule } from './app-routing.module';
 import { AdsSectionComponent } from './modules/ads-section/ads-section.component'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.component'
+import { DialogModule } from 'primeng/dialog'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { CheckboxModule } from 'primeng/checkbox';
+import { TestComponent } from './components/test/test.component'
 
 @NgModule({
   declarations: [
@@ -32,6 +37,8 @@ import { HttpClientModule } from '@angular/common/http'
     NewAdComponent,
     AccountSettingsComponent,
     AdsSectionComponent,
+    DialogBoxComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,10 @@ import { HttpClientModule } from '@angular/common/http'
     ButtonModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    CheckboxModule
   ],
   providers: [
 

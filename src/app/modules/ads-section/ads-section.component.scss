@@ -11,6 +11,7 @@
   }
 }
 
+
 .ad-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -37,5 +38,8 @@
   }
 }
 
+.ad-card-container {
+  overflow: hidden;
+}
 
 
