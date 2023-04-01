@@ -22,7 +22,13 @@ import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.compon
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CheckboxModule } from 'primeng/checkbox';
-import { TestComponent } from './components/test/test.component'
+import { TestComponent } from './components/test/test.component';
+import { ContentContainerComponent } from './pages/content-container/content-container.component'
+import { AccordionModule } from 'primeng/accordion'
+import { InputMaskModule } from 'primeng/inputmask'
+import { InplaceModule } from 'primeng/inplace'
+import { InputTextModule } from 'primeng/inputtext';
+import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
 
 @NgModule({
   declarations: [
@@ -39,6 +45,8 @@ import { TestComponent } from './components/test/test.component'
     AdsSectionComponent,
     DialogBoxComponent,
     TestComponent,
+    ContentContainerComponent,
+    AdDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,11 @@ import { TestComponent } from './components/test/test.component'
     HttpClientModule,
     DialogModule,
     BrowserAnimationsModule,
-    CheckboxModule
+    CheckboxModule,
+    AccordionModule,
+    InputMaskModule,
+    InplaceModule,
+    InputTextModule
   ],
   providers: [
 

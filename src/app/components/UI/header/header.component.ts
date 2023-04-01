@@ -13,7 +13,9 @@ export class HeaderComponent {
   visible: boolean = false;
   checked: boolean = true;
 
-  showDialog() {
+
+  showLoginDialog() {
+
     this.visible = true
 
 }

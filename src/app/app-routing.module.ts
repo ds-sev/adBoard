@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { AppComponent } from './app.component'
 
 import { NewAdComponent } from './pages/new-ad/new-ad.component'
-import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
+
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
 
 import { AdsSectionComponent } from './modules/ads-section/ads-section.component'
@@ -14,6 +14,7 @@ import {
 } from './modules/ads-section/components/recommendations/recommendations.component'
 import { MyAdsComponent } from './modules/ads-section/components/my-ads/my-ads.component'
 import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.component'
+import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
 
 const routes: Routes = [
   {path: '', component: AdsSectionComponent},
