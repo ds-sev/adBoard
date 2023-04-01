@@ -1,3 +1,26 @@
-
+.new-ad-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  max-width: 856px;
+  margin: 0;
+  box-sizing: content-box;
+}
+.new-ad-container input {
+  width: 100%;
+}
+.new-ad-container .new-ad__description {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 168px;
+}
+.new-ad-container .new-ad__agreement {
+  width: 306px;
+}
+.new-ad-container .new-ad__image-add-container {
+  display: flex;
+  align-items: center;
+}
 
 /*# sourceMappingURL=new-ad.component.css.map */

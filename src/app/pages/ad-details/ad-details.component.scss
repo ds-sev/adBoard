@@ -1,0 +1,145 @@
+//
+//div {
+//  border: 1px solid red;
+//}
+
+.ad-details-container {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  column-gap: 24px;
+
+}
+
+.ad-details {
+  color: #1E293B;
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    margin-bottom: 24px;
+
+    aspect-ratio: 856 / 512;
+
+    &_large {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    &_small {
+      width: 120px;
+      height: 84px;
+      margin-right: 12px;
+      transition: ease-out .2s;
+      will-change: transform;
+      background-position: center;
+      background-size: cover;
+      &:hover {
+        transition: ease-in .1s;
+        opacity: .9;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__text {
+    &_price {
+      margin-top: 32px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    &_breadcrumbs {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 8px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      ul {
+
+      }
+
+      li {
+        &:not(:first-child) {
+          list-style: disc;
+          color: #64748B
+        }
+
+      }
+
+      a {
+        color: #64748B;
+      }
+    }
+
+    &_description-heading {
+      margin-bottom: 8px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &_description {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.phone-button {
+  margin-top: 16px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 68px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+
+  &__icon {
+    background-image: url('../../../assets/images/icons/phone_icon.svg');
+    background-size: cover;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.link {
+  margin-top: 4px;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../../assets/images/icons/arrow-up-right-square.svg');
+  }
+}
