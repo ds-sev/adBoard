@@ -22,13 +22,19 @@ import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.compon
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CheckboxModule } from 'primeng/checkbox';
-import { TestComponent } from './components/test/test.component';
 import { ContentContainerComponent } from './pages/content-container/content-container.component'
 import { AccordionModule } from 'primeng/accordion'
 import { InputMaskModule } from 'primeng/inputmask'
 import { InplaceModule } from 'primeng/inplace'
 import { InputTextModule } from 'primeng/inputtext';
-import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
+import { AdDetailsComponent } from './pages/ad-details/ad-details.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { SignInComponent } from './services/user/sign-in/sign-in.component';
+import { SignUpComponent } from './services/user/sign-up/sign-up.component'
+import {
+  RecommendationsComponent
+} from './modules/ads-section/components/recommendations/recommendations.component'
+import { DialogService } from 'primeng/dynamicdialog'
 
 @NgModule({
   declarations: [
@@ -44,9 +50,13 @@ import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
     AccountSettingsComponent,
     AdsSectionComponent,
     DialogBoxComponent,
-    TestComponent,
+
     ContentContainerComponent,
     AdDetailsComponent,
+    AuthComponent,
+    SignInComponent,
+    SignUpComponent,
+    RecommendationsComponent
   ],
   imports: [
     BrowserModule,
@@ -63,9 +73,10 @@ import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
     AccordionModule,
     InputMaskModule,
     InplaceModule,
-    InputTextModule
+    InputTextModule,
   ],
   providers: [
+    DialogService
 
   ],
   bootstrap: [AppComponent]

@@ -15,20 +15,38 @@ import {
 import { MyAdsComponent } from './modules/ads-section/components/my-ads/my-ads.component'
 import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.component'
 import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
+import { AuthComponent } from './pages/auth/auth.component'
+import { SignInComponent } from './services/user/sign-in/sign-in.component'
+import { SignUpComponent } from './services/user/sign-up/sign-up.component'
 
 const routes: Routes = [
-  {path: '', component: AdsSectionComponent},
-  {path: 'recommendations', component: RecommendationsComponent},
-  {path: 'my-ads', component: MyAdsComponent},
-  {path: 'new-ad', component: NewAdComponent},
-  {path: 'ad/:id', component: AdDetailsComponent},
-  {path: 'account-settings', component: AccountSettingsComponent},
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'sign-up', component: SignUpComponent},
 
+  // {path: 'authenticated', component: AuthComponent, children: [
+  //
+  //     {path: 'my-ads', component: MyAdsComponent},
+      {path: 'new-ad', component: NewAdComponent},
+  //     {path: 'account-settings', component: AccountSettingsComponent},
+  //
+  //   ]},
+
+  // {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+
+
+  {path: 'home', component: AdsSectionComponent},
+
+
+  {path: 'ad/:id', component: AdDetailsComponent},
 
   {path: 'dialog', component: DialogBoxComponent},
 
-  {path: '**', redirectTo: '', component: AppComponent},
+  {path: '**', redirectTo: '', component: RecommendationsComponent},
+
 ]
+
+
 
 @NgModule({
 
