@@ -1,16 +1,7 @@
-
-<!-- <div class="ad-card" *ngFor="let ad of ads"> -->
-
-
 <div class="ad-card">
-
-
-
-    <div class="ad-card__photo-container">
-      <img src="{{ad.image}}" alt="{{ad.title}}">
-    </div>
-
-
+  <div class="ad-card__photo-container">
+    <img src="{{ad.image}}" alt="{{ad.title}}">
+  </div>
   <div class="ad-card__info">
     <h3 class="ad-card__title">{{ad.title}}</h3>
     <p class="ad-card__price">{{ad.price | currency:"EUR"}}</p>

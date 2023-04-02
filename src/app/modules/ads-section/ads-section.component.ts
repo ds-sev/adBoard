@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core'
-import { AdCardComponent } from '../../shared/components/ad-card/ad-card.component'
+import { Component } from '@angular/core'
 import { AdsService } from '../../services/ads.service'
 import { IAd } from '../../models/ad'
 import { Subscription } from 'rxjs'
@@ -17,16 +16,11 @@ export class AdsSectionComponent {
   }
 
   ngOnInit(): void {
-
     this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
       this.ads = data
       console.log(data)
       console.log(this.ads)
     })
-    // this._adService.getAdsList()
-    // .subscribe(response => {
-    //   // this.ads = response.data
-    // } )
   }
 
   ngOnDestroy() {

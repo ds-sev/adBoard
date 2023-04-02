@@ -1,0 +1,56 @@
+.new-ad-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 336px;
+  max-width: 306px;
+  max-height: 336px;
+  overflow: hidden;
+  background: rgba(59, 130, 246, 0.04);
+  border: 3px dashed rgba(59, 130, 246, 0.16);
+  border-radius: 4px;
+  -webkit-transition: ease-out 0.2s;
+  -o-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
+}
+.new-ad-card:hover {
+  background: rgba(59, 130, 246, 0.08);
+  border: 3px dashed rgba(59, 130, 246, 0.32);
+  cursor: pointer;
+  -webkit-transition: ease-in 0.2s;
+  -o-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+.new-ad-card:active {
+  background: rgba(39, 110, 226, 0.04);
+  border: 3px dashed rgba(39, 110, 226, 0.16);
+}
+.new-ad-card:active .new-ad-card__icon {
+  background-image: url("../../../assets/images/icons/new-ad-icon_active.svg");
+}
+.new-ad-card:active .new-ad-card__text {
+  color: #1E3A8A;
+}
+.new-ad-card__container {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.new-ad-card__icon {
+  width: 60px;
+  height: 60px;
+  background-image: url("../../../assets/images/icons/new-ad-icon.svg");
+  background-size: cover;
+}
+.new-ad-card__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #3B82F6;
+}
+
+/*# sourceMappingURL=new-ad-card.component.css.map */

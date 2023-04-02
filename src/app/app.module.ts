@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
-
 import { AdCardComponent } from './shared/components/ad-card/ad-card.component';
 import { HeaderComponent } from './components/UI/header/header.component';
 import { RouterOutlet } from '@angular/router';
@@ -11,8 +9,6 @@ import { NavigationComponent } from './components/UI/navigation/navigation.compo
 import { CascadeSelectModule } from 'primeng/cascadeselect'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/button';
-
-
 import { NewAdComponent } from './pages/new-ad/new-ad.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +18,6 @@ import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.compon
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CheckboxModule } from 'primeng/checkbox';
-import { ContentContainerComponent } from './pages/content-container/content-container.component'
 import { AccordionModule } from 'primeng/accordion'
 import { InputMaskModule } from 'primeng/inputmask'
 import { InplaceModule } from 'primeng/inplace'
@@ -31,32 +26,27 @@ import { AdDetailsComponent } from './pages/ad-details/ad-details.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { SignInComponent } from './services/user/sign-in/sign-in.component';
 import { SignUpComponent } from './services/user/sign-up/sign-up.component'
-import {
-  RecommendationsComponent
-} from './modules/ads-section/components/recommendations/recommendations.component'
-import { DialogService } from 'primeng/dynamicdialog'
+import { DialogService } from 'primeng/dynamicdialog';
+import { MyAdsComponent } from './pages/my-ads/my-ads.component';
+import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-
     HeaderComponent,
     AdCardComponent,
     FooterComponent,
     NavigationComponent,
-
-
     NewAdComponent,
     AccountSettingsComponent,
     AdsSectionComponent,
     DialogBoxComponent,
-
-    ContentContainerComponent,
     AdDetailsComponent,
     AuthComponent,
     SignInComponent,
     SignUpComponent,
-    RecommendationsComponent
+    MyAdsComponent,
+    NewAdCardComponent,
   ],
   imports: [
     BrowserModule,

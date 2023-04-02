@@ -1,25 +1,8 @@
 <section class="ads-section _container">
   <h3 class="ads-section__title">Рекомендации для вас</h3>
   <div class="ad-cards">
-<!--   <div class="ad-cards"> -->
-<!-- <app-ad-card *ngFor="let ad of ads" [ad]="ad"></app-ad-card> -->
-
-
-<!--   <ng-container *ngFor="let ad of ads"> -->
-<!--     <app-ad-card class="ad-cards" [ad]="ads"> -->
-
-<!--     </app-ad-card> -->
-
-<!--   </ng-container> -->
-
-
-    <app-ad-card  class="ad-card-container" *ngFor="let ad of ads; let i = index" [ad]="ad">
-    </app-ad-card>
-
-
+    <app-ad-card class="ad-card-container" *ngFor="let ad of ads; let i = index" [ad]="ad"></app-ad-card>
   </div>
-
-<!--   </div> -->
 </section>
 
 

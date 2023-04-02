@@ -58,7 +58,7 @@
 }
 .ad-card img {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=ad-card.component.css.map */
