@@ -29,6 +29,8 @@ import { SignUpComponent } from './services/user/sign-up/sign-up.component'
 import { DialogService } from 'primeng/dynamicdialog';
 import { MyAdsComponent } from './pages/my-ads/my-ads.component';
 import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.component'
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { UserMenuComponent } from './components/UI/user-menu/user-menu.component'
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.compone
     SignUpComponent,
     MyAdsComponent,
     NewAdCardComponent,
+    UserMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +67,7 @@ import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.compone
     InputMaskModule,
     InplaceModule,
     InputTextModule,
+    ProgressSpinnerModule,
   ],
   providers: [
     DialogService

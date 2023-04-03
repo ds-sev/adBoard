@@ -21,6 +21,7 @@
   }
 
   &__button-login {
+    position: relative;
     display: flex;
     column-gap: 8px;
     justify-content: center;
@@ -56,6 +57,8 @@
     @media screen and (max-width: 382px) {
       width: 56px;
     }
+
+
   }
 
 
@@ -67,6 +70,41 @@
       width: 16px;
     }
   }
+  &__user-menu {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    z-index: 10;
+    width: 150px;
+    height: 108px;
+    position: absolute;
+
+    top: 35px;
+    right: 5px;
+
+
+
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    nav {
+
+      color: black;
+      ul {
+        display: flex;
+        flex-direction: column;
+align-items: flex-end;
+        height: 100%;
+
+        gap: 10px;
+      }
+      a {
+
+      }
+    }
+  }
+
 }
 
 
@@ -116,6 +154,39 @@
     line-height: 24px;
   }
 
+}
 
+
+.button-container {
+  position: relative;
 
 }
+
+.user-menu{
+
+    &__link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: right;
+      color: #1E293B;
+      -webkit-transition: ease-out .2s;
+      -o-transition: ease-out .2s;
+      transition: ease-out .2s;
+      &:hover {
+        cursor: pointer;
+        opacity: .6;
+        -webkit-transition: ease-in .2s;
+        -o-transition: ease-in .2s;
+        transition: ease-in .2s;
+      }
+
+
+
+&_accent {
+  color: #EF4444;
+}
+    }
+
+}
+
