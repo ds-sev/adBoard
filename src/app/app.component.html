@@ -2,13 +2,9 @@
   <app-header></app-header>
   <app-navigation></app-navigation>
   <div class="page-content">
-
-
     <router-outlet>
     </router-outlet>
-
-      <p-progressSpinner *ngIf="loading$ | async"></p-progressSpinner>
-
+    <p-progressSpinner *ngIf="loading$ | async"></p-progressSpinner>
   </div>
   <app-footer></app-footer>
 </div>

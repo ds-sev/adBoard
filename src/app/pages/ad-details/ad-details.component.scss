@@ -1,14 +1,8 @@
-//
-//div {
-//  border: 1px solid red;
-//}
-
 .ad-details-container {
   margin-top: 32px;
   display: grid;
   grid-template-columns: 8fr 4fr;
   column-gap: 24px;
-
 }
 
 .ad-details {
@@ -24,7 +18,6 @@
 
   &__image {
     margin-bottom: 24px;
-
     aspect-ratio: 856 / 512;
 
     &_large {
@@ -42,6 +35,7 @@
       will-change: transform;
       background-position: center;
       background-size: cover;
+
       &:hover {
         transition: ease-in .1s;
         opacity: .9;
@@ -68,16 +62,11 @@
       font-size: 16px;
       line-height: 24px;
 
-      ul {
-
-      }
-
       li {
         &:not(:first-child) {
           list-style: disc;
           color: #64748B
         }
-
       }
 
       a {

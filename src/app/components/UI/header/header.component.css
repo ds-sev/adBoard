@@ -79,6 +79,10 @@
   height: 100%;
   gap: 10px;
 }
+.header__logo {
+  max-height: 40px;
+}
+
 .login-modal {
   width: 416px;
   height: 200px;

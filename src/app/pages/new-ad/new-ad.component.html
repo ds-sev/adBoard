@@ -1,31 +1,25 @@
 <section class="_container">
-<div class="new-ad-container">
-  <h2 class="ads-section__title">Новое объявление</h2>
-  <p>Выберите категорию *</p>
-  <p-cascadeSelect placeholder="Нажмите, чтобы выбрать"></p-cascadeSelect>
-  <p>Название объявления</p>
-  <input pInputText placeholder="Что хотите продать?">
-
-  <p>Описание</p>
-  <input class="new-ad__description" pInputText placeholder="Расскажите подробнее о товаре или услуге">
-  <p>Адрес (место проведения сделки) *</p>
-  <input pInputText aria-placeholder="sss">
-  <p>Описание</p>
-
-  <div class="new-ad__image-add-container">
-    <p-button>Добавить картинки</p-button>
-    <p>Максимум 10 картинок в формате jpeg, png или heic</p>
+  <div class="new-ad-container">
+    <h2 class="ads-section__title">Новое объявление</h2>
+    <p>Выберите категорию *</p>
+    <p-cascadeSelect placeholder="Нажмите, чтобы выбрать"></p-cascadeSelect>
+    <p>Название объявления</p>
+    <input pInputText placeholder="Что хотите продать?">
+    <p>Описание</p>
+    <input class="new-ad__description" pInputText placeholder="Расскажите подробнее о товаре или услуге">
+    <p>Адрес (место проведения сделки) *</p>
+    <input pInputText aria-placeholder="sss">
+    <p>Описание</p>
+    <div class="new-ad__image-add-container">
+      <p-button>Добавить картинки</p-button>
+      <p>Максимум 10 картинок в формате jpeg, png или heic</p>
+    </div>
+    <p>Цена</p>
+    <input pInputText placeholder="0 ₽" [ngStyle]="{width:'305px'}">
+    <p-button>Разместить объявление</p-button>
+    <p class="new-ad__agreement">
+      Нажимая кнопку «Разместить объявление»
+      Вы соглашаетесь с <a>правилами площадки</a>
+    </p>
   </div>
-  <p>Цена</p>
-  <input pInputText placeholder="0 ₽" [ngStyle]="{width:'305px'}">
-
-  <p-button>Разместить объявление</p-button>
-
-  <p class="new-ad__agreement">
-    Нажимая кнопку «Разместить объявление»
-    Вы соглашаетесь с <a>правилами площадки</a>
-  </p>
-
-</div>
-
 </section>

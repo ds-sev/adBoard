@@ -9,4 +9,5 @@ export class AccountSettingsComponent {
   name: string = 'Алексей'
   phone: number = 978
   checkVisible: string = 'display: flex'
+  address: string = 'г. Севастополь, ул Большая Морская, д 23'
 }

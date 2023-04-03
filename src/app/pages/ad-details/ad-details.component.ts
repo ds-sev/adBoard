@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./ad-details.component.scss']
 })
 export class AdDetailsComponent {
-
 }

@@ -16,7 +16,7 @@
       </div>
     </div>
     <p>Адрес <span>(будет указываться в объявлениях по умолчанию)</span></p>
-    <input type="text" pInputText name="address" placeholder="Не указан">
+    <input type="text" pInputText name="address" placeholder="Не указан" [value]="address">
     <div class="settings__button-container">
       <button pButton label="Сохранить" class="button" [disabled]="'true'"></button>
       <div class="data-check__container" [style]="checkVisible">

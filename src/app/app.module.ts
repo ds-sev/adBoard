@@ -14,7 +14,6 @@ import { AccountSettingsComponent } from './pages/account-settings/account-setti
 import { AppRoutingModule } from './app-routing.module';
 import { AdsSectionComponent } from './modules/ads-section/ads-section.component'
 import { HttpClientModule } from '@angular/common/http';
-import { DialogBoxComponent } from './components/UI/dialog-box/dialog-box.component'
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CheckboxModule } from 'primeng/checkbox';
@@ -46,7 +45,6 @@ import { PasswordModule } from 'primeng/password'
     NewAdComponent,
     AccountSettingsComponent,
     AdsSectionComponent,
-    DialogBoxComponent,
     AdDetailsComponent,
     AuthComponent,
     SignInComponent,

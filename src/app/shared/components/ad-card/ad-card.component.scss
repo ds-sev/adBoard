@@ -1,15 +1,11 @@
 .ad-card {
-  //min-width: 220px;
-
   position: relative;
   width: 100%;
   max-width: 306px;
   max-height: 336px;
   overflow: hidden;
 
-
   &__title {
-
     margin: 8px 0 0;
     white-space: nowrap;
     overflow: hidden;
@@ -58,16 +54,16 @@
     will-change: transform;
     background-position: center;
     background-size: cover;
+
     &:hover {
       transition: ease-in .1s;
       opacity: .9;
       cursor: pointer;
     }
   }
+
   img {
     width: 100%;
     object-fit: contain;
-
   }
-
 }

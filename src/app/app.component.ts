@@ -16,14 +16,14 @@ import { filter, map, Observable, of } from 'rxjs'
 })
 export class AppComponent implements OnInit {
   loading$: Observable<boolean> = of(false)
+
   constructor(
     private router: Router,
     public dialogService: DialogService
-    ) {}
+  ) {
+  }
 
-  title = 'adBoard';
-
-
+  title = 'adBoard'
 
   ngOnInit() {
 
@@ -36,8 +36,7 @@ export class AppComponent implements OnInit {
           e instanceof NavigationError
       ),
       map((e) => e instanceof NavigationEnd)
-
-    );
+    )
     console.log(this.loading$)
   }
 }
