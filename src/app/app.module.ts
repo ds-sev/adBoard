@@ -33,7 +33,8 @@ import { UserMenuComponent } from './components/UI/user-menu/user-menu.component
 import { MenuModule } from 'primeng/menu'
 import { ToastModule } from 'primeng/toast'
 import { MessagesModule } from 'primeng/messages'
-import { PasswordModule } from 'primeng/password'
+import { PasswordModule } from 'primeng/password';
+import { SellerInfoModalComponent } from './components/seller-info-modal/seller-info-modal.component'
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PasswordModule } from 'primeng/password'
     MyAdsComponent,
     NewAdCardComponent,
     UserMenuComponent,
+    SellerInfoModalComponent,
   ],
   imports: [
     BrowserModule,
