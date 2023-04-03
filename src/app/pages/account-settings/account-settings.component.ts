@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class AccountSettingsComponent {
   name: string = 'Алексей'
   phone: number = 978
-
+  checkVisible: string = 'display: flex'
 }

@@ -1,7 +1,8 @@
 .settings {
- margin-top: 32px;
+  margin-top: 32px;
   max-width: 856px;
   box-sizing: content-box;
+
   &__title {
     margin-bottom: 24px;
     font-family: 'Inter', sans-serif;
@@ -16,20 +17,27 @@
     display: flex;
     justify-content: space-between;
     gap: 24px;
+
     div {
       width: 100%;
+    }
+
+    @media screen and (max-width: 466px) {
+      flex-wrap: wrap;
     }
   }
 
   &__password-container {
+    display: flex;
+    flex-direction: column;
     margin-top: 48px;
-    width: 416px;
+    max-width: 416px;
   }
 
   &__phone-input {
     margin-top: 8px;
     margin-bottom: 16px;
-    width: 100%!important;
+    width: 100% !important;
   }
 
   .new-ad__description {
@@ -37,7 +45,6 @@
     align-items: flex-start;
     justify-content: flex-start;
     height: 168px;
-
   }
 
   .new-ad__agreement {
@@ -47,6 +54,15 @@
   .new-ad__image-add-container {
     display: flex;
     align-items: center;
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    @media screen and (max-width: 466px) {
+      flex-wrap: wrap;
+    }
   }
 }
 
@@ -72,14 +88,32 @@ input {
   width: 100%;
 }
 
-p-inputmask {
-  width: 400px!important;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  width: 100%!important;
-}
-
 button {
+  max-width: 186px;
+  height: 48px;
   margin-top: 8px;
   font-size: 16px;
+}
+
+.data-check {
+  &__container {
+    margin-top: 8px;
+    display: none;
+    gap: 8px;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #22C55E;
+  }
 }

@@ -20,9 +20,16 @@
 .settings__fields-container div {
   width: 100%;
 }
+@media screen and (max-width: 466px) {
+  .settings__fields-container {
+    flex-wrap: wrap;
+  }
+}
 .settings__password-container {
+  display: flex;
+  flex-direction: column;
   margin-top: 48px;
-  width: 416px;
+  max-width: 416px;
 }
 .settings__phone-input {
   margin-top: 8px;
@@ -41,6 +48,16 @@
 .settings .new-ad__image-add-container {
   display: flex;
   align-items: center;
+}
+.settings__button-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+@media screen and (max-width: 466px) {
+  .settings__button-container {
+    flex-wrap: wrap;
+  }
 }
 
 p {
@@ -65,16 +82,30 @@ input {
   width: 100%;
 }
 
-p-inputmask {
-  width: 400px !important;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  width: 100% !important;
-}
-
 button {
+  max-width: 186px;
+  height: 48px;
   margin-top: 8px;
   font-size: 16px;
+}
+
+.data-check__container {
+  margin-top: 8px;
+  display: none;
+  gap: 8px;
+  align-items: center;
+  flex-direction: row;
+}
+.data-check__icon {
+  width: 24px;
+  height: 24px;
+}
+.data-check__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #22C55E;
 }
 
 /*# sourceMappingURL=account-settings.component.css.map */

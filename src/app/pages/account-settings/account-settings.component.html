@@ -9,15 +9,22 @@
       <div>
         <p>Номер телефона</p>
         <input type="tel" pInputText name="phone" placeholder="Номер телефона" [value]="phone">
-<!--         <div class="flex-auto"> -->
-<!--           <span class="font-bold block mb-2">Phone</span> -->
-<!--           <p-inputMask mask="(999) 999-9999" [(ngModel)]="name" placeholder="(999) 999-9999"></p-inputMask> -->
-<!--         </div> -->
+        <!--         <div class="flex-auto"> -->
+        <!--           <span class="font-bold block mb-2">Phone</span> -->
+        <!--           <p-inputMask mask="(999) 999-9999" [(ngModel)]="name" placeholder="(999) 999-9999"></p-inputMask> -->
+        <!--         </div> -->
       </div>
     </div>
     <p>Адрес <span>(будет указываться в объявлениях по умолчанию)</span></p>
     <input type="text" pInputText name="address" placeholder="Не указан">
-    <button pButton label="Сохранить" class="button" [disabled]="'true'"></button>
+    <div class="settings__button-container">
+      <button pButton label="Сохранить" class="button" [disabled]="'true'"></button>
+      <div class="data-check__container" [style]="checkVisible">
+        <img class="data-check__icon" src="../../../../assets/images/icons/check-circle.svg" alt="icon"><span
+        class="data-check__text">Изменения
+        сохранены</span>
+      </div>
+    </div>
     <div class="settings__password-container">
       <h2 class="settings__title">Смена пароля</h2>
       <p>Текущий пароль</p>
