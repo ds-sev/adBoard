@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { DialogService } from 'primeng/dynamicdialog'
 import { Router } from '@angular/router'
-import { SignUpComponent } from '../../../services/user/sign-up/sign-up.component'
+import { SignUpComponent } from '../sign-up/sign-up.component'
 import { MessageService } from 'primeng/api'
 
 @Component({

@@ -4,11 +4,11 @@ import { IAd } from '../../models/ad'
 import { Subscription } from 'rxjs'
 
 @Component({
-  selector: 'app-ads-section',
-  templateUrl: './ads-section.component.html',
-  styleUrls: ['./ads-section.component.scss']
+  selector: 'app-recommendations',
+  templateUrl: './recommendations.component.html',
+  styleUrls: ['./recommendations.component.scss']
 })
-export class AdsSectionComponent {
+export class RecommendationsComponent {
   ads!: IAd[]
   adsSubscription!: Subscription
 

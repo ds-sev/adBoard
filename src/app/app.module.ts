@@ -12,7 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { NewAdComponent } from './pages/new-ad/new-ad.component';
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
 import { AppRoutingModule } from './app-routing.module';
-import { AdsSectionComponent } from './modules/ads-section/ads-section.component'
+import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
 import { HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -23,8 +23,8 @@ import { InplaceModule } from 'primeng/inplace'
 import { InputTextModule } from 'primeng/inputtext';
 import { AdDetailsComponent } from './pages/ad-details/ad-details.component';
 import { AuthComponent } from './pages/auth/auth.component';
-import { SignInComponent } from './services/user/sign-in/sign-in.component';
-import { SignUpComponent } from './services/user/sign-up/sign-up.component'
+import { SignInComponent } from './components/UI/sign-in/sign-in.component';
+import { SignUpComponent } from './components/UI/sign-up/sign-up.component'
 import { DialogService } from 'primeng/dynamicdialog';
 import { MyAdsComponent } from './pages/my-ads/my-ads.component';
 import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.component'
@@ -44,7 +44,7 @@ import { PasswordModule } from 'primeng/password'
     NavigationComponent,
     NewAdComponent,
     AccountSettingsComponent,
-    AdsSectionComponent,
+    RecommendationsComponent,
     AdDetailsComponent,
     AuthComponent,
     SignInComponent,
