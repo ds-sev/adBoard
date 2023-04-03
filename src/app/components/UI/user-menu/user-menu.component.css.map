@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"user-menu.component.css"}
+{"version":3,"sourceRoot":"","sources":["user-menu.component.scss"],"names":[],"mappings":"AAEE;EACE;;AAEF;EACE;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;EACA;;AAEF;EACE;EACA","file":"user-menu.component.css"}

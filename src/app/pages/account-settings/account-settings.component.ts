@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./account-settings.component.scss']
 })
 export class AccountSettingsComponent {
+  name: string = 'Алексей'
+  phone: number = 978
 
 }

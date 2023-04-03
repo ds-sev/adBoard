@@ -1,1 +1,13 @@
-<p>user-menu works!</p>
+<div class="card flex justify-content-center">
+  <p-toast></p-toast>
+  <p-menu #menu [model]="items" [popup]="true"></p-menu>
+  <div class="login-btn__container">
+    <button pButton type="button" (click)="menu.toggle($event)" [icon]="btnIcon"
+            [style]="'background-color: transparent; border: none; height: 32px'" [label]="name"
+            iconPos="right" class="login-btn__element"><img class="login-btn__icon"
+                                             src="../../../../assets/images/icons/login-icon.svg"
+                                 alt="icon"></button>
+</div>
+<!-- "icon="'pi pi-angle-down'"" -->
+<!-- (click)="menu.toggle($event)" -->
+</div>

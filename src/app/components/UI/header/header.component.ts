@@ -5,15 +5,19 @@ import { Router } from '@angular/router'
 import { SignInComponent } from '../../../services/user/sign-in/sign-in.component'
 import { SignUpComponent } from '../../../services/user/sign-up/sign-up.component'
 import { UserMenuComponent } from '../user-menu/user-menu.component'
+import { MessageService } from 'primeng/api'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  providers: [MessageService]
 })
 export class HeaderComponent implements OnInit {
 
   loggedIn: boolean = true
+  visible: string = ''
+  items: any = ['one', 'two', 'three']
 
 
   constructor(
@@ -42,6 +46,7 @@ export class HeaderComponent implements OnInit {
 
 
   userMenu() {
+    this.visible = 'display: flex'
     console.log('open')
   }
 
@@ -67,6 +72,7 @@ export class HeaderComponent implements OnInit {
   //   this.visible = true;
   //
   // }
+
 
 }
 

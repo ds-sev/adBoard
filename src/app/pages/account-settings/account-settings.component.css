@@ -1,3 +1,80 @@
+.settings {
+  margin-top: 32px;
+  max-width: 856px;
+  box-sizing: content-box;
+}
+.settings__title {
+  margin-bottom: 24px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1E293B;
+}
+.settings__fields-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.settings__fields-container div {
+  width: 100%;
+}
+.settings__password-container {
+  margin-top: 48px;
+  width: 416px;
+}
+.settings__phone-input {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  width: 100% !important;
+}
+.settings .new-ad__description {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 168px;
+}
+.settings .new-ad__agreement {
+  width: 306px;
+}
+.settings .new-ad__image-add-container {
+  display: flex;
+  align-items: center;
+}
 
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1E293B;
+}
+
+span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #64748B;
+}
+
+input {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+p-inputmask {
+  width: 400px !important;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  width: 100% !important;
+}
+
+button {
+  margin-top: 8px;
+  font-size: 16px;
+}
 
 /*# sourceMappingURL=account-settings.component.css.map */

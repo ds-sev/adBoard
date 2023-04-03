@@ -5,20 +5,35 @@
 
 
       <div class="button-container">
-        <a class="header__button-login button" (click)="showLoginModal()">
-          <img class="header__button-login-icon" src="../../../../assets/images/icons/login-icon.svg" alt="login">
-          <span class="button__text_hide">{{userBtnText}}</span>
-        </a>
-        <div class="header__user-menu user-menu" [ngStyle]="{'display': userMenu? 'true' : 'none'}">
-          <nav>
-            <ul>
-              <li><a class="user-menu__link" routerLink="my-ads">Мои объявления</a></li>
-              <li><a class="user-menu__link" routerLink="settings">Настройки</a></li>
-              <li><a class="user-menu__link" routerLink="sign-out"><span class="user-menu__link_accent">Выйти</span></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+
+
+<!--         <a class="header__button-login button" (click)="showLoginModal()"> -->
+<!--           <img class="header__button-login-icon" src="../../../../assets/images/icons/login-icon.svg" alt="login"> -->
+<!--           <span class="button__text_hide">{{userBtnText}}</span> -->
+<!--         </a> -->
+
+
+        <user-menu [loggedIn]="loggedIn"></user-menu>
+
+
+
+
+
+<!--         <div class="header__user-menu user-menu" [style]="visible"> -->
+<!--           <nav> -->
+<!--             <ul> -->
+<!--               <li><a class="user-menu__link" routerLink="my-ads">Мои объявления</a></li> -->
+<!--               <li><a class="user-menu__link" routerLink="settings">Настройки</a></li> -->
+<!--               <li><a class="user-menu__link" routerLink="sign-out"><span class="user-menu__link_accent">Выйти</span></a> -->
+<!--               </li> -->
+<!--             </ul> -->
+<!--           </nav> -->
+<!--         </div> -->
+
+
+
+
+
 
 
 
@@ -29,4 +44,7 @@
       </button>
     </div>
   </div>
+
+
+
 </header>

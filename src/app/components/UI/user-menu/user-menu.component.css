@@ -1,3 +1,30 @@
-
+.login-btn__container {
+  display: flex;
+}
+.login-btn__icon {
+  margin-right: 8px;
+}
+.login-btn__element {
+  margin-right: 5px;
+  border-radius: 4px;
+  -webkit-transition: ease-out 0.2s;
+  -o-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
+  font-family: "Inter", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  font-size: 14px !important;
+}
+.login-btn__element:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  -webkit-transition: ease-in 0.2s;
+  -o-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+.login-btn__element:focus {
+  opacity: 0.7;
+  box-shadow: none;
+}
 
 /*# sourceMappingURL=user-menu.component.css.map */

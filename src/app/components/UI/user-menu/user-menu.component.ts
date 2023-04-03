@@ -1,10 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Output, ViewChild } from '@angular/core'
+import { MenuItem, MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'app-user-menu',
+  selector: 'user-menu',
   templateUrl: './user-menu.component.html',
-  styleUrls: ['./user-menu.component.scss']
+  styleUrls: ['./user-menu.component.scss'],
+  providers: [MessageService]
 })
-export class UserMenuComponent {
+export class UserMenuComponent implements OnInit {
+  items!: MenuItem[];
+  name: string = 'Алексей'
+  btnIcon: string = ''
+
+  @Input() public loggedIn: boolean = false
+
+  constructor(private messageService: MessageService) {}
+
+
+
+
+  // openUserMenu: string = ''
+
+
+
+  onLoginBtnClick() {
+    // this.loggedIn ? : console.log('not logged')
+  }
+
+
+
+  ngOnInit() {
+    this.items = [
+      {label: 'Мои объявления',
+      routerLink: 'my-ads'},
+      {label: 'Настройки',
+        routerLink: 'settings'},
+      {label: 'Выйти',
+        routerLink: 'log-out'}
+    ];
+    if (this.loggedIn) {
+      this.name = 'Алексей'
+      this.btnIcon = 'pi pi-angle-down'
+
+    } else {
+    this.name = 'Войти'
+      this.btnIcon = ''
+  }
+  }
+
+  update() {
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Data Updated' });
+  }
+
+  delete() {
+    this.messageService.add({ severity: 'warn', summary: 'Delete', detail: 'Data Deleted' });
+  }
 
 }

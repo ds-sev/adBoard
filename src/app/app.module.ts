@@ -31,6 +31,10 @@ import { MyAdsComponent } from './pages/my-ads/my-ads.component';
 import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.component'
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { UserMenuComponent } from './components/UI/user-menu/user-menu.component'
+import { MenuModule } from 'primeng/menu'
+import { ToastModule } from 'primeng/toast'
+import { MessagesModule } from 'primeng/messages'
+import { PasswordModule } from 'primeng/password'
 
 @NgModule({
   declarations: [
@@ -68,9 +72,13 @@ import { UserMenuComponent } from './components/UI/user-menu/user-menu.component
     InplaceModule,
     InputTextModule,
     ProgressSpinnerModule,
+    MenuModule,
+    ToastModule,
+    MessagesModule,
+    PasswordModule
   ],
   providers: [
-    DialogService
+    DialogService,
 
   ],
   bootstrap: [AppComponent]

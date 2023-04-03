@@ -1,3 +1,30 @@
-<p>account-settings works!</p>
-
-
+<section class="_container">
+  <div class="settings">
+    <h2 class="settings__title">Настройки</h2>
+    <div class="settings__fields-container">
+      <div>
+        <p>Имя</p>
+        <input type="text" pInputText name="name" placeholder="Введите имя" [value]="name">
+      </div>
+      <div>
+        <p>Номер телефона</p>
+        <input type="tel" pInputText name="phone" placeholder="Номер телефона" [value]="phone">
+<!--         <div class="flex-auto"> -->
+<!--           <span class="font-bold block mb-2">Phone</span> -->
+<!--           <p-inputMask mask="(999) 999-9999" [(ngModel)]="name" placeholder="(999) 999-9999"></p-inputMask> -->
+<!--         </div> -->
+      </div>
+    </div>
+    <p>Адрес <span>(будет указываться в объявлениях по умолчанию)</span></p>
+    <input type="text" pInputText name="address" placeholder="Не указан">
+    <button pButton label="Сохранить" class="button" [disabled]="'true'"></button>
+    <div class="settings__password-container">
+      <h2 class="settings__title">Смена пароля</h2>
+      <p>Текущий пароль</p>
+      <input type="password" pInputText placeholder="Введите текущий пароль" name="old-pass">
+      <p>Новый пароль <span>(минимум 8 символов)</span></p>
+      <input type="password" pInputText placeholder="Введите новый пароль" minlength="8" name="new-pass">
+      <button class="button" pButton label="Изменить пароль" [disabled]="'true'"></button>
+    </div>
+  </div>
+</section>

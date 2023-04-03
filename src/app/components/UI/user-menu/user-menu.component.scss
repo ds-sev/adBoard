@@ -1,0 +1,32 @@
+
+.login-btn {
+  &__container {
+    display: flex;
+  }
+  &__icon {
+    margin-right: 8px;
+  }
+  &__element {
+    margin-right: 5px;
+    border-radius: 4px;
+    -webkit-transition: ease-out .2s;
+    -o-transition: ease-out .2s;
+    transition: ease-out .2s;
+    font-family: 'Inter', sans-serif!important;
+    font-style: normal!important;
+    font-weight: 300!important;
+    font-size: 14px!important;
+    &:hover {
+      cursor: pointer;
+      opacity: .6;
+      -webkit-transition: ease-in .2s;
+      -o-transition: ease-in .2s;
+      transition: ease-in .2s;
+    }
+    &:focus {
+      opacity:  .7;
+      box-shadow: none;
+    }
+  }
+}
+
