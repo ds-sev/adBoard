@@ -2,17 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AdCardComponent } from './shared/components/ad-card/ad-card.component';
-import { HeaderComponent } from './components/UI/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from './components/UI/footer/footer.component';
-import { NavigationComponent } from './components/UI/navigation/navigation.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { NavigationComponent } from './components/navigation/navigation.component'
 import { CascadeSelectModule } from 'primeng/cascadeselect'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/button';
-import { NewAdComponent } from './pages/new-ad/new-ad.component';
-import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
+import { NewAdComponent } from './modules/authorized/pages/new-ad/new-ad.component';
+import { AccountSettingsComponent } from './modules/authorized/pages/account-settings/account-settings.component'
 import { AppRoutingModule } from './app-routing.module';
-import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
+import { RecommendationsComponent } from './modules/global/pages/recommendations/recommendations.component'
 import { HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -21,21 +21,20 @@ import { AccordionModule } from 'primeng/accordion'
 import { InputMaskModule } from 'primeng/inputmask'
 import { InplaceModule } from 'primeng/inplace'
 import { InputTextModule } from 'primeng/inputtext';
-import { AdDetailsComponent } from './pages/ad-details/ad-details.component';
-import { AuthComponent } from './pages/auth/auth.component';
-import { SignInComponent } from './components/UI/sign-in/sign-in.component';
-import { SignUpComponent } from './components/UI/sign-up/sign-up.component'
+import { AdDetailsComponent } from './modules/global/pages/ad-details/ad-details.component';
+import { SignInComponent } from './modules/guest/modals/sign-in/sign-in.component';
+import { SignUpComponent } from './modules/guest/modals/sign-up/sign-up.component'
 import { DialogService } from 'primeng/dynamicdialog';
-import { MyAdsComponent } from './pages/my-ads/my-ads.component';
-import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.component'
+import { MyAdsComponent } from './modules/authorized/pages/my-ads/my-ads.component';
+import { NewAdCardComponent } from './modules/authorized/components/new-ad-card/new-ad-card.component'
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { UserMenuComponent } from './components/UI/user-menu/user-menu.component'
+import { UserMenuComponent } from './modules/authorized/user-menu/user-menu.component'
 import { MenuModule } from 'primeng/menu'
 import { ToastModule } from 'primeng/toast'
 import { MessagesModule } from 'primeng/messages'
 import { PasswordModule } from 'primeng/password';
-import { SellerInfoModalComponent } from './components/seller-info-modal/seller-info-modal.component';
-import { ModalConfirmComponent } from './components/UI/modal-confirm/modal-confirm.component'
+import { SellerInfoModalComponent } from './modules/global/modals/seller-info-modal/seller-info-modal.component';
+import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
 
 @NgModule({
   declarations: [
@@ -48,7 +47,6 @@ import { ModalConfirmComponent } from './components/UI/modal-confirm/modal-confi
     AccountSettingsComponent,
     RecommendationsComponent,
     AdDetailsComponent,
-    AuthComponent,
     SignInComponent,
     SignUpComponent,
     MyAdsComponent,

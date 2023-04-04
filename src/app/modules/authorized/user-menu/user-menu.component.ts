@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { MenuItem, MessageService } from 'primeng/api'
 import { DialogService } from 'primeng/dynamicdialog'
-import { ModalConfirmComponent } from '../modal-confirm/modal-confirm.component'
+import { ModalConfirmComponent } from '../modals/modal-confirm/modal-confirm.component'
 
 @Component({
   selector: 'user-menu',

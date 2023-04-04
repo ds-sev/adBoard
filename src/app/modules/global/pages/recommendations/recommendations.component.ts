@@ -1,12 +1,12 @@
-import { Component } from '@angular/core'
-import { AdsService } from '../../services/ads.service'
-import { IAd } from '../../models/ad'
+import { ChangeDetectionStrategy, Component, OnChanges } from '@angular/core'
+import { AdsService } from '../../../../services/ads.service'
+import { IAd } from '../../../../models/ad'
 import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-recommendations',
   templateUrl: './recommendations.component.html',
-  styleUrls: ['./recommendations.component.scss']
+  styleUrls: ['./recommendations.component.scss'],
 })
 export class RecommendationsComponent {
   ads!: IAd[]

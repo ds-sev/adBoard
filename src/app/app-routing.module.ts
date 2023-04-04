@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { NewAdComponent } from './pages/new-ad/new-ad.component'
-import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
-import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
-import { SignInComponent } from './components/UI/sign-in/sign-in.component'
-import { SignUpComponent } from './components/UI/sign-up/sign-up.component'
-import { MyAdsComponent } from './pages/my-ads/my-ads.component'
-import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
+import { NewAdComponent } from './modules/authorized/pages/new-ad/new-ad.component'
+import { RecommendationsComponent } from './modules/global/pages/recommendations/recommendations.component'
+import { AdDetailsComponent } from './modules/global/pages/ad-details/ad-details.component'
+import { SignInComponent } from './modules/guest/modals/sign-in/sign-in.component'
+import { SignUpComponent } from './modules/guest/modals/sign-up/sign-up.component'
+import { MyAdsComponent } from './modules/authorized/pages/my-ads/my-ads.component'
+import { AccountSettingsComponent } from './modules/authorized/pages/account-settings/account-settings.component'
 
 const routes: Routes = [
   {path: 'sign-in', component: SignInComponent},

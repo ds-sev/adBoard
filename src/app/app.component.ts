@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnChanges, OnInit } from '@angular/core'
 import {
   NavigationCancel,
   NavigationEnd,
@@ -12,19 +12,29 @@ import { filter, map, Observable, of } from 'rxjs'
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class AppComponent implements OnInit {
+
   loading$: Observable<boolean> = of(false)
-  constructor(
-    private router: Router,
-  ) {
-  }
+
+  constructor(private router: Router,) {}
 
   title = 'adBoard'
 
   ngOnInit() {
-    this.loading$ = this.router.events.pipe(
+
+    console.log(this.loading$.pipe())
+    console.log(this.loading$)
+    console.log(NavigationEnd)
+    console.log(NavigationStart)
+
+
+
+
+
+
+    this.router.events.pipe(
       filter(
         (e) =>
           e instanceof NavigationStart ||
@@ -34,6 +44,8 @@ export class AppComponent implements OnInit {
       ),
       map((e) => e instanceof NavigationStart)
     )
+    .subscribe(console.log)
   }
+
 }
 

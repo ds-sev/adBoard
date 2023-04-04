@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
-import { IAd } from '../../models/ad'
-import { example } from '../../services/example'
+import { IAd } from '../../../../models/ad'
+import { example } from '../../../../services/example'
 import { DialogService } from 'primeng/dynamicdialog'
 import { Router } from '@angular/router'
 
