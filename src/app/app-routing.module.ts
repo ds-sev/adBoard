@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'home', component: RecommendationsComponent},
   {path: 'ad/:id', component: AdDetailsComponent},
   {path: '**', redirectTo: '', component: RecommendationsComponent},
+  {path: 'test', loadChildren:() => import('./modules/authorized/authorized.module').then(m => m.AuthorizedModule)}
 ]
 
 @NgModule({
