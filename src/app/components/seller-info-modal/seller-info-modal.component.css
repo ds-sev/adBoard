@@ -1,3 +1,29 @@
-
+.seller-info {
+  max-width: 468px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.seller-info__number {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #E2E8F0;
+}
+.seller-info__number p {
+  font-size: 30px;
+  line-height: 36px;
+  color: #3B82F6;
+}
+.seller-info ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1E293B;
+}
+.seller-info ul li {
+  margin-left: 25px;
+  list-style: disc;
+}
 
 /*# sourceMappingURL=seller-info-modal.component.css.map */

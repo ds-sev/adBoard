@@ -22,23 +22,23 @@
   </div>
   <div>
     <p class="ad-details__text_price">80 000 ₽</p>
-    <button class="phone-button" pButton>
+    <button class="phone-button" pButton (click)="onPhoneBtnClick()">
       <div class="phone-button__icon"></div>
       Показать номер телефона
     </button>
     <p class="ad-details__text_description-heading">Адрес</p>
     <p class="ad-details__text_description">Город, ул. Улица, ХХ</p>
-    <a class="link" href="#">Открыть на карте<div class="link__icon"></div></a>
+    <a class="link" href="#">Открыть на карте
+      <div class="link__icon"></div>
+    </a>
     <p class="ad-details__text_description-heading">Описание</p>
     <p class="ad-details__text_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-      voluptatem.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
+      voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
       consequatur illum incidunt iure neque
       repudiandae.</p>
-    <!--     <p-button>Добавить картинки</p-button> -->
-    <!-- <button pButton>2232</button> -->
-
-
-    <app-seller-info-modal></app-seller-info-modal>
+    <p-dialog [(visible)]="displayModal" [modal]="true" [dismissableMask]="true" [header]="'Пользователь'">
+      <app-seller-info-modal></app-seller-info-modal>
+    </p-dialog>
   </div>
 </section>
 

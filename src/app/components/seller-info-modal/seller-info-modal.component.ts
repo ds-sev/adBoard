@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core'
 
 @Component({
   selector: 'app-seller-info-modal',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class SellerInfoModalComponent {
   phone: string = '+7 (978) 987-65-43'
-
+  @Input() displayModal = true
 }
+
+
+
+
