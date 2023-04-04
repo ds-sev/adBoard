@@ -17,7 +17,6 @@ export class AdCardComponent {
     console.log('photo')
     this.router.navigate(['ad/:id']).then()
   }
-
 }
 
 

@@ -34,7 +34,8 @@ import { MenuModule } from 'primeng/menu'
 import { ToastModule } from 'primeng/toast'
 import { MessagesModule } from 'primeng/messages'
 import { PasswordModule } from 'primeng/password';
-import { SellerInfoModalComponent } from './components/seller-info-modal/seller-info-modal.component'
+import { SellerInfoModalComponent } from './components/seller-info-modal/seller-info-modal.component';
+import { ModalConfirmComponent } from './components/UI/modal-confirm/modal-confirm.component'
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { SellerInfoModalComponent } from './components/seller-info-modal/seller-
     NewAdCardComponent,
     UserMenuComponent,
     SellerInfoModalComponent,
+    ModalConfirmComponent,
   ],
   imports: [
     BrowserModule,

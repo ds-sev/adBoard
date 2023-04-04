@@ -4,7 +4,7 @@
   <div class="page-content">
     <router-outlet>
     </router-outlet>
-    <p-progressSpinner *ngIf="loading$ | async"></p-progressSpinner>
+    <div *ngIf="loading$ | async"><p-progressSpinner></p-progressSpinner></div>
   </div>
   <app-footer></app-footer>
 </div>

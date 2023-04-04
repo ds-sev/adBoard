@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { MenuItem, MessageService } from 'primeng/api'
+import { DialogService } from 'primeng/dynamicdialog'
+import { ModalConfirmComponent } from '../modal-confirm/modal-confirm.component'
 
 @Component({
   selector: 'user-menu',
@@ -14,7 +16,13 @@ export class UserMenuComponent implements OnInit {
 
   @Input() public loggedIn: boolean = false
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, public dialogService: DialogService) {
+  }
+
+  logOut() {
+    this.dialogService.open(ModalConfirmComponent, {
+      header: 'Вы уверены?'
+    })
   }
 
   onLoginBtnClick() {
@@ -32,7 +40,7 @@ export class UserMenuComponent implements OnInit {
       },
       {
         label: 'Выйти',
-        routerLink: 'log-out'
+        command:() => this.logOut()
       }
     ]
     if (this.loggedIn) {

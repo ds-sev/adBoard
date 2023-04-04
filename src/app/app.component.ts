@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core'
-import { DialogService } from 'primeng/dynamicdialog'
 import {
   NavigationCancel,
   NavigationEnd,
   NavigationError,
   NavigationStart,
-  Router
+  Router,
 } from '@angular/router'
 import { filter, map, Observable, of } from 'rxjs'
 
@@ -16,17 +15,14 @@ import { filter, map, Observable, of } from 'rxjs'
 })
 export class AppComponent implements OnInit {
   loading$: Observable<boolean> = of(false)
-
   constructor(
     private router: Router,
-    public dialogService: DialogService
   ) {
   }
 
   title = 'adBoard'
 
   ngOnInit() {
-
     this.loading$ = this.router.events.pipe(
       filter(
         (e) =>
@@ -35,9 +31,8 @@ export class AppComponent implements OnInit {
           e instanceof NavigationCancel ||
           e instanceof NavigationError
       ),
-      map((e) => e instanceof NavigationEnd)
+      map((e) => e instanceof NavigationStart)
     )
-    console.log(this.loading$)
   }
 }
 

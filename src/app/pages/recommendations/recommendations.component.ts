@@ -17,9 +17,7 @@ export class RecommendationsComponent {
 
   ngOnInit(): void {
     this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
-      this.ads = data
-      console.log(data)
-      console.log(this.ads)
+        this.ads = data
     })
   }
 
@@ -27,5 +25,3 @@ export class RecommendationsComponent {
     if (this.adsSubscription) this.adsSubscription.unsubscribe()
   }
 }
-
-
