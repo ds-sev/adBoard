@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { IAd } from '../../../models/ad'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-ad-card',
@@ -8,7 +9,15 @@ import { IAd } from '../../../models/ad'
 })
 
 export class AdCardComponent {
+  constructor(private router: Router) {
+  }
   @Input() public ad!: IAd
+
+  onAdClick() {
+    console.log('photo')
+    this.router.navigate(['ad/:id']).then()
+  }
+
 }
 
 
