@@ -14,10 +14,6 @@ export class AdCardComponent {
   @Input() public ad!: IAd
 
   onAdClick() {
-    console.log('photo')
-    this.router.navigate(['ad/:id']).then()
+    this.router.navigate(['ad', this.ad.id]).then()
   }
 }
-
-
-
