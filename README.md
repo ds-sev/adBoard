@@ -1,27 +1,33 @@
 # AdBoard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+SolarLabAcademy project
 
-## Development server
+## ТЗ 30.03.23:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1.	Создать базовую структуру приложения, сделать модули, страницы, компоненты, настроить роутинг.</br>
+2.	Сделать базовую верстку компонентов шапки и поиска. Поиск и выбор категорий можно пока оставить без логики, в шапке сделать базовую логику в виде:</br>
+     a.	Если не залогинен:</br>
+          i.	По нажатию на войти должно открываться модальное окно входа.</br>
+          ii.	По нажатию на «новое объявление» - аналогично открывается окно входа.</br>
+     b.	Если залогинен:</br>
+          i.	По клику на пользователя открывается менюшка</br>
+          ii.	По клику на Новое объявление – происходит редирект на страницу создания</br>
+     c.	Т.к. логина как такового пока нет – можете сделать просто булевое поле в компоненте «авторизован-не авторизован»</br>
+3.	Сверстать «главную страницу» рекомендованных объявлений на моках, вместо запроса на сервер можете использовать моковые данные по типу:</br>
 
-## Code scaffolding
+     *new Array(20).fill({</br>
+          id: 0,</br>
+          title: 'Гитара фендер',</br>
+          price: 20000,</br>
+          imgSrc: 'https://placehold.co/600x400',</br>
+          createdAt: 'Сегодня 14:12',</br>
+          address: 'Москва',</br>
+     })</br>*
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+     Данные должны передаваться в дочерний компонент и отображаться там.</br>
+     a.	Если данных нет – отображать соответствующее сообщение пользователю</br>
+     b.	Если данные еще грузятся – отображать спиннер или скелетон. Сэмулировать загрузку данных можете любым образом, например через debounceTime или же setTimeout.</br>
+     
+     
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
