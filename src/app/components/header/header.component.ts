@@ -12,7 +12,8 @@ import { MessageService } from 'primeng/api'
 })
 export class HeaderComponent implements OnInit {
 
-  loggedIn: boolean = true
+  loggedIn: boolean = false
+
   visible: string = ''
   items: any = ['one', 'two', 'three']
 

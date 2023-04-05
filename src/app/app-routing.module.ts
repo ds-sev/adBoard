@@ -9,17 +9,25 @@ import { MyAdsComponent } from './modules/authorized/pages/my-ads/my-ads.compone
 import { AccountSettingsComponent } from './modules/authorized/pages/account-settings/account-settings.component'
 
 const routes: Routes = [
-  {path: 'sign-in', component: SignInComponent},
-  {path: 'sign-up', component: SignUpComponent},
-  // {path: 'authenticated', component: AuthComponent, children: [
+  // {path: 'sign-in', component: SignInComponent},
+  // {path: 'sign-up', component: SignUpComponent},
+
   {path: 'my-ads', component: MyAdsComponent},
   {path: 'new-ad', component: NewAdComponent},
   {path: 'settings', component: AccountSettingsComponent},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: RecommendationsComponent},
+
   {path: 'ad/:id', component: AdDetailsComponent},
-  {path: '**', redirectTo: '', component: RecommendationsComponent},
-  {path: 'test', loadChildren:() => import('./modules/authorized/authorized.module').then(m => m.AuthorizedModule)}
+
+
+
+
+
+  {path: '', loadChildren:() => import('./modules/global/global.module').then(m => m.GlobalModule)},
+  {path: '', loadChildren:() => import('./modules/guest/guest.module').then(m => m.GuestModule)},
+  {path: '', loadChildren:() => import('./modules/authorized/authorized.module').then(m => m.AuthorizedModule)},
+  {path: '**', redirectTo: ''}
+
+  // {path: '', loadChildren:() => import('./modules/global/global-routing.module').then(m => m.GlobalRoutingModule)}
 ]
 
 @NgModule({
