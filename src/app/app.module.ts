@@ -8,7 +8,6 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { CascadeSelectModule } from 'primeng/cascadeselect'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/button';
-import { NewAdComponent } from './modules/authorized/pages/new-ad/new-ad.component';
 import { AccountSettingsComponent } from './modules/authorized/pages/account-settings/account-settings.component'
 import { AppRoutingModule } from './app-routing.module';
 import { RecommendationsComponent } from './modules/global/pages/recommendations/recommendations.component'
@@ -24,8 +23,6 @@ import { AdDetailsComponent } from './modules/global/pages/ad-details/ad-details
 import { SignInComponent } from './modules/guest/modals/sign-in/sign-in.component';
 import { SignUpComponent } from './modules/guest/modals/sign-up/sign-up.component'
 import { DialogService } from 'primeng/dynamicdialog';
-import { MyAdsComponent } from './modules/authorized/pages/my-ads/my-ads.component';
-import { NewAdCardComponent } from './modules/authorized/components/new-ad-card/new-ad-card.component'
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { UserMenuComponent } from './modules/authorized/user-menu/user-menu.component'
 import { MenuModule } from 'primeng/menu'
@@ -43,14 +40,14 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
     // AdCardComponent,
     FooterComponent,
     NavigationComponent,
-    NewAdComponent,
+    // NewAdComponent,
     AccountSettingsComponent,
     RecommendationsComponent,
     AdDetailsComponent,
     SignInComponent,
     SignUpComponent,
-    MyAdsComponent,
-    NewAdCardComponent,
+    // MyAdsComponent,
+    // NewAdCardComponent,
     UserMenuComponent,
     SellerInfoModalComponent,
     ModalConfirmComponent,

@@ -12,11 +12,11 @@ const routes: Routes = [
   // {path: 'sign-in', component: SignInComponent},
   // {path: 'sign-up', component: SignUpComponent},
 
-  {path: 'my-ads', component: MyAdsComponent},
-  {path: 'new-ad', component: NewAdComponent},
-  {path: 'settings', component: AccountSettingsComponent},
-
-  {path: 'ad/:id', component: AdDetailsComponent},
+  // {path: 'my-ads', component: MyAdsComponent},
+  // {path: 'new-ad', component: NewAdComponent},
+  // {path: 'settings', component: AccountSettingsComponent},
+  //
+  // {path: 'ad/:id', component: AdDetailsComponent},
 
 
 
@@ -25,6 +25,7 @@ const routes: Routes = [
   {path: '', loadChildren:() => import('./modules/global/global.module').then(m => m.GlobalModule)},
   {path: '', loadChildren:() => import('./modules/guest/guest.module').then(m => m.GuestModule)},
   {path: '', loadChildren:() => import('./modules/authorized/authorized.module').then(m => m.AuthorizedModule)},
+
   {path: '**', redirectTo: ''}
 
   // {path: '', loadChildren:() => import('./modules/global/global-routing.module').then(m => m.GlobalRoutingModule)}

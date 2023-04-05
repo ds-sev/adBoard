@@ -2,13 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthorizedRoutingModule } from './authorized-routing.module';
+import { MyAdsComponent } from './pages/my-ads/my-ads.component'
+import { NewAdCardComponent } from './components/new-ad-card/new-ad-card.component'
+import { AddCardComponentModule } from '../../shared/components/ad-card/ad-card.component'
+import { NewAdComponent } from './pages/new-ad/new-ad.component'
+import { CascadeSelectModule } from 'primeng/cascadeselect'
+import { InputTextModule } from 'primeng/inputtext'
+import { ButtonModule } from 'primeng/button'
 
 
 @NgModule({
-  declarations: [],
+  declarations: [MyAdsComponent, NewAdCardComponent, NewAdComponent],
   imports: [
     CommonModule,
-    AuthorizedRoutingModule
-  ]
+    AuthorizedRoutingModule,
+    AddCardComponentModule,
+    CascadeSelectModule,
+    InputTextModule,
+    ButtonModule
+  ],
+  // exports: [NewAdComponent]
 })
 export class AuthorizedModule { }
