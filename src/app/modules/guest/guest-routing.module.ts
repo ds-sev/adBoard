@@ -4,8 +4,8 @@ import { RecommendationsComponent } from '../global/pages/recommendations/recomm
 import { SignInComponent } from './modals/sign-in/sign-in.component'
 
 const routes: Routes = [
-  // {path: 'sign-in', component: SignInComponent},
-  // {path: 'sign-up', component: SignInComponent},
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'sign-up', component: SignInComponent},
 
 ];
 
