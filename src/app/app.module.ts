@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { AdCardComponent } from './shared/components/ad-card/ad-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
@@ -35,12 +34,13 @@ import { MessagesModule } from 'primeng/messages'
 import { PasswordModule } from 'primeng/password';
 import { SellerInfoModalComponent } from './modules/global/modals/seller-info-modal/seller-info-modal.component';
 import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
+import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AdCardComponent,
+    // AdCardComponent,
     FooterComponent,
     NavigationComponent,
     NewAdComponent,
@@ -75,7 +75,8 @@ import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm
     MenuModule,
     ToastModule,
     MessagesModule,
-    PasswordModule
+    PasswordModule,
+    AddCardComponentModule
   ],
   providers: [
     DialogService,

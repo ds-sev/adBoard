@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, NgModule } from '@angular/core'
 import { IAd } from '../../../models/ad'
 import { Router } from '@angular/router'
+import { CurrencyPipe } from '@angular/common'
 
 @Component({
   selector: 'app-ad-card',
@@ -17,3 +18,11 @@ export class AdCardComponent {
     this.router.navigate(['ad', this.ad.id]).then()
   }
 }
+
+@NgModule({
+  declarations: [AdCardComponent],
+  imports: [CurrencyPipe],
+  exports: [AdCardComponent]
+})
+
+export class AddCardComponentModule {}
