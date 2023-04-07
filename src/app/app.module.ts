@@ -19,7 +19,6 @@ import { AccordionModule } from 'primeng/accordion'
 import { InputMaskModule } from 'primeng/inputmask'
 import { InplaceModule } from 'primeng/inplace'
 import { InputTextModule } from 'primeng/inputtext';
-import { AdDetailsComponent } from './modules/global/pages/ad-details/ad-details.component';
 import { SignInComponent } from './modules/guest/modals/sign-in/sign-in.component';
 import { SignUpComponent } from './modules/guest/modals/sign-up/sign-up.component'
 import { DialogService } from 'primeng/dynamicdialog';
@@ -29,7 +28,6 @@ import { MenuModule } from 'primeng/menu'
 import { ToastModule } from 'primeng/toast'
 import { MessagesModule } from 'primeng/messages'
 import { PasswordModule } from 'primeng/password';
-import { SellerInfoModalComponent } from './modules/global/modals/seller-info-modal/seller-info-modal.component';
 import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
 import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component'
 
@@ -43,13 +41,12 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
     // NewAdComponent,
     AccountSettingsComponent,
     RecommendationsComponent,
-    AdDetailsComponent,
+    // AdDetailsComponent,
     SignInComponent,
     SignUpComponent,
     // MyAdsComponent,
     // NewAdCardComponent,
     UserMenuComponent,
-    SellerInfoModalComponent,
     ModalConfirmComponent,
   ],
   imports: [
@@ -73,10 +70,13 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
     ToastModule,
     MessagesModule,
     PasswordModule,
-    AddCardComponentModule
+    AddCardComponentModule,
   ],
   providers: [
     DialogService,
+
+  ],
+  exports: [
 
   ],
   bootstrap: [AppComponent]

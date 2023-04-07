@@ -1,5 +1,6 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { DialogService } from 'primeng/dynamicdialog'
+import { IAd } from '../../../../models/ad'
 
 @Component({
   selector: 'app-ad-details',
@@ -9,6 +10,9 @@ import { DialogService } from 'primeng/dynamicdialog'
 export class AdDetailsComponent {
   constructor(public dialogService: DialogService) {
   }
+
+  @Input() adDetailsData!: IAd
+  @Input() test!: string
 
   displayModal: boolean = false
 
