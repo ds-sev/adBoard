@@ -26,11 +26,11 @@ export class NavigationComponent implements OnInit {
 
     this.countries = [
       {
-        name: 'Australia',
+        name: 'Транспорт',
         code: 'AU',
         states: [
           {
-            name: 'New South Wales',
+            name: 'Автомобили',
             cities: [
               { cname: 'Sydney', code: 'A-SY' },
               { cname: 'Newcastle', code: 'A-NE' },
@@ -38,7 +38,7 @@ export class NavigationComponent implements OnInit {
             ]
           },
           {
-            name: 'Queensland',
+            name: 'Мотоциклы',
             cities: [
               { cname: 'Brisbane', code: 'A-BR' },
               { cname: 'Townsville', code: 'A-TO' }
@@ -47,7 +47,7 @@ export class NavigationComponent implements OnInit {
         ]
       },
       {
-        name: 'Canada',
+        name: 'Недвижимость',
         code: 'CA',
         states: [
           {
@@ -67,7 +67,7 @@ export class NavigationComponent implements OnInit {
         ]
       },
       {
-        name: 'United States',
+        name: 'Работа',
         code: 'US',
         states: [
           {
@@ -96,6 +96,11 @@ export class NavigationComponent implements OnInit {
             ]
           }
         ]
+      },
+      {
+        name: 'Услуги',
+        code: 'US',
+        states: []
       }
     ];
   }
