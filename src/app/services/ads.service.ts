@@ -7,7 +7,8 @@ import { IAd } from '../models/ad'
   providedIn: 'root'
 })
 export class AdsService {
-  url: string = 'https://fakestoreapi.com/products?limit=5'
+  // url: string = 'https://fakestoreapi.com/products?limit=5'
+  url: string = 'http://80.90.184.170:5000/Advert'
 
   constructor(private _http: HttpClient) {
   }
