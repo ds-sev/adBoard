@@ -1,13 +1,13 @@
 <div class="ad-card">
   <div class="ad-card__photo-container" (click)="onAdClick()">
-    <img src="{{ad.image}}" alt="{{ad.title}}">
+    <img src="{{ad.image}}" alt="{{ad.name}}">
   </div>
   <div class="ad-card__info">
-    <h3 class="ad-card__title">{{ad.title}}</h3>
+    <h3 class="ad-card__title">{{ad.name}}</h3>
     <p class="ad-card__price">{{ad.price | currency:"EUR"}}</p>
     <p class="ad-card__additional-info" id="location">Location</p>
-    <p class="ad-card__additional-info ad-card__additional-info_inline" id="day">Rate: {{ad.rating.rate}} </p>
-    <p class="ad-card__additional-info ad-card__additional-info_inline" id="time">Count: {{ad.rating.count}} </p>
+<!--     <p class="ad-card__additional-info ad-card__additional-info_inline" id="day">Rate: {{ad.rating.rate}} </p> -->
+<!--     <p class="ad-card__additional-info ad-card__additional-info_inline" id="time">Count: {{ad.rating.count}} </p> -->
   </div>
 </div>
 <!-- <app-ad-details [test]="'hello'"></app-ad-details> -->

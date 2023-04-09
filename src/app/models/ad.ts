@@ -1,16 +1,45 @@
 export interface IAd {
   id: number,
-  title: string,
-  price: number,
-  description: string,
-  category: string,
+  name: string,
   image?: string,
-  rating: IAdRating
+  description?: string,
+  price?: number,
+  category: string,
+  isActive: boolean
+
+
+  rating?: number
 }
 
-export interface IAdRating {
-  rate: number,
-  count: number
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   title: string,
+//   price: number,
+//   description: string,
+//   category: string,
+//   image?: string,
+//   rating: IAdRating
+// }
+//
+// export interface IAdRating {
+//   rate: number,
+//   count: number
+// }
 
 
