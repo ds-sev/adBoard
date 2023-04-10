@@ -3,6 +3,10 @@ import { DialogService } from 'primeng/dynamicdialog'
 import { Router } from '@angular/router'
 import { SignUpComponent } from '../../modules/guest/modals/sign-up/sign-up.component'
 import { MessageService } from 'primeng/api'
+import {
+  SignModalComponent,
+  SignModalComponentModule
+} from '../../modules/guest/modules/sign-modal/sign-modal.component'
 
 @Component({
   selector: 'app-header',
@@ -29,8 +33,12 @@ export class HeaderComponent implements OnInit {
     if (this.loggedIn) {
       this.router.navigate(['new-ad']).then()
     } else {
-      this.dialogService.open(SignUpComponent, {
-        header: 'Регистрация'
+      // this.dialogService.open(SignUpComponent, {
+      //   header: 'Регистрация'
+      //
+      // })
+      this.dialogService.open(SignModalComponent, {
+        header: 'dss'
       })
     }
   }
@@ -44,9 +52,9 @@ export class HeaderComponent implements OnInit {
     if (this.loggedIn) {
       this.userMenu()
     } else {
-      this.dialogService.open(SignUpComponent, {
-        header: 'Регистрация'
-      })
+      // this.dialogService.open(SignUpComponent, {
+      //   header: 'Регистрация'
+      // })
     }
   }
 

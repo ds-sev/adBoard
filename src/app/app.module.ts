@@ -77,6 +77,8 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
 
   ],
   exports: [
+    SignInComponent,
+    SignUpComponent
 
   ],
   bootstrap: [AppComponent]

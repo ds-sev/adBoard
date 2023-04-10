@@ -1,0 +1,24 @@
+<form class="auth-form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <div class="auth-form__group">
+    <input class="auth-form__input" pInputText type="number" name="phone" required placeholder="Номер телефона"
+           formControlName="phone">
+    <!--       <span class="form-group__warning" [hidden]="phone.valid || phone.pristine">Введите номер телефона</span>
+     -->
+  </div>
+  <div class="auth-form__group">
+    <input class="auth-form__input" pInputText type="text" name="name" required placeholder="Имя"
+           formControlName="name">
+    <!--       <span class="form-group__warning" [hidden]="password.valid || password.pristine">Введите пароль</span> -->
+  </div>
+  <div class="auth-form__group">
+    <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
+           formControlName="password">
+  </div>
+  <button class="auth-form__btn" pButton (submit)="onSubmit()">{{btnText}}</button>
+  <p class="auth-form__tip">Уже зарегистрированы? <a (click)="onLogin()">Войти</a></p>
+</form>
+
+
+
+
+
