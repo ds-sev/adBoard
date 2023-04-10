@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router'
 import { NewAdComponent } from './modules/authorized/pages/new-ad/new-ad.component'
 import { RecommendationsComponent } from './modules/global/pages/recommendations/recommendations.component'
 import { AdDetailsComponent } from './modules/global/pages/ad-details/ad-details.component'
-import { SignInComponent } from './modules/guest/modals/sign-in/sign-in.component'
-import { SignUpComponent } from './modules/guest/modals/sign-up/sign-up.component'
 import { MyAdsComponent } from './modules/authorized/pages/my-ads/my-ads.component'
 import { AccountSettingsComponent } from './modules/authorized/pages/account-settings/account-settings.component'
 

@@ -19,8 +19,6 @@ import { AccordionModule } from 'primeng/accordion'
 import { InputMaskModule } from 'primeng/inputmask'
 import { InplaceModule } from 'primeng/inplace'
 import { InputTextModule } from 'primeng/inputtext';
-import { SignInComponent } from './modules/guest/modals/sign-in/sign-in.component';
-import { SignUpComponent } from './modules/guest/modals/sign-up/sign-up.component'
 import { DialogService } from 'primeng/dynamicdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { UserMenuComponent } from './modules/authorized/user-menu/user-menu.component'
@@ -42,8 +40,6 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
     AccountSettingsComponent,
     RecommendationsComponent,
     // AdDetailsComponent,
-    SignInComponent,
-    SignUpComponent,
     // MyAdsComponent,
     // NewAdCardComponent,
     UserMenuComponent,
@@ -77,8 +73,7 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
 
   ],
   exports: [
-    SignInComponent,
-    SignUpComponent
+
 
   ],
   bootstrap: [AppComponent]
