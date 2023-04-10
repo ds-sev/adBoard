@@ -9,8 +9,8 @@
 <!--               <button class="navigation__button-categories button" (click)="onCategoriesBtnClick()"><img src="../../../assets/images/icons/list-nested.svg" -->
 <!--                                                                         alt="categories-icon">Все категории -->
 <!--               </button> -->
-        <p-cascadeSelect formControlName="selectedCity"
-                         [options]="countries"
+        <p-cascadeSelect formControlName="selectedCategory"
+                         [options]="categories"
                          optionLabel="cname"
                          optionGroupLabel="name"
                          [optionGroupChildren]="['states', 'cities']"

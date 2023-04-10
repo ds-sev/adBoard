@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { SignInComponent } from '../sign-in/sign-in.component'
-import { DialogService } from 'primeng/dynamicdialog'
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +11,8 @@ import { DialogService } from 'primeng/dynamicdialog'
 export class SignUpComponent {
 
   constructor(
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private readonly _dialogRef: DynamicDialogRef
   ) {
   }
 
@@ -24,6 +25,7 @@ export class SignUpComponent {
   })
 
   onLogin() {
+    this._dialogRef.close()
     this.dialogService.open(SignInComponent, {
       header: 'Авторизация',
     })

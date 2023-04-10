@@ -24,10 +24,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.loading$.pipe())
-    console.log(this.loading$)
-    console.log(NavigationEnd)
-    console.log(NavigationStart)
+    // console.log(this.loading$.pipe())
+    // console.log(this.loading$)
+    // console.log(NavigationEnd)
+    // console.log(NavigationStart)
 
 
 
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
       ),
       map((e) => e instanceof NavigationStart)
     )
-    .subscribe(console.log)
+
   }
 
 }
