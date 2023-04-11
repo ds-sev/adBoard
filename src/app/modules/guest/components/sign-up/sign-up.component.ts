@@ -19,15 +19,17 @@ export class SignUpComponent {
   btnText = 'Зарегистрироваться'
 
   signUpForm = new FormGroup({
-
+    name: new FormControl<any>('', Validators.required),
     phone: new FormControl<any>('', Validators.required),
     password: new FormControl<any>('', Validators.required)
   })
 
-  onLogin() {
+  onLoginClick() {
     this._dialogRef.close()
     this.dialogService.open(SignInComponent, {
       header: 'Авторизация',
+      modal: true,
+      dismissableMask: true
     })
   }
 

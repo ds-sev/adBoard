@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 import { DialogService } from 'primeng/dynamicdialog'
 import { Router } from '@angular/router'
 import { MessageService } from 'primeng/api'
-import {
-  SignModalComponent,
-  SignModalComponentModule
-} from '../../modules/guest/modules/sign-modal/sign-modal.component'
+import { SignUpComponent } from '../../modules/guest/components/sign-up/sign-up.component'
 
 @Component({
   selector: 'app-header',
@@ -16,6 +13,8 @@ import {
 export class HeaderComponent implements OnInit {
 
   loggedIn: boolean = false
+
+  @Output() newAdBtnClick = new EventEmitter()
 
   visible: string = ''
   items: any = ['one', 'two', 'three']
@@ -36,8 +35,11 @@ export class HeaderComponent implements OnInit {
       //   header: 'Регистрация'
       //
       // })
-      this.dialogService.open(SignModalComponent, {
-        header: 'dss'
+      this.newAdBtnClick.emit()
+      this.dialogService.open(SignUpComponent, {
+        header: 'Регистрация',
+        modal: true,
+        dismissableMask: true
       })
     }
   }

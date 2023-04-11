@@ -18,7 +18,7 @@ export const example: IAd[] = [
     price: 20000,
     description: 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday',
     category: 'musicInstruments',
-    image: '../../assets/images/cards-examples/guitar.jpg',
+    image: '/assets/images/cards-examples/guitar.jpg',
     isActive: true
 
   },
@@ -28,7 +28,7 @@ export const example: IAd[] = [
     price: 109.95,
     description: 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday',
     category: 'men\'s clothing',
-    image: '../../assets/images/cards-examples/girl.jpg',
+    image: '/assets/images/cards-examples/girl.jpg',
     isActive: true
 
   }

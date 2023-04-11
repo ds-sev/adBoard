@@ -14,11 +14,13 @@
       <p-checkbox value="Запомнить меня" inputId="remember-me"></p-checkbox>
       <label>Запомнить меня</label>
     </div>
-    <p class="auth-form__tip"><a>Забыли пароль?</a></p>
+    <p class="auth-form__tip"><a (click)="show()">Забыли пароль?</a></p>
   </div>
   <button class="auth-form__btn" pButton (submit)="onSubmit()">{{btnText}}</button>
-  <p class="auth-form__tip">Еще нет учетной записи? <a (click)="onRegister()">Создать</a></p>
+  <p class="auth-form__tip">Еще нет учетной записи? <a (click)="onRegisterClick()">Создать</a></p>
 </form>
+
+<p-dialog [(visible)]="isForgetModalOpen">Очень жаль. До свидания.</p-dialog>
 
 
 
