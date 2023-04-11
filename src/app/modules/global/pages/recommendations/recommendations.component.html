@@ -1,7 +1,16 @@
 <section class="ads-section _container">
   <h3 class="ads-section__title">Рекомендации для вас</h3>
   <div class="ad-cards">
-    <app-ad-card class="ad-card-container" *ngFor="let ad of ads; let i = index" [ad]="ad"></app-ad-card>
+    <ng-container *ngIf="isLoading">
+
+
+      <p>Tut budet spinner</p>
+
+
+    </ng-container>
+    <ng-container *ngIf="!isLoading">
+      <app-ad-card class="ad-card-container" *ngFor="let ad of ads; let i = index" [ad]="ad"></app-ad-card>
+    </ng-container>
   </div>
 </section>
 

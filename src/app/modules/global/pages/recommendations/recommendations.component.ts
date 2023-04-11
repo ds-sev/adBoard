@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs'
   styleUrls: ['./recommendations.component.scss'],
 })
 export class RecommendationsComponent {
+  isLoading: boolean = false
   ads!: IAd[]
   adsSubscription!: Subscription
 
@@ -17,7 +18,8 @@ export class RecommendationsComponent {
 
   ngOnInit(): void {
     this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
-        this.ads = data
+      this.ads = data
+      this.isLoading = false
     })
   }
 

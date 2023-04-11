@@ -3,6 +3,7 @@ import { DialogService } from 'primeng/dynamicdialog'
 import { Router } from '@angular/router'
 import { MessageService } from 'primeng/api'
 import { SignUpComponent } from '../../modules/guest/components/sign-up/sign-up.component'
+import { AuthService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,8 @@ import { SignUpComponent } from '../../modules/guest/components/sign-up/sign-up.
   providers: [MessageService]
 })
 export class HeaderComponent implements OnInit {
+
+
 
   loggedIn: boolean = false
 
@@ -21,14 +24,23 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public dialogService: DialogService,
-    private router: Router
+    private router: Router,
+    private _auth: AuthService
   ) {
   }
+
+  setLoginStatus() {
+    localStorage.setItem('isLogin', 'true')
+  }
+  isLogin: any = localStorage.getItem('isLogin')
 
   userBtnText: string = 'Войти'
 
   onNewAdBtnClick() {
-    if (this.loggedIn) {
+    // this.setLoginStatus()
+    localStorage.setItem('isLogin', 'false')
+
+    if (localStorage.getItem('isLogin') === 'true') {
       this.router.navigate(['new-ad']).then()
     } else {
       // this.dialogService.open(SignUpComponent, {

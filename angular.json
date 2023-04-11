@@ -96,7 +96,8 @@
               "browserTarget": "adBoard:build:production"
             },
             "development": {
-              "browserTarget": "adBoard:build:development"
+              "browserTarget": "adBoard:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
