@@ -5,6 +5,7 @@ import { DialogModule } from 'primeng/dialog'
 import { ButtonModule } from 'primeng/button'
 import { visit } from '@angular/compiler-cli/src/ngtsc/util/src/visitor'
 import { AuthService } from '../../../services/auth.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'user-menu',
@@ -21,7 +22,7 @@ export class UserMenuComponent implements OnInit {
   @Input() public loggedIn: boolean = false
 
   constructor(
-    // private _dialogRef: DynamicDialogRef,
+    private router: Router,
     private _auth: AuthService,
     private messageService: MessageService,
     public dialogService: DialogService) {
@@ -70,6 +71,7 @@ export class UserMenuComponent implements OnInit {
 
   onConfirmBtnClick() {
     this._auth.signOut('isLogin')
+    this.router.navigate(['home']).then()
     this.visible = false
   }
 
