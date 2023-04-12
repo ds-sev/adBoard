@@ -2,15 +2,40 @@
   <p-toast></p-toast>
   <p-menu #menu [model]="items" [popup]="true"></p-menu>
   <div class="login-btn__container">
+
+    <ng-container *ngIf="isLogin; else notLoggedIn">
+
     <button pButton type="button" (click)="menu.toggle($event)" [icon]="btnIcon"
             [style]="'background-color: transparent; border: none; height: 32px'" [label]="name"
             iconPos="right" class="login-btn__element">
       <img class="login-btn__icon"
-           src="../../../../assets/images/icons/login-icon.svg"
+           src="/assets/images/icons/login-icon.svg"
            alt="icon">
     </button>
+
+
+    </ng-container>
+
+
+    <ng-template #notLoggedIn>
+      <button pButton type="button" (click)="onLoginBtnClick()"
+              [style]="'background-color: transparent; border: none; height: 32px'" [label]="'Войти'"
+              iconPos="right" class="login-btn__element">
+      <img class="login-btn__icon"
+           src="/assets/images/icons/login-icon.svg"
+           alt="icon">
+      </button>
+    </ng-template>
+
+
   </div>
 </div>
+
+
+
+
+
+
 <p-dialog [(visible)]="visible" [modal]="true" [dismissableMask]="true" [header]="'Вы уверены'">
   <button pButton (click)="onConfirmBtnClick()">Да</button>
 </p-dialog>

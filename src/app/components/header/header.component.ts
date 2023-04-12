@@ -15,7 +15,9 @@ export class HeaderComponent implements OnInit {
 
 
 
-  loggedIn: boolean = false
+  loggedIn: boolean = true
+
+
 
   @Output() newAdBtnClick = new EventEmitter()
 
@@ -27,6 +29,7 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private _auth: AuthService
   ) {
+    // console.log(this._auth.getAuthStatus() ? 'sdsd' : 'net')
   }
 
   setLoginStatus() {
@@ -34,7 +37,7 @@ export class HeaderComponent implements OnInit {
   }
   isLogin: any = localStorage.getItem('isLogin')
 
-  userBtnText: string = 'Войти'
+  userBtnText!: string
 
   onNewAdBtnClick() {
     // this.setLoginStatus()
@@ -72,7 +75,16 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    (this.loggedIn ? this.userBtnText = 'Алексей' : this.userBtnText = 'Войти')
+
+    if (this._auth.getAuthStatus()) {
+      console.log('logged In')
+    } else {
+      this.userBtnText = 'Войти'
+      console.log('not logged in')
+    }
+
+
+    // (this._auth.getAuthStatus() ? this.userBtnText = 'Алексей' : this.userBtnText = 'Войти')
   }
 }
 

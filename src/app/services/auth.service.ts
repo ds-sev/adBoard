@@ -15,7 +15,7 @@ export class AuthService {
   }
 
   getAuthStatus() {
-    localStorage.getItem('isLogin')
+    return localStorage.getItem('isLogin')
   }
 
   getUserName() {

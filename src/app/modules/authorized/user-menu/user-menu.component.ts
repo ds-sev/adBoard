@@ -6,6 +6,8 @@ import { ButtonModule } from 'primeng/button'
 import { visit } from '@angular/compiler-cli/src/ngtsc/util/src/visitor'
 import { AuthService } from '../../../services/auth.service'
 import { Router } from '@angular/router'
+import { SignUpComponent } from '../../guest/components/sign-up/sign-up.component'
+import { SignInComponent } from '../../guest/components/sign-in/sign-in.component'
 
 @Component({
   selector: 'user-menu',
@@ -15,11 +17,14 @@ import { Router } from '@angular/router'
 })
 export class UserMenuComponent implements OnInit {
   items!: MenuItem[]
-  name: string = 'Алексей'
+  @Input() name!: string
   btnIcon: string = ''
   visible!: boolean
 
-  @Input() public loggedIn: boolean = false
+  // @Input() public loggedIn: boolean = false
+
+
+
 
   constructor(
     private router: Router,
@@ -28,11 +33,19 @@ export class UserMenuComponent implements OnInit {
     public dialogService: DialogService) {
   }
 
+
+  isLogin: any = this._auth.getAuthStatus()
+
   logOut() {
     this.visible = true
   }
 
   onLoginBtnClick() {
+    this.dialogService.open(SignInComponent, {
+      header: 'Войти',
+      modal: true,
+      dismissableMask: true
+    })
 
   }
 
@@ -51,7 +64,7 @@ export class UserMenuComponent implements OnInit {
         command:() => this.logOut()
       }
     ]
-    if (this.loggedIn) {
+    if (this._auth.getAuthStatus()) {
       this.name = 'Алексей'
       this.btnIcon = 'pi pi-angle-down'
 
