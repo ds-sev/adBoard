@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core'
 import { IAd } from '../../../models/ad'
 import { Router } from '@angular/router'
-import { CurrencyPipe } from '@angular/common'
+import { CurrencyPipe, NgIf } from '@angular/common'
 import { AppModule } from '../../../app.module'
 import { GlobalModule } from '../../../modules/global/global.module'
 
@@ -17,6 +17,8 @@ export class AdCardComponent {
   @Input() public ad!: IAd
   @Output() test = new EventEmitter();
 
+
+
   onAdClick() {
     this.router.navigate(['ad', this.ad.id]).then()
 
@@ -26,7 +28,7 @@ export class AdCardComponent {
 
 @NgModule({
   declarations: [AdCardComponent],
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, NgIf],
   exports: [AdCardComponent]
 })
 

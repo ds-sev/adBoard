@@ -38,7 +38,7 @@ export class AuthService {
   }
 
   register(user: User) {
-    return this._http.post(`${environment}/Account/register`, user)
+    return this._http.post(`${environment.apiUrl}/Account/register`, user)
   }
 
   // isLogin!: boolean

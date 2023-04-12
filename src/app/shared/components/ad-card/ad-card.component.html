@@ -1,16 +1,20 @@
 <div class="ad-card">
   <div class="ad-card__photo-container" (click)="onAdClick()">
-    <img src="{{ad.imageUrl || null}}" alt="{{ad.name}}">
+    <ng-container *ngIf="ad.imageUrl; else noPhoto">
+      <img src="{{ad.imageUrl}}" alt="{{ad.name}}">
+    </ng-container>
+    <ng-template #noPhoto>
+      <img src="/assets/images/interface/noPhoto.png" alt="Нет фото">
+    </ng-template>
   </div>
   <div class="ad-card__info">
     <h3 class="ad-card__title">{{ad.name}}</h3>
-    <p class="ad-card__price">{{ad.price | currency:"EUR"}}</p>
-    <p class="ad-card__additional-info" id="location">Location</p>
-<!--     <p class="ad-card__additional-info ad-card__additional-info_inline" id="day">Rate: {{ad.rating.rate}} </p> -->
-<!--     <p class="ad-card__additional-info ad-card__additional-info_inline" id="time">Count: {{ad.rating.count}} </p> -->
+    <p class="ad-card__price">{{ad.price}} ₽</p>
+    <p class="ad-card__address">{{ad.address}}</p>
+    <p class="ad-card__address">{{ad.createdAt}}</p>
   </div>
 </div>
-<!-- <app-ad-details [test]="'hello'"></app-ad-details> -->
+<!-- '/assets/images/interface/noPhoto.png' -->
 
 
 
