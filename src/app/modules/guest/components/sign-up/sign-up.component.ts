@@ -24,6 +24,8 @@ export class SignUpComponent {
     password: new FormControl<any>('', Validators.required)
   })
 
+
+
   onLoginClick() {
     this._dialogRef.close()
     this.dialogService.open(SignInComponent, {

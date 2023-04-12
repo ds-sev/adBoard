@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
 
   onNewAdBtnClick() {
     // this.setLoginStatus()
-    localStorage.setItem('isLogin', 'false')
+    // localStorage.setItem('isLogin', 'false')
 
     if (localStorage.getItem('isLogin') === 'true') {
       this.router.navigate(['new-ad']).then()

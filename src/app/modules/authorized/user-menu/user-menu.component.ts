@@ -1,7 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input, NgModule, OnInit } from '@angular/core'
 import { MenuItem, MessageService } from 'primeng/api'
-import { DialogService } from 'primeng/dynamicdialog'
-import { ModalConfirmComponent } from '../modals/modal-confirm/modal-confirm.component'
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
+import { DialogModule } from 'primeng/dialog'
+import { ButtonModule } from 'primeng/button'
+import { visit } from '@angular/compiler-cli/src/ngtsc/util/src/visitor'
+import { AuthService } from '../../../services/auth.service'
 
 @Component({
   selector: 'user-menu',
@@ -13,19 +16,23 @@ export class UserMenuComponent implements OnInit {
   items!: MenuItem[]
   name: string = 'Алексей'
   btnIcon: string = ''
+  visible!: boolean
 
   @Input() public loggedIn: boolean = false
 
-  constructor(private messageService: MessageService, public dialogService: DialogService) {
+  constructor(
+    // private _dialogRef: DynamicDialogRef,
+    private _auth: AuthService,
+    private messageService: MessageService,
+    public dialogService: DialogService) {
   }
 
   logOut() {
-    this.dialogService.open(ModalConfirmComponent, {
-      header: 'Вы уверены?'
-    })
+    this.visible = true
   }
 
   onLoginBtnClick() {
+
   }
 
   ngOnInit() {
@@ -60,4 +67,11 @@ export class UserMenuComponent implements OnInit {
   delete() {
     this.messageService.add({severity: 'warn', summary: 'Delete', detail: 'Data Deleted'})
   }
+
+  onConfirmBtnClick() {
+    this._auth.signOut('isLogin')
+    this.visible = false
+  }
+
 }
+

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
 import { SignUpComponent } from '../sign-up/sign-up.component'
+import { AuthService } from '../../../../services/auth.service'
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +12,8 @@ import { SignUpComponent } from '../sign-up/sign-up.component'
 export class SignInComponent {
   constructor(
     private dialogService: DialogService,
-    private readonly _dialogRef: DynamicDialogRef
+    private readonly _dialogRef: DynamicDialogRef,
+    private _auth: AuthService
   ) {
   }
 
@@ -38,7 +40,9 @@ export class SignInComponent {
   }
 
   onSubmit() {
-    if (this.signInForm.value.phone === 1) {
+    if (this.signInForm.value.phone === this.signInForm.value.password.length) {
+      this._auth.saveUserData(this.signInForm.value.phone)
+      this._dialogRef.close()
     }
   }
 

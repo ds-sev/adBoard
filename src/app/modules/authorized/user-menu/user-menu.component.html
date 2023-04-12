@@ -11,3 +11,7 @@
     </button>
   </div>
 </div>
+<p-dialog [(visible)]="visible" [modal]="true" [dismissableMask]="true" [header]="'Вы уверены'">
+  <button pButton (click)="onConfirmBtnClick()">Да</button>
+</p-dialog>
+

@@ -8,7 +8,7 @@ import { AddCardComponentModule } from '../../shared/components/ad-card/ad-card.
 import { NewAdComponent } from './pages/new-ad/new-ad.component'
 import { CascadeSelectModule } from 'primeng/cascadeselect'
 import { InputTextModule } from 'primeng/inputtext'
-import { ButtonModule } from 'primeng/button'
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({

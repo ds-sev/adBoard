@@ -21,7 +21,9 @@ import { InplaceModule } from 'primeng/inplace'
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import { UserMenuComponent } from './modules/authorized/user-menu/user-menu.component'
+import {
+  UserMenuComponent,
+} from './modules/authorized/user-menu/user-menu.component'
 import { MenuModule } from 'primeng/menu'
 import { ToastModule } from 'primeng/toast'
 import { MessagesModule } from 'primeng/messages'
