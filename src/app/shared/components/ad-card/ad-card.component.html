@@ -1,6 +1,6 @@
 <div class="ad-card">
   <div class="ad-card__photo-container" (click)="onAdClick()">
-    <img src="{{ad.image}}" alt="{{ad.name}}">
+    <img src="{{ad.imageUrl || null}}" alt="{{ad.name}}">
   </div>
   <div class="ad-card__info">
     <h3 class="ad-card__title">{{ad.name}}</h3>

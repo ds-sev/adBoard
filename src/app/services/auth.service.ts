@@ -4,6 +4,7 @@ import { __values } from 'tslib'
 import { User } from '../models/user'
 import { Router } from '@angular/router'
 import { HttpClient } from '@angular/common/http'
+import { environment } from '../../environments/environment.development'
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,7 @@ export class AuthService {
   }
 
   register(user: User) {
-    return this._http.post('http://80.90.184.170:5000/Account/register', user)
+    return this._http.post(`${environment}/Account/register`, user)
   }
 
   // isLogin!: boolean

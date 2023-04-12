@@ -1,14 +1,11 @@
 export interface IAd {
-  id: number,
+  id: string,
   name: string,
-  image?: string,
-  description?: string,
-  price?: number,
-  category: string,
+  price: number,
+  imageUrl?: string,
+  address: string,
+  createdAt: string,
   isActive: boolean
-
-
-  rating?: number
 }
 
 
@@ -22,6 +19,18 @@ export interface IAd {
 
 
 
+
+
+// id: number,
+//   name: string,
+//   image?: string,
+//   description?: string,
+//   price?: number,
+//   category: string,
+//   isActive: boolean
+//
+//
+// rating?: number
 
 
 
