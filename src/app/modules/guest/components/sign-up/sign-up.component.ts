@@ -1,30 +1,35 @@
-import { Component } from '@angular/core'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { SignInComponent } from '../sign-in/sign-in.component'
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
+import { AuthService } from '../../../../services/auth.service'
+import { first } from 'rxjs'
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
+  signUpForm!: FormGroup
 
   constructor(
+    private _authService: AuthService,
+    private _formBuilder: FormBuilder,
     private dialogService: DialogService,
     private readonly _dialogRef: DynamicDialogRef
   ) {
   }
 
-  btnText = 'Зарегистрироваться'
+  ngOnInit() {
+    this.signUpForm = this._formBuilder.group({
+      email: [''],
+      login: [''],
+      password: ['']
+    })
+  }
 
-  signUpForm = new FormGroup({
-    name: new FormControl<any>('', Validators.required),
-    phone: new FormControl<any>('', Validators.required),
-    password: new FormControl<any>('', Validators.required)
-  })
-
-
+  // get form() { return this.form.controls }
 
   onLoginClick() {
     this._dialogRef.close()
@@ -36,6 +41,13 @@ export class SignUpComponent {
   }
 
   onSubmit() {
-    console.log(this.signUpForm.value.phone)
+    console.log(this.signUpForm.value.email)
+    this._authService.register(this.signUpForm.value)
+    .pipe(first())
+    .subscribe({
+      next: () => {
+        this.onLoginClick()
+      }
+    })
   }
 }

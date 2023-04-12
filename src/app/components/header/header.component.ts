@@ -4,6 +4,7 @@ import { Router } from '@angular/router'
 import { MessageService } from 'primeng/api'
 import { SignUpComponent } from '../../modules/guest/components/sign-up/sign-up.component'
 import { AuthService } from '../../services/auth.service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-header',
@@ -14,10 +15,9 @@ import { AuthService } from '../../services/auth.service'
 export class HeaderComponent implements OnInit {
 
 
+  public isLogin$!: Observable<boolean>
 
   loggedIn: boolean = true
-
-
 
   @Output() newAdBtnClick = new EventEmitter()
 
@@ -29,27 +29,23 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private _auth: AuthService
   ) {
-    // console.log(this._auth.getAuthStatus() ? 'sdsd' : 'net')
+
+    // console.log(this.isLogin$)
+
   }
 
   setLoginStatus() {
     localStorage.setItem('isLogin', 'true')
   }
-  isLogin: any = localStorage.getItem('isLogin')
+
+  // isLogin: any = localStorage.getItem('isLogin')
 
   userBtnText!: string
 
   onNewAdBtnClick() {
-    // this.setLoginStatus()
-    // localStorage.setItem('isLogin', 'false')
-
-    if (localStorage.getItem('isLogin') === 'true') {
+    if (localStorage.getItem('isLogin') !== 'true') {
       this.router.navigate(['new-ad']).then()
     } else {
-      // this.dialogService.open(SignUpComponent, {
-      //   header: 'Регистрация'
-      //
-      // })
       this.newAdBtnClick.emit()
       this.dialogService.open(SignUpComponent, {
         header: 'Регистрация',
@@ -61,30 +57,23 @@ export class HeaderComponent implements OnInit {
 
   userMenu() {
     this.visible = 'display: flex'
-    console.log('open')
   }
 
   showLoginModal() {
     if (this.loggedIn) {
       this.userMenu()
     } else {
-      // this.dialogService.open(SignUpComponent, {
-      //   header: 'Регистрация'
-      // })
     }
   }
 
   ngOnInit() {
 
     if (this._auth.getAuthStatus()) {
-      console.log('logged In')
+
     } else {
       this.userBtnText = 'Войти'
-      console.log('not logged in')
+
     }
-
-
-    // (this._auth.getAuthStatus() ? this.userBtnText = 'Алексей' : this.userBtnText = 'Войти')
   }
 }
 

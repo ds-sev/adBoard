@@ -73,6 +73,7 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
   providers: [
     DialogService,
 
+
   ],
   exports: [
 

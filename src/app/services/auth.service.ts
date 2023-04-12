@@ -1,10 +1,43 @@
 import { Injectable, OnInit } from '@angular/core'
+import { BehaviorSubject, map, Observable } from 'rxjs'
+import { __values } from 'tslib'
+import { User } from '../models/user'
+import { Router } from '@angular/router'
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor() {
+  private _userSubject: BehaviorSubject<User | null>
+  public user: Observable<User | null>
+
+
+  constructor(
+    private _router: Router,
+    private _http: HttpClient
+  ) {
+    // console.log(this.authStatus$)
+    this._userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!))
+    this.user = this._userSubject.asObservable()
+  }
+
+  public get userValue() {
+    return this._userSubject.value
+  }
+
+  login(email: string, password: string) {
+    return this._http.post<User>('http://80.90.184.170:5000/Account/login', {email, password})
+    .pipe(map(user => {
+      localStorage.setItem('user', JSON.stringify(user))
+      this._userSubject.next(user)
+      return user
+      })
+      )
+  }
+
+  register(user: User) {
+    return this._http.post('http://80.90.184.170:5000/Account/register', user)
   }
 
   // isLogin!: boolean
@@ -15,7 +48,7 @@ export class AuthService {
   }
 
   getAuthStatus() {
-    return localStorage.getItem('isLogin')
+    return localStorage.getItem('isLogin') === 'true';
   }
 
   getUserName() {
@@ -23,7 +56,10 @@ export class AuthService {
   }
 
   signOut(userName: string) {
-    localStorage.removeItem('isLogin')
+    localStorage.removeItem('user')
+    this._userSubject.next(null)
+    this._router.navigate(['home']).then()
+
   }
 
 

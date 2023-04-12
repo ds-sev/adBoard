@@ -17,6 +17,8 @@ export class SignInComponent {
   ) {
   }
 
+  isLogin: boolean = false
+
   btnText = 'Войти'
 
   isForgetModalOpen: boolean = false
@@ -42,6 +44,7 @@ export class SignInComponent {
   onSubmit() {
     if (this.signInForm.value.phone === this.signInForm.value.password.length) {
       this._auth.saveUserData(this.signInForm.value.phone)
+      this.isLogin = true
       this._dialogRef.close()
     }
   }

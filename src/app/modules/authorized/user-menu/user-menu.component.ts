@@ -17,6 +17,11 @@ import { SignInComponent } from '../../guest/components/sign-in/sign-in.componen
 })
 export class UserMenuComponent implements OnInit {
   items!: MenuItem[]
+
+  private _dialogRef!: DynamicDialogRef
+  // ref!: DynamicDialogRef
+
+
   @Input() name!: string
   btnIcon: string = ''
   visible!: boolean
@@ -30,7 +35,9 @@ export class UserMenuComponent implements OnInit {
     private router: Router,
     private _auth: AuthService,
     private messageService: MessageService,
-    public dialogService: DialogService) {
+    public dialogService: DialogService,
+    ) {
+
   }
 
 
@@ -41,15 +48,22 @@ export class UserMenuComponent implements OnInit {
   }
 
   onLoginBtnClick() {
-    this.dialogService.open(SignInComponent, {
+    this._dialogRef = this.dialogService.open(SignInComponent, {
       header: 'Войти',
       modal: true,
       dismissableMask: true
+    })
+    this._dialogRef.onClose.subscribe((isLogin: boolean) => {
+      this.isLogin = isLogin
+      console.log(this.isLogin)
     })
 
   }
 
   ngOnInit() {
+
+
+
     this.items = [
       {
         label: 'Мои объявления',
@@ -85,7 +99,12 @@ export class UserMenuComponent implements OnInit {
   onConfirmBtnClick() {
     this._auth.signOut('isLogin')
     this.router.navigate(['home']).then()
+    this._auth.getAuthStatus()
+    // console.log(this._auth.authStatus$)
     this.visible = false
+
+
+
   }
 
 }

@@ -1,8 +1,8 @@
 <!-- <ng-content></ng-content> -->
 <form class="auth-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
   <div class="auth-form__group">
-    <input class="auth-form__input" pInputText type="number" name="phone" required placeholder="Номер телефона"
-           formControlName="phone">
+    <input class="auth-form__input" pInputText type="login" name="login" required placeholder="Логин"
+           formControlName="login">
   </div>
   <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
