@@ -27,8 +27,8 @@ export class AuthService {
     return this._userSubject.value
   }
 
-  login(email: string, password: string) {
-    return this._http.post<User>('http://80.90.184.170:5000/Account/login', {email, password})
+  login(login: string, password: string) {
+    return this._http.post<User>(`${environment.apiUrl}/Account/login`, {login, password})
     .pipe(map(user => {
       localStorage.setItem('user', JSON.stringify(user))
       this._userSubject.next(user)

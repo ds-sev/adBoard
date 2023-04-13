@@ -1,35 +1,42 @@
-import { Component, EventEmitter, Output } from '@angular/core'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
 import { SignUpComponent } from '../sign-up/sign-up.component'
 import { AuthService } from '../../../../services/auth.service'
+import { first } from 'rxjs'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit {
+  signInForm!: FormGroup
   constructor(
+    private _router: Router,
+    private _formBuilder: FormBuilder,
     private dialogService: DialogService,
     private readonly _dialogRef: DynamicDialogRef,
-    private _auth: AuthService
+    private _authService: AuthService
   ) {
   }
 
-  isLogin: boolean = false
+  ngOnInit() {
+    this.signInForm = this._formBuilder.group({
+      login: [''],
+      password: ['']
+    })
+  }
 
-  btnText = 'Войти'
+  get form() { return this.signInForm.controls  }
+
+  isLogin: boolean = false
 
   isForgetModalOpen: boolean = false
 
   @Output() registerClick = new EventEmitter()
 
-  signInForm = new FormGroup({
-
-    phone: new FormControl<any>(null, Validators.required),
-    password: new FormControl<any>(null, Validators.required)
-  })
   loggedIn!: boolean
 
   onRegisterClick() {
@@ -42,11 +49,15 @@ export class SignInComponent {
   }
 
   onSubmit() {
-    if (this.signInForm.value.phone === this.signInForm.value.password.length) {
-      this._auth.saveUserData(this.signInForm.value.phone)
-      this.isLogin = true
-      this._dialogRef.close()
-    }
+    this._authService.login(this.form['login'].value, this.form['password'].value )
+    .pipe(first())
+    .subscribe({
+      next: () => {
+        this._router.navigate(['home']).then()
+      }
+    })
+    this._dialogRef.close()
+    console.log(this.form['login'].value, this.form['password'].value)
   }
 
   show() {
