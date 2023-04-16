@@ -35,7 +35,13 @@
 }
 
 .new-ad__add-image-btn {
+  display: flex;
+  justify-content: center;
+  padding: 0;
   margin: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 
@@ -45,6 +51,19 @@
 
 .new-ad__input-label {
   margin-bottom: 8px;
+}
+
+.new-ad__create-btn {
+  padding: 0;
+  height: 52px;
+  width: 262px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 

@@ -1,7 +1,6 @@
 .new-ad-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
   max-width: 856px;
   margin: 0;
   box-sizing: content-box;
@@ -14,6 +13,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   height: 168px;
+  width: 100%;
 }
 .new-ad-container .new-ad__agreement {
   width: 306px;
@@ -21,5 +21,45 @@
 .new-ad-container .new-ad__image-add-container {
   display: flex;
   align-items: center;
+  min-height: 64px;
+  border: 1px solid #E2E8F0;
+  border-radius: 3px;
+  background-color: #F8FAFC;
 }
 
+.new-ad__add-image-btn {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.new-ad__input-el_position {
+  margin-bottom: 16px;
+}
+
+.new-ad__input-label {
+  margin-bottom: 8px;
+}
+
+.new-ad__create-btn {
+  padding: 0;
+  height: 52px;
+  width: 262px;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+::ng-deep .p-dropdown-trigger-icon {
+  color: #1E293B;
+}
+
+/*# sourceMappingURL=new-ad.component.css.map */
