@@ -1,4 +1,4 @@
-.ads-section__title {
+.section__title {
   margin: 32px 0 24px 0;
   font-weight: 600;
   font-size: 24px;
@@ -6,7 +6,7 @@
   color: #1e293b;
 }
 @media screen and (max-width: 466px) {
-  .ads-section__title {
+  .section__title {
     margin-top: 14px;
     margin-bottom: 12px;
     text-align: center;

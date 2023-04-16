@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-ad.component.scss']
 })
 export class NewAdComponent {
+  formGroup: any
+  categories: any
 
 }

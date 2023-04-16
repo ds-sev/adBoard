@@ -161,10 +161,11 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #3B82F6 !important;
+    //color: #3B82F6 !important;
   }
 
   .p-cascadeselect-label {
+    color: #3B82F6 !important;
     padding: 0 !important;
   }
 
@@ -173,7 +174,7 @@
   }
 
   .p-cascadeselect-trigger {
-    background-image: url('../../../../src/assets/images/icons/list-nested.svg');
+    background-image: url('/assets/images/icons/list-nested.svg');
   }
 
   .pi-chevron-down:before {

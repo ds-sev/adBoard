@@ -44,7 +44,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 168px;
+    //height: 200px;
   }
 
   .new-ad__agreement {
@@ -52,6 +52,7 @@
   }
 
   .new-ad__image-add-container {
+    border: 1px solid red;
     display: flex;
     align-items: center;
   }

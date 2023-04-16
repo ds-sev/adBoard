@@ -9,6 +9,9 @@ import { NewAdComponent } from './pages/new-ad/new-ad.component'
 import { CascadeSelectModule } from 'primeng/cascadeselect'
 import { InputTextModule } from 'primeng/inputtext'
 import { ButtonModule } from 'primeng/button';
+import { ReactiveFormsModule } from '@angular/forms'
+import { DropdownModule } from 'primeng/dropdown'
+import { InputTextareaModule } from 'primeng/inputtextarea'
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { ButtonModule } from 'primeng/button';
     AddCardComponentModule,
     CascadeSelectModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    ReactiveFormsModule,
+    DropdownModule,
+    InputTextareaModule
   ],
   // exports: [NewAdComponent]
 })

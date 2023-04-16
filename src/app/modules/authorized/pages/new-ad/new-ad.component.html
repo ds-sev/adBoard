@@ -1,22 +1,34 @@
 <section class="_container">
   <div class="new-ad-container">
-    <h2 class="ads-section__title">Новое объявление</h2>
-    <p>Выберите категорию *</p>
-    <p-cascadeSelect placeholder="Нажмите, чтобы выбрать"></p-cascadeSelect>
-    <p>Название объявления</p>
-    <input pInputText placeholder="Что хотите продать?">
-    <p>Описание</p>
-    <input class="new-ad__description" pInputText placeholder="Расскажите подробнее о товаре или услуге">
-    <p>Адрес (место проведения сделки) *</p>
-    <input pInputText aria-placeholder="sss">
-    <p>Описание</p>
-    <div class="new-ad__image-add-container">
-      <p-button>Добавить картинки</p-button>
+    <h2 class="section__title">Новое объявление</h2>
+    <form [formGroup]="formGroup" class="new-ad__input-label">
+      <p class="new-ad__input-label">Выберите категорию <span style="color: #ef4444">*</span></p>
+      <p-dropdown dropdownIcon="pi pi-angle-down"
+                  formControlName="city"
+                  [options]="categories"
+                  optionLabel="name"
+                  placeholder="Нажмите, чтобы выбрать">
+      </p-dropdown>
+    </form>
+    <p class="new-ad__input-label">Название объявления <span style="color: #ef4444">*</span></p>
+    <input pInputText placeholder="Что хотите продать?" class="new-ad__input-el_position">
+    <p class="new-ad__input-label">Описание</p>
+<!--     <form action=""> -->
+    <textarea rows="9" cols="30" class="new-ad__description new-ad__input-el_position" pInputTextarea [autoResize]="true"
+              placeholder="Расскажите подробнее о товаре или услуге"></textarea>
+<!--       <label for="new-ad-description-textarea">Расскажите подробнее о товаре или услуге</label> -->
+<!--     </form> -->
+    <p class="new-ad__input-label">Адрес (место проведения сделки) <span style="color: #ef4444">*</span></p>
+
+    <input pInputText placeholder="Начните вводить адрес" class="new-ad__input-el_position">
+
+    <div class="new-ad__image-add-container new-ad__input-el_position">
+      <p-button class="new-ad__add-image-btn">Добавить картинки</p-button>
       <p>Максимум 10 картинок в формате jpeg, png или heic</p>
     </div>
-    <p>Цена</p>
-    <input pInputText placeholder="0 ₽" [ngStyle]="{width:'305px'}">
-    <p-button>Разместить объявление</p-button>
+    <p class="new-ad__input-label">Цена</p>
+    <input pInputText placeholder="0 ₽" [ngStyle]="{width:'305px'}" class="new-ad__input-el_position">
+    <p-button class="new-ad__input-label">Разместить объявление</p-button>
     <p class="new-ad__agreement">
       Нажимая кнопку «Разместить объявление»
       Вы соглашаетесь с <a>правилами площадки</a>

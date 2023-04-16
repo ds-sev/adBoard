@@ -1,7 +1,6 @@
 .new-ad-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
   max-width: 856px;
   margin: 0;
   box-sizing: content-box;
@@ -11,10 +10,13 @@
   }
 
   .new-ad__description {
+
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     height: 168px;
+    width: 100%;
+
   }
 
   .new-ad__agreement {
@@ -24,5 +26,30 @@
   .new-ad__image-add-container {
     display: flex;
     align-items: center;
+    min-height: 64px;
+    border: 1px solid #E2E8F0;
+    border-radius: 3px;
+    background-color: #F8FAFC;
+
+  }
+}
+
+.new-ad__add-image-btn {
+  margin: 16px;
+}
+
+
+.new-ad__input-el_position {
+  margin-bottom: 16px;
+}
+
+.new-ad__input-label {
+  margin-bottom: 8px;
+}
+
+
+::ng-deep {
+.p-dropdown-trigger-icon{
+    color: #1E293B;
   }
 }

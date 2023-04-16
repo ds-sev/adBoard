@@ -50,6 +50,7 @@ export class AuthService {
 
   getAuthStatus() {
     return localStorage.getItem('isLogin') === 'true';
+    // return localStorage.getItem('isLogin') !== null;
   }
 
   getUserName() {
