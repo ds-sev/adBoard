@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
   userBtnText!: string
 
   onNewAdBtnClick() {
-    if (this._auth.userValue === null) {
+    if (this._auth.userValue !== null) {
       this.router.navigate(['new-ad']).then()
     } else {
       this.newAdBtnClick.emit()

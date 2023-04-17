@@ -23,7 +23,7 @@ export class NewAdComponent implements OnInit {
 
   ngOnInit() {
     this.newAdForm = this._formBuilder.group({
-      category: ['', Validators.required],
+      category: [''],
       title: ['', [Validators.required, Validators.minLength(5)]],
       description: [''],
       address: [''],

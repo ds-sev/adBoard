@@ -29,7 +29,8 @@ import { ToastModule } from 'primeng/toast'
 import { MessagesModule } from 'primeng/messages'
 import { PasswordModule } from 'primeng/password';
 import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
-import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component'
+import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component';
+import { AlertComponent } from './shared/components/alert/alert.component'
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AddCardComponentModule } from './shared/components/ad-card/ad-card.comp
     // NewAdCardComponent,
     UserMenuComponent,
     ModalConfirmComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

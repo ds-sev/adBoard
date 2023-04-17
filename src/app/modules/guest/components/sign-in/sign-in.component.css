@@ -5,6 +5,7 @@
   width: 368px;
 }
 .auth-form__group {
+  position: relative;
   width: 100%;
 }
 .auth-form__input {
@@ -26,10 +27,17 @@
   gap: 8px;
 }
 .auth-form__btn {
-  margin-top: 8px;
+  margin: 8px;
   display: flex;
   justify-content: center;
   width: 127px;
   height: 48px;
 }
 
+.invalid-field {
+  top: 48px;
+  color: red;
+  position: absolute;
+}
+
+/*# sourceMappingURL=sign-in.component.css.map */

@@ -2,19 +2,31 @@
   <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="email" name="email" required placeholder="E-mail"
            formControlName="email">
-    <!--       <span class="form-group__warning" [hidden]="phone.valid || phone.pristine">Введите номер телефона</span>
-     -->
+    <div *ngIf="submitted && form['email'].errors" class="invalid-field">
+      <span *ngIf="form['email'].errors['required']">Введите адрес электронной почты</span>
+    </div>
   </div>
   <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="text" name="login" required placeholder="Имя"
            formControlName="login">
-    <!--       <span class="form-group__warning" [hidden]="password.valid || password.pristine">Введите пароль</span> -->
+    <div *ngIf="submitted && form['login'].errors" class="invalid-field">
+      <span *ngIf="form['login'].errors['required']">Введите свое имя</span>
+    </div>
   </div>
   <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
            formControlName="password">
-    <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Повторите пароль"
-           formControlName="password">
+    <div *ngIf="submitted && form['password'].errors" class="invalid-field">
+      <span *ngIf="form['password'].errors['required']">Придумайте пароль от 8 до 16 символов</span>
+    </div>
+    <div class="auth-form__group">
+      <input class="auth-form__input" pInputText type="password" name="password-confirmation" required
+             placeholder="Повторите пароль"
+             formControlName="passwordConfirm">
+      <div *ngIf="submitted" class="invalid-field">
+        <span *ngIf="form['password'].value !== form['passwordConfirm'].value">Введенные пароли не совпадают</span>
+      </div>
+    </div>
   </div>
   <button class="auth-form__btn" pButton (submit)="onSubmit()">Зарегистрироваться</button>
   <p class="auth-form__tip">Уже зарегистрированы? <a (click)="onLoginClick()">Войти</a></p>

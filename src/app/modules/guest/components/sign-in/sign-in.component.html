@@ -3,12 +3,22 @@
   <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="login" name="login" required placeholder="Логин"
            formControlName="login">
+    <div *ngIf="submitted && form['login'].errors" class="invalid-field">
+      <span *ngIf="submitted && form['login'].errors['required']">Введите имя, указанное при регистрации</span>
+    </div>
   </div>
-  <div class="auth-form__group">
+
+
+  <div class="auth-form__group mb-3">
     <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
-           formControlName="password">
-    <!--       <span class="form-group__warning" [hidden]="password.valid || password.pristine">Введите пароль</span> -->
+           formControlName="password" [ngClass]="{ 'is-invalid': submitted && form['login'].errors}">
+    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+          <span *ngIf="submitted && form['password'].errors['required']">Необходимо ввести пароль</span>
+    </div>
   </div>
+
+
+
   <div class="auth-form__options-container">
     <div class="auth-form__checkbox">
       <p-checkbox value="Запомнить меня" inputId="remember-me"></p-checkbox>

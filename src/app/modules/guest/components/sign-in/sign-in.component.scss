@@ -5,6 +5,7 @@
   width: 368px;
 
   &__group {
+    position: relative;
     width: 100%;
   }
 
@@ -39,4 +40,12 @@
     width: 127px;
     height: 48px;
   }
+}
+
+
+
+.invalid-field {
+  top: 48px;
+  color: red;
+  position: absolute;
 }

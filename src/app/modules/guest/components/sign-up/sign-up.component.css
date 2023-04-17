@@ -5,6 +5,7 @@
   width: 368px;
 }
 .auth-form__group {
+  position: relative;
   width: 100%;
 }
 .auth-form__input {
@@ -21,3 +22,10 @@
   height: 48px;
 }
 
+.invalid-field {
+  top: 48px;
+  color: red;
+  position: absolute;
+}
+
+/*# sourceMappingURL=sign-up.component.css.map */

@@ -5,10 +5,12 @@
   width: 368px;
 
   &__group {
+    position: relative;
     width: 100%;
   }
 
   &__input {
+
     min-width: 100%;
     border-radius: 4px;
     margin-bottom: 16px;
@@ -22,5 +24,11 @@
     width: 244px;
     height: 48px;
   }
+}
+
+.invalid-field {
+  top: 48px;
+  color: red;
+  position: absolute;
 }
 

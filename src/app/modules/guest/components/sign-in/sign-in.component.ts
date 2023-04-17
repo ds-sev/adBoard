@@ -5,6 +5,8 @@ import { SignUpComponent } from '../sign-up/sign-up.component'
 import { AuthService } from '../../../../services/auth.service'
 import { first } from 'rxjs'
 import { Router } from '@angular/router'
+import { AlertService } from '../../../../services/alert.service'
+import { error } from '@angular/compiler-cli/src/transformers/util'
 
 @Component({
   selector: 'app-sign-in',
@@ -13,19 +15,21 @@ import { Router } from '@angular/router'
 })
 export class SignInComponent implements OnInit {
   signInForm!: FormGroup
+  submitted = false
   constructor(
     private _router: Router,
     private _formBuilder: FormBuilder,
     private dialogService: DialogService,
     private readonly _dialogRef: DynamicDialogRef,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _alertService: AlertService
   ) {
   }
 
   ngOnInit() {
     this.signInForm = this._formBuilder.group({
-      login: ['', Validators.required, Validators.minLength(5)],
-      password: ['', Validators.required, Validators.minLength(8)]
+      login: ['', Validators.required],
+      password: ['', Validators.required]
     })
   }
 
@@ -49,6 +53,8 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true
+    this._alertService.clear()
 
     if (this.signInForm.invalid) {
       return
@@ -59,10 +65,17 @@ export class SignInComponent implements OnInit {
     .subscribe({
       next: () => {
         this._router.navigate(['home']).then()
+        this._dialogRef.close()
+      },
+
+      error: error => {
+        this._alertService.error(error)
       }
+
     })
-    this._dialogRef.close()
-    console.log(this.form['login'].value, this.form['password'].value)
+
+    // this._dialogRef.close()
+    // console.log(this.form['login'].value, this.form['password'].value)
   }
 
   show() {
