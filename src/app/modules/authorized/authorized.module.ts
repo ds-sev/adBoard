@@ -12,11 +12,12 @@ import { ButtonModule } from 'primeng/button';
 import { ReactiveFormsModule } from '@angular/forms'
 import { DropdownModule } from 'primeng/dropdown'
 import { InputTextareaModule } from 'primeng/inputtextarea'
-import { InputNumberModule } from 'primeng/inputnumber'
+import { InputNumberModule } from 'primeng/inputnumber';
+import { RulesComponent } from './pages/rules/rules.component'
 
 
 @NgModule({
-  declarations: [MyAdsComponent, NewAdCardComponent, NewAdComponent],
+  declarations: [MyAdsComponent, NewAdCardComponent, NewAdComponent, RulesComponent],
   imports: [
     CommonModule,
     AuthorizedRoutingModule,
