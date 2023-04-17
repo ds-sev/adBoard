@@ -24,8 +24,8 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.signInForm = this._formBuilder.group({
-      login: [''],
-      password: ['']
+      login: ['', Validators.required, Validators.minLength(5)],
+      password: ['', Validators.required, Validators.minLength(8)]
     })
   }
 
@@ -49,6 +49,11 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit() {
+
+    if (this.signInForm.invalid) {
+      return
+    }
+
     this._authService.login(this.form['login'].value, this.form['password'].value )
     .pipe(first())
     .subscribe({

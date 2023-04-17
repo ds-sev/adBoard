@@ -13,6 +13,8 @@
   <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
            formControlName="password">
+    <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Повторите пароль"
+           formControlName="password">
   </div>
   <button class="auth-form__btn" pButton (submit)="onSubmit()">Зарегистрироваться</button>
   <p class="auth-form__tip">Уже зарегистрированы? <a (click)="onLoginClick()">Войти</a></p>

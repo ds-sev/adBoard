@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { ReactiveFormsModule } from '@angular/forms'
 import { DropdownModule } from 'primeng/dropdown'
 import { InputTextareaModule } from 'primeng/inputtextarea'
+import { InputNumberModule } from 'primeng/inputnumber'
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea'
     ButtonModule,
     ReactiveFormsModule,
     DropdownModule,
-    InputTextareaModule
+    InputTextareaModule,
+    InputNumberModule
   ],
   // exports: [NewAdComponent]
 })

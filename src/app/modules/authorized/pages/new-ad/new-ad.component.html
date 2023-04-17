@@ -2,7 +2,7 @@
   <form [formGroup]="newAdForm" class="new-ad__input-label">
     <div class="new-ad-container">
       <h2 class="section__title">Новое объявление</h2>
-      <div style="padding-bottom: 8px">
+      <div style="padding-bottom: 8px; width: 416px">
         <p class="new-ad__input-label">Выберите категорию <span style="color: #ef4444">*</span></p>
         <p-dropdown dropdownIcon="pi pi-angle-down"
                     formControlName="category"
@@ -10,6 +10,7 @@
                     optionLabel="name"
                     placeholder="Нажмите, чтобы выбрать">
         </p-dropdown>
+
       </div>
       <p class="new-ad__input-label">Название объявления <span style="color: #ef4444">*</span></p>
       <input pInputText placeholder="Что хотите продать?"
@@ -39,11 +40,15 @@
         <p>Максимум 10 картинок в формате jpeg, png или heic</p>
       </div>
       <p class="new-ad__input-label">Цена</p>
-      <input pInputText placeholder="0 ₽"
+      <p-inputNumber placeholder="0 ₽"
              [ngStyle]="{width:'305px'}"
              class="new-ad__input-el_position"
-             formControlName="price">
-      <button pButton class="new-ad__create-btn new-ad__input-label">Разместить
+
+                     mode="currency"
+                     currency="RUB"
+                     [minFractionDigits]="0"
+                     formControlName="price"></p-inputNumber>
+      <button pButton class="new-ad__create-btn new-ad__input-label" (click)="onCreateBtnClick()">Разместить
         объявление
       </button>
       <p class="new-ad__agreement">
