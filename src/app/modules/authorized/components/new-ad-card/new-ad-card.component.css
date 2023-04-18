@@ -27,7 +27,7 @@
   border: 3px dashed rgba(39, 110, 226, 0.16);
 }
 .new-ad-card:active .new-ad-card__icon {
-  background-image: url('../../../../../assets/images/icons/new-ad-icon_active.svg');
+  background-image: url("../../../../../assets/images/icons/new-ad-icon_active.svg");
 }
 .new-ad-card:active .new-ad-card__text {
   color: #1E3A8A;
@@ -42,7 +42,7 @@
 .new-ad-card__icon {
   width: 60px;
   height: 60px;
-  background-image: url('../../../../../assets/images/icons/new-ad-icon.svg');
+  background-image: url("../../../../../assets/images/icons/new-ad-icon.svg");
   background-size: cover;
 }
 .new-ad-card__text {
@@ -52,3 +52,5 @@
   line-height: 24px;
   color: #3B82F6;
 }
+
+/*# sourceMappingURL=new-ad-card.component.css.map */

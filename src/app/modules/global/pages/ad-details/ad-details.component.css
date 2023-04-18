@@ -86,14 +86,14 @@
   width: 100%;
   height: 68px;
   border-radius: 4px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
 }
 .phone-button__icon {
-  background-image: url('../../../../../assets/images/icons/phone_icon.svg');
+  background-image: url("../../../../../assets/images/icons/phone_icon.svg");
   background-size: cover;
   width: 28px;
   height: 28px;
@@ -113,6 +113,7 @@
 .link__icon {
   width: 20px;
   height: 20px;
-  background-image: url('../../../../../assets/images/icons/arrow-up-right-square.svg');
+  background-image: url("../../../../../assets/images/icons/arrow-up-right-square.svg");
 }
 
+/*# sourceMappingURL=ad-details.component.css.map */
