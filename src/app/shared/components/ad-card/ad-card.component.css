@@ -38,7 +38,7 @@
   line-height: 20px;
   color: #64748b;
 }
-.ad-card__additional-info_inline {
+.ad-card__address_inline {
   display: inline;
 }
 .ad-card__photo-container {
@@ -61,3 +61,4 @@
   object-fit: contain;
 }
 
+/*# sourceMappingURL=ad-card.component.css.map */

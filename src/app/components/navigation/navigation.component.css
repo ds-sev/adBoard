@@ -142,3 +142,46 @@
     gap: 12px;
   }
 }
+
+::ng-deep .p-cascadeselect {
+  width: 100px;
+  align-items: center;
+  flex-direction: row-reverse;
+  max-width: 50px;
+  border-radius: 4px;
+  height: 36px;
+  border: 1px solid #3B82F6;
+  box-sizing: border-box;
+  min-width: 152px !important;
+  margin-right: 12px;
+}
+::ng-deep .p-cascadeselect .p-cascadeselect-item-content {
+  font-family: "Inter", sans-serif !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+::ng-deep .p-placeholder {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+::ng-deep .p-cascadeselect-label {
+  color: #3B82F6 !important;
+  padding: 0 !important;
+}
+::ng-deep .p-cascadeselect-trigger {
+  background-image: url("/assets/images/icons/list-nested.svg");
+}
+::ng-deep .pi-chevron-down:before {
+  display: none;
+}
+::ng-deep .p-cascadeselect-trigger-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("/assets/images/icons/list-nested.svg");
+}
+
+/*# sourceMappingURL=navigation.component.css.map */
