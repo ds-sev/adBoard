@@ -30,24 +30,17 @@ import { MessagesModule } from 'primeng/messages'
 import { PasswordModule } from 'primeng/password';
 import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
 import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component';
-import { AlertComponent } from './shared/components/alert/alert.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    // AdCardComponent,
     FooterComponent,
     NavigationComponent,
-    // NewAdComponent,
     AccountSettingsComponent,
     RecommendationsComponent,
-    // AdDetailsComponent,
-    // MyAdsComponent,
-    // NewAdCardComponent,
     UserMenuComponent,
     ModalConfirmComponent,
-    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,15 +65,8 @@ import { AlertComponent } from './shared/components/alert/alert.component'
     PasswordModule,
     AddCardComponentModule,
   ],
-  providers: [
-    DialogService,
-
-
-  ],
-  exports: [
-
-
-  ],
+  providers: [DialogService],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,7 +17,8 @@
     <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
            formControlName="password">
     <div *ngIf="submitted && form['password'].errors" class="invalid-field">
-      <span *ngIf="form['password'].errors['required']">Придумайте пароль от 8 до 16 символов</span>
+      <span *ngIf="form['password'].errors['required']">Придумайте пароль</span>
+      <span *ngIf="form['password'].errors['minlength']">Пароль должен содержать от 8 до 16 символов</span>
     </div>
     <div class="auth-form__group">
       <input class="auth-form__input" pInputText type="password" name="password-confirmation" required
@@ -28,7 +29,7 @@
       </div>
     </div>
   </div>
-  <button class="auth-form__btn" pButton (submit)="onSubmit()">Зарегистрироваться</button>
+  <button class="auth-form__btn" [disabled]="signUpForm.invalid" pButton (submit)="onSubmit()">Зарегистрироваться</button>
   <p class="auth-form__tip">Уже зарегистрированы? <a (click)="onLoginClick()">Войти</a></p>
 </form>
 

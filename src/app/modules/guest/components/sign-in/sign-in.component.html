@@ -7,18 +7,13 @@
       <span *ngIf="submitted && form['login'].errors['required']">Введите имя, указанное при регистрации</span>
     </div>
   </div>
-
-
-  <div class="auth-form__group mb-3">
+  <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
            formControlName="password" [ngClass]="{ 'is-invalid': submitted && form['login'].errors}">
-    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
-          <span *ngIf="submitted && form['password'].errors['required']">Необходимо ввести пароль</span>
+    <div *ngIf="submitted && form['password'].errors" class="invalid-field">
+      <span *ngIf="submitted && form['password'].errors['required']">Необходимо ввести пароль</span>
     </div>
   </div>
-
-
-
   <div class="auth-form__options-container">
     <div class="auth-form__checkbox">
       <p-checkbox value="Запомнить меня" inputId="remember-me"></p-checkbox>
@@ -26,10 +21,9 @@
     </div>
     <p class="auth-form__tip"><a (click)="show()">Забыли пароль?</a></p>
   </div>
-  <button class="auth-form__btn" pButton (submit)="onSubmit()">Войти</button>
+  <button class="auth-form__btn" pButton [disabled]="signInForm.invalid" (submit)="onSubmit()">Войти</button>
   <p class="auth-form__tip">Еще нет учетной записи? <a (click)="onRegisterClick()">Создать</a></p>
 </form>
-
 <p-dialog [(visible)]="isForgetModalOpen">Очень жаль. До свидания.</p-dialog>
 
 

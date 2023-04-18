@@ -16,10 +16,7 @@ export class NewAdComponent implements OnInit {
   newAdForm!: FormGroup
   formGroup: any
 
-
   categories!: any
-
-
 
   ngOnInit() {
     this.newAdForm = this._formBuilder.group({

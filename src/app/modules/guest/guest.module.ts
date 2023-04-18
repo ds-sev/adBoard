@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { GuestRoutingModule } from './guest-routing.module';
 import { SignInComponent } from './components/sign-in/sign-in.component'
 import { SignUpComponent } from './components/sign-up/sign-up.component'
@@ -18,7 +17,6 @@ import { DialogModule } from 'primeng/dialog'
 
   ],
   imports: [
-
     CommonModule,
     GuestRoutingModule,
     ReactiveFormsModule,

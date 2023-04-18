@@ -2,13 +2,7 @@
   <div class="navigation__container _container">
     <h1 class="navigation__title"><a style="color: inherit" [routerLink]="''">Доска объявлений</a></h1>
     <div class="navigation__low-res-container">
-      <!--       <button class="navigation__button-categories button" (click)="onCategoriesBtnClick()"><img src="../../../assets/images/icons/list-nested.svg" -->
-      <!--                                                                 alt="categories-icon">Все категории -->
-      <!--       </button> -->
       <form [formGroup]="formGroup">
-<!--               <button class="navigation__button-categories button" (click)="onCategoriesBtnClick()"><img src="../../../assets/images/icons/list-nested.svg" -->
-<!--                                                                         alt="categories-icon">Все категории -->
-<!--               </button> -->
         <p-cascadeSelect formControlName="selectedCategory"
                          [options]="categories"
                          optionLabel="cname"
@@ -17,10 +11,7 @@
                          [style]="{ minWidth: '14rem' }"
                          placeholder="Все категории"
                          styleClass=""
-
-
-
-                         ></p-cascadeSelect>
+        ></p-cascadeSelect>
       </form>
       <form class="navigation__form" method="get">
         <input class="navigation__form-field" name="search" placeholder="Поиск по объявлениям" type="search"

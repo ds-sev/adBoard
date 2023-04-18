@@ -1,6 +1,5 @@
-import { Injectable, OnInit } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { BehaviorSubject, map, Observable } from 'rxjs'
-import { __values } from 'tslib'
 import { User } from '../models/user'
 import { Router } from '@angular/router'
 import { HttpClient } from '@angular/common/http'
@@ -11,16 +10,15 @@ import { environment } from '../../environments/environment.development'
 })
 export class AuthService {
   private _userSubject: BehaviorSubject<User | null>
-  public user: Observable<User | null>
-
+  public user$: Observable<User | null>
 
   constructor(
     private _router: Router,
     private _http: HttpClient
   ) {
-    // console.log(this.authStatus$)
+
     this._userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!))
-    this.user = this._userSubject.asObservable()
+    this.user$ = this._userSubject.asObservable()
   }
 
   public get userValue() {
@@ -30,18 +28,16 @@ export class AuthService {
   login(login: string, password: string) {
     return this._http.post<User>(`${environment.apiUrl}/Account/login`, {login, password})
     .pipe(map(user => {
-      localStorage.setItem('user', JSON.stringify(user))
-      this._userSubject.next(user)
-      return user
+        localStorage.setItem('user', JSON.stringify(user))
+        this._userSubject.next(user)
+        return user
       })
-      )
+    )
   }
 
   register(user: User) {
     return this._http.post(`${environment.apiUrl}/Account/register`, user)
   }
-
-  // isLogin!: boolean
 
   saveUserData(userName: string) {
     localStorage.setItem('userName', userName)
@@ -49,21 +45,16 @@ export class AuthService {
   }
 
   getAuthStatus() {
-    return localStorage.getItem('isLogin') === 'true';
-    // return localStorage.getItem('isLogin') !== null;
+    return localStorage.getItem('isLogin') !== 'true'
   }
 
   getUserName() {
     localStorage.getItem('UserName')
   }
 
-  signOut(userName: string) {
+  signOut() {
     localStorage.removeItem('user')
     this._userSubject.next(null)
     this._router.navigate(['home']).then()
-
   }
-
-
-
 }

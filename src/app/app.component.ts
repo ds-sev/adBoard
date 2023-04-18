@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnChanges, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import {
   NavigationCancel,
   NavigationEnd,
@@ -24,16 +24,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    // console.log(this.loading$.pipe())
-    // console.log(this.loading$)
-    // console.log(NavigationEnd)
-    // console.log(NavigationStart)
-
-
-
-
-
-
     this.router.events.pipe(
       filter(
         (e) =>
@@ -44,8 +34,6 @@ export class AppComponent implements OnInit {
       ),
       map((e) => e instanceof NavigationStart)
     )
-
   }
-
 }
 

@@ -2,11 +2,7 @@
   <h3 class="section__title">Рекомендации для вас</h3>
   <div class="ad-cards">
     <ng-container *ngIf="isLoading">
-
-
       <p>Tut budet spinner</p>
-
-
     </ng-container>
     <ng-container *ngIf="!isLoading">
       <app-ad-card class="ad-card-container" *ngFor="let ad of ads; let i = index" [ad]="ad"></app-ad-card>

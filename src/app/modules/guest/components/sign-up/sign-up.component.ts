@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { SignInComponent } from '../sign-in/sign-in.component'
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
 import { AuthService } from '../../../../services/auth.service'
 import { first } from 'rxjs'
-import { AlertService } from '../../../../services/alert.service'
-import { error } from '@angular/compiler-cli/src/transformers/util'
 
 @Component({
   selector: 'app-sign-up',
@@ -21,7 +19,7 @@ export class SignUpComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private dialogService: DialogService,
     private readonly _dialogRef: DynamicDialogRef,
-    private _alertService: AlertService
+    // private _alertService: AlertService
   ) {
   }
 
@@ -32,6 +30,7 @@ export class SignUpComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8)]],
       passwordConfirm: ['', Validators.required]
     })
+    // this._alertService.clear();
   }
 
   get form() { return this.signUpForm.controls }
@@ -47,16 +46,19 @@ export class SignUpComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true
+    if (this.signUpForm.invalid || this.form['password'].value !== this.form['passwordConfirm'].value) {
+      return
+    }
     this._authService.register(this.signUpForm.value)
     .pipe(first())
     .subscribe({
       next: () => {
-        this._alertService.success('Вы зарегистрированы', { keepAfterRouteChange: false})
+        // this._alertService.success('Вы зарегистрированы', { keepAfterRouteChange: false})
         this.onLoginClick()
       },
-      error: error => {
-        this._alertService.error(error)
-      }
+      // error: error => {
+      //   this._alertService.error(error)
+      // }
     })
   }
 }

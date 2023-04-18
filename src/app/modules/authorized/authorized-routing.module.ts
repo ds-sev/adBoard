@@ -4,7 +4,7 @@ import { MyAdsComponent } from './pages/my-ads/my-ads.component'
 import { NewAdComponent } from './pages/new-ad/new-ad.component'
 import { AccountSettingsComponent } from './pages/account-settings/account-settings.component'
 import { AdDetailsComponent } from '../global/pages/ad-details/ad-details.component'
-import { RulesComponent } from './pages/rules/rules.component'
+import { RulesComponent } from '../global/pages/rules/rules.component'
 
 const routes: Routes = [
   {path: 'my-ads', component: MyAdsComponent},

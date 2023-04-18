@@ -3,7 +3,9 @@
   <app-navigation></app-navigation>
   <div class="page-content">
     <router-outlet></router-outlet>
-    <div *ngIf="loading$ | async"><p-progressSpinner></p-progressSpinner></div>
+    <div *ngIf="loading$ | async">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
   </div>
   <app-footer></app-footer>
 </div>

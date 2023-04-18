@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnChanges } from '@angular/core'
+import { Component } from '@angular/core'
 import { AdsService } from '../../../../services/ads.service'
 import { IAd } from '../../../../models/ad'
 import { Subscription } from 'rxjs'

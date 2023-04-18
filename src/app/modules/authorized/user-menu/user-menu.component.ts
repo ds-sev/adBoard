@@ -1,12 +1,8 @@
-import { Component, Input, NgModule, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { MenuItem, MessageService } from 'primeng/api'
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
-import { DialogModule } from 'primeng/dialog'
-import { ButtonModule } from 'primeng/button'
-import { visit } from '@angular/compiler-cli/src/ngtsc/util/src/visitor'
 import { AuthService } from '../../../services/auth.service'
 import { Router } from '@angular/router'
-import { SignUpComponent } from '../../guest/components/sign-up/sign-up.component'
 import { SignInComponent } from '../../guest/components/sign-in/sign-in.component'
 
 @Component({
@@ -19,27 +15,20 @@ export class UserMenuComponent implements OnInit {
   items!: MenuItem[]
 
   private _dialogRef!: DynamicDialogRef
-  // ref!: DynamicDialogRef
-
 
   @Input() name!: string
   btnIcon: string = ''
   visible!: boolean
-
-  // @Input() public loggedIn: boolean = false
-
-
-
 
   constructor(
     private router: Router,
     private _auth: AuthService,
     private messageService: MessageService,
     public dialogService: DialogService,
-    ) {
-
+  ) {
+    // console.log(this._auth.user$ === null)
+    // this._auth.user$.subscribe(value => console.log(value))
   }
-
 
   isLogin: any = this._auth.getAuthStatus()
 
@@ -62,8 +51,6 @@ export class UserMenuComponent implements OnInit {
 
   ngOnInit() {
 
-
-
     this.items = [
       {
         label: 'Мои объявления',
@@ -75,7 +62,7 @@ export class UserMenuComponent implements OnInit {
       },
       {
         label: 'Выйти',
-        command:() => this.logOut()
+        command: () => this.logOut()
       }
     ]
     if (this._auth.getAuthStatus()) {
@@ -97,15 +84,10 @@ export class UserMenuComponent implements OnInit {
   }
 
   onConfirmBtnClick() {
-    this._auth.signOut('isLogin')
+    this._auth.signOut()
     this.router.navigate(['home']).then()
     this._auth.getAuthStatus()
-    // console.log(this._auth.authStatus$)
     this.visible = false
-
-
-
   }
-
 }
 

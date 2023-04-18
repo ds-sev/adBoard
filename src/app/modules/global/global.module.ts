@@ -6,10 +6,11 @@ import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
 import { ButtonModule } from 'primeng/button'
 import { DialogModule } from 'primeng/dialog'
 import { SellerInfoModalComponent } from './modals/seller-info-modal/seller-info-modal.component'
+import { RulesComponent } from './pages/rules/rules.component'
 
 
 @NgModule({
-  declarations: [AdDetailsComponent, SellerInfoModalComponent],
+  declarations: [AdDetailsComponent, SellerInfoModalComponent, RulesComponent],
   exports: [
     AdDetailsComponent
   ],
