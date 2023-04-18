@@ -14,6 +14,7 @@ import { Router } from '@angular/router'
 export class SignInComponent implements OnInit {
   signInForm!: FormGroup
   submitted = false
+  isBtnActive!: boolean
 
   constructor(
     private _router: Router,
@@ -21,10 +22,7 @@ export class SignInComponent implements OnInit {
     private dialogService: DialogService,
     private readonly _dialogRef: DynamicDialogRef,
     private _authService: AuthService,
-  ) {
-
-
-  }
+  ) {}
 
   ngOnInit() {
     this.signInForm = this._formBuilder.group({
@@ -32,6 +30,12 @@ export class SignInComponent implements OnInit {
       password: ['', Validators.required]
     })
 
+    this.signInForm.valueChanges.subscribe(value => {
+      if (value.login === '' || value.password === '') {
+        return this.isBtnActive = true
+      }
+      return this.isBtnActive = false
+    })
   }
 
   get form() {

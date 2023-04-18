@@ -13,27 +13,34 @@ import { first } from 'rxjs'
 export class SignUpComponent implements OnInit {
   signUpForm!: FormGroup
   submitted = false
+  isBtnActive!: boolean
 
   constructor(
     private _authService: AuthService,
     private _formBuilder: FormBuilder,
     private dialogService: DialogService,
     private readonly _dialogRef: DynamicDialogRef,
-    // private _alertService: AlertService
   ) {
   }
 
   ngOnInit() {
     this.signUpForm = this._formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       login: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(8)]],
       passwordConfirm: ['', Validators.required]
     })
-    // this._alertService.clear();
+    this.signUpForm.valueChanges.subscribe(value => {
+      if (value.email === '' || value.login === '' || value.password === '' || value.passwordConfirm === '') {
+        return this.isBtnActive = true
+      }
+      return this.isBtnActive = false
+    })
   }
 
-  get form() { return this.signUpForm.controls }
+  get form() {
+    return this.signUpForm.controls
+  }
 
   onLoginClick() {
     this._dialogRef.close()
