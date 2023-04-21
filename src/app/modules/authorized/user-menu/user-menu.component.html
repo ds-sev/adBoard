@@ -1,9 +1,9 @@
 <div class="card flex justify-content-center">
   <p-menu #menu [model]="items" [popup]="true"></p-menu>
   <div class="login-btn__container">
-    <ng-container *ngIf="isLogin; else notLoggedIn">
-      <button pButton type="button" (click)="menu.toggle($event)" [icon]="btnIcon"
-              [style]="'background-color: transparent; border: none; height: 32px'" [label]="name"
+    <ng-container *ngIf="(isLoggedIn$ | async); else notLoggedIn">
+      <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-angle-down"
+              [style]="'background-color: transparent; border: none; height: 32px'" label="{{name}}"
               iconPos="right" class="login-btn__element">
       </button>
     </ng-container>

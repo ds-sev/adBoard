@@ -8,10 +8,10 @@
     </ng-template>
   </div>
   <div class="ad-card__info">
-    <h3 class="ad-card__title">{{ad.name}}</h3>
+    <h3 class="ad-card__title" (click)="onAdClick()">{{ad.name}}</h3>
     <p class="ad-card__price">{{ad.price}} ₽</p>
     <p class="ad-card__address">{{ad.address}}</p>
-    <p class="ad-card__address">{{ad.createdAt}}</p>
+    <p class="ad-card__address">{{ ad.createdAt | date }}</p>
   </div>
 </div>
 

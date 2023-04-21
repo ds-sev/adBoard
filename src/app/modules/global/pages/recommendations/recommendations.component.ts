@@ -26,4 +26,5 @@ export class RecommendationsComponent {
   ngOnDestroy() {
     if (this.adsSubscription) this.adsSubscription.unsubscribe()
   }
+
 }

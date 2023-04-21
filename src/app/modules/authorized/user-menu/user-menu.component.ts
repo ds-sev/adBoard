@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { MenuItem, MessageService } from 'primeng/api'
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
 import { AuthService } from '../../../services/auth.service'
@@ -16,8 +16,7 @@ export class UserMenuComponent implements OnInit {
 
   private _dialogRef!: DynamicDialogRef
 
-  @Input() name!: string
-  btnIcon: string = ''
+  name: string | null = localStorage.getItem('userName')
   visible!: boolean
 
   constructor(
@@ -26,11 +25,10 @@ export class UserMenuComponent implements OnInit {
     private messageService: MessageService,
     public dialogService: DialogService,
   ) {
-    // console.log(this._auth.user$ === null)
     // this._auth.user$.subscribe(value => console.log(value))
   }
 
-  isLogin: any = this._auth.getAuthStatus()
+  isLoggedIn$ = this._auth.user$
 
   logOut() {
     this.visible = true
@@ -42,15 +40,9 @@ export class UserMenuComponent implements OnInit {
       modal: true,
       dismissableMask: true
     })
-    this._dialogRef.onClose.subscribe((isLogin: boolean) => {
-      this.isLogin = isLogin
-      console.log(this.isLogin)
-    })
-
   }
 
   ngOnInit() {
-
     this.items = [
       {
         label: 'Мои объявления',
@@ -65,23 +57,15 @@ export class UserMenuComponent implements OnInit {
         command: () => this.logOut()
       }
     ]
-    if (this._auth.getAuthStatus()) {
-      this.name = 'Алексей'
-      this.btnIcon = 'pi pi-angle-down'
-
-    } else {
-      this.name = 'Войти'
-      this.btnIcon = ''
-    }
   }
 
-  update() {
-    this.messageService.add({severity: 'success', summary: 'Success', detail: 'Data Updated'})
-  }
-
-  delete() {
-    this.messageService.add({severity: 'warn', summary: 'Delete', detail: 'Data Deleted'})
-  }
+  // update() {
+  //   this.messageService.add({severity: 'success', summary: 'Success', detail: 'Data Updated'})
+  // }
+  //
+  // delete() {
+  //   this.messageService.add({severity: 'warn', summary: 'Delete', detail: 'Data Deleted'})
+  // }
 
   onConfirmBtnClick() {
     this._auth.signOut()

@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment.development'
 export class AuthService {
   private _userSubject: BehaviorSubject<User | null>
   public user$: Observable<User | null>
+  public userName!: string
 
   constructor(
     private _router: Router,
@@ -19,6 +20,8 @@ export class AuthService {
 
     this._userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!))
     this.user$ = this._userSubject.asObservable()
+
+
   }
 
   public get userValue() {
@@ -26,6 +29,7 @@ export class AuthService {
   }
 
   login(login: string, password: string) {
+    localStorage.setItem('userName', login)
     return this._http.post<User>(`${environment.apiUrl}/Account/login`, {login, password})
     .pipe(map(user => {
         localStorage.setItem('user', JSON.stringify(user))
@@ -39,17 +43,17 @@ export class AuthService {
     return this._http.post(`${environment.apiUrl}/Account/register`, user)
   }
 
-  saveUserData(userName: string) {
-    localStorage.setItem('userName', userName)
-    localStorage.setItem('isLogin', 'true')
-  }
+  // saveUserData(userName: string) {
+  //   localStorage.setItem('userName', userName)
+  //   localStorage.setItem('isLogin', 'true')
+  // }
 
   getAuthStatus() {
     return localStorage.getItem('isLogin') === 'true'
   }
 
   getUserName() {
-    localStorage.getItem('UserName')
+    localStorage.getItem('userName')
   }
 
   signOut() {

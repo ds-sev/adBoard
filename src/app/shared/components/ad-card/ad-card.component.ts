@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core'
 import { IAd } from '../../../models/ad'
 import { Router } from '@angular/router'
-import { CurrencyPipe, NgIf } from '@angular/common'
+import { CurrencyPipe, DatePipe, NgIf } from '@angular/common'
 
 @Component({
   selector: 'app-ad-card',
@@ -23,7 +23,7 @@ export class AdCardComponent {
 
 @NgModule({
   declarations: [AdCardComponent],
-  imports: [CurrencyPipe, NgIf],
+  imports: [CurrencyPipe, NgIf, DatePipe],
   exports: [AdCardComponent]
 })
 
