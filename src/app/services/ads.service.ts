@@ -8,14 +8,21 @@ import { environment } from '../../environments/environment.development'
 })
 export class AdsService {
   constructor(private _http: HttpClient) {
+
+    console.log(this.getAdsList())
+
   }
 
   getAdsList() {
     return this._http.get<IAd[]>(`${environment.apiUrl}/Advert`)
   }
 
-  getAd(id: number) {
-    return this._http.get<IAd>(`${environment.apiUrl}/${id}`)
+  getAd(id: string) {
+    return this._http.get<IAd>(`${environment.apiUrl}/Advert/${id}`)
   }
+
+  // getAdDetails() {
+  //   return this._http.get<IAd>()
+  // }
 }
 

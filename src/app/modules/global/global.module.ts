@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common'
 
 import { GlobalRoutingModule } from './global-routing.module';
 import { AdDetailsComponent } from './pages/ad-details/ad-details.component'
@@ -18,7 +18,8 @@ import { RulesComponent } from './pages/rules/rules.component'
     CommonModule,
     GlobalRoutingModule,
     ButtonModule,
-    DialogModule
+    DialogModule,
+    NgOptimizedImage
   ]
 })
 export class GlobalModule { }

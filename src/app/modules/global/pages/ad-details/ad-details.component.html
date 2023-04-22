@@ -1,4 +1,4 @@
-<section class="ad-details ad-details-container _container">
+<section class="ad-details ad-details-container _container" *ngIf="adData">
   <div>
     <nav aria-label="Breadcrumb">
       <ul class="ad-details__text_breadcrumbs">
@@ -9,10 +9,9 @@
         <li><span aria-current="page">Выбранное объявление</span></li>
       </ul>
     </nav>
-    <h4 class="ad-details__title">"adDetailsData.name"</h4>
+    <h4 class="ad-details__title">{{adData.name}}</h4>
     <div class="ad-details__image">
-      <img class="ad-details__image_large" src="/src/assets/images/cards-examples/guitar.jpg" alt="">
-      <p>{{test}}</p>
+      <img class="ad-details__image_large" [src]="adData.imageUrl" alt="">
     </div>
     <div class="ad-details__preview-img-container">
       <img class="ad-details__image_small" src="/src/assets/images/cards-examples/guitar.jpg" alt="">
@@ -22,13 +21,13 @@
     </div>
   </div>
   <div>
-    <p class="ad-details__text_price">80 000 ₽</p>
+    <p class="ad-details__text_price">{{adData.price}} ₽</p>
     <button class="phone-button" pButton (click)="onPhoneBtnClick()">
       <div class="phone-button__icon"></div>
       Показать номер телефона
     </button>
     <p class="ad-details__text_description-heading">Адрес</p>
-    <p class="ad-details__text_description">Город, ул. Улица, ХХ</p>
+    <p class="ad-details__text_description">{{adData.address}}</p>
     <a class="link" href="#">Открыть на карте
       <div class="link__icon"></div>
     </a>

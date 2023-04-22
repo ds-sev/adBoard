@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core'
 import { IAd } from '../../../models/ad'
 import { Router } from '@angular/router'
 import { CurrencyPipe, DatePipe, NgIf } from '@angular/common'
+import { GlobalModule } from '../../../modules/global/global.module'
 
 @Component({
   selector: 'app-ad-card',
@@ -10,6 +11,9 @@ import { CurrencyPipe, DatePipe, NgIf } from '@angular/common'
 })
 
 export class AdCardComponent {
+
+  targetAdId!: string
+
   constructor(private router: Router) {
   }
 
@@ -17,13 +21,16 @@ export class AdCardComponent {
   @Output() test = new EventEmitter()
 
   onAdClick() {
+    this.targetAdId = this.ad.id
     this.router.navigate(['ad', this.ad.id]).then()
+
+    // console.log(this.targetAdId)
   }
 }
 
 @NgModule({
   declarations: [AdCardComponent],
-  imports: [CurrencyPipe, NgIf, DatePipe],
+  imports: [CurrencyPipe, NgIf, DatePipe, GlobalModule],
   exports: [AdCardComponent]
 })
 
