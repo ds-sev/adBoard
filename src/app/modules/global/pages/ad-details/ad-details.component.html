@@ -21,7 +21,7 @@
     </div>
   </div>
   <div>
-    <p class="ad-details__text_price">{{adData.price}} ₽</p>
+    <p class="ad-details__text_price">{{adData.price | number:' ':'fr-FR'}} ₽</p>
     <button class="phone-button" pButton (click)="onPhoneBtnClick()">
       <div class="phone-button__icon"></div>
       Показать номер телефона

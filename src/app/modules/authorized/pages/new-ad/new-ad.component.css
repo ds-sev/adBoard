@@ -62,4 +62,10 @@
   color: #1E293B;
 }
 
-/*# sourceMappingURL=new-ad.component.css.map */
+.display_none {
+  display: none;
+}
+
+.image-preview {
+  width: 50px;
+}

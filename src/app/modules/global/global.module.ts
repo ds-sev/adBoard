@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button'
 import { DialogModule } from 'primeng/dialog'
 import { SellerInfoModalComponent } from './modals/seller-info-modal/seller-info-modal.component'
 import { RulesComponent } from './pages/rules/rules.component'
+import { AppModule } from '../../app.module'
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { RulesComponent } from './pages/rules/rules.component'
     GlobalRoutingModule,
     ButtonModule,
     DialogModule,
-    NgOptimizedImage
+    NgOptimizedImage,
   ]
 })
 export class GlobalModule { }

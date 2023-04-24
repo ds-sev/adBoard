@@ -1,5 +1,5 @@
 <section class="_container">
-  <form [formGroup]="newAdForm" class="new-ad__input-label">
+  <form [formGroup]="newAdForm" class="new-ad__input-label" (submit)="onSubmit()">
     <div class="new-ad-container">
       <h2 class="section__title">Новое объявление</h2>
       <div style="padding-bottom: 8px; width: 416px">
@@ -15,7 +15,7 @@
       <p class="new-ad__input-label">Название объявления <span style="color: #ef4444">*</span></p>
       <input pInputText placeholder="Что хотите продать?"
              class="new-ad__input-el_position"
-             formControlName="title">
+             formControlName="name">
       <p class="new-ad__input-label">Описание</p>
       <!--     <form action=""> -->
       <textarea rows="9"
@@ -32,12 +32,21 @@
              class="new-ad__input-el_position"
              formControlName="address">
       <div class="new-ad__image-add-container new-ad__input-el_position">
+
+        <input type="file" class="display_none" (change)="onFileUpload($event)" #input>
         <button pButton class="new-ad__add-image-btn"
-                style="height: 35px; width: 186px">
+                style="height: 35px; width: 186px" (click)="triggerClick()">
           <img src="/assets/images/icons/new-ad-image-icon.svg" alt="button-icon" style="margin-right: 8px">
           Добавить картинки
         </button>
+<!--         <p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" -->
+<!--                       (onUpload)="onUploadBtnClick($event)" [auto]="true" -->
+<!--                       chooseLabel="Browse"></p-fileUpload> -->
+        <ng-container *ngIf="!imagePreview; else preview">
         <p>Максимум 10 картинок в формате jpeg, png или heic</p>
+        </ng-container>
+        <ng-template
+          #preview><img class="image-preview" [src]="imagePreview" alt="Изображение объявления"></ng-template>
       </div>
       <p class="new-ad__input-label">Цена</p>
       <p-inputNumber placeholder="0 ₽"
@@ -48,7 +57,7 @@
                      currency="RUB"
                      [minFractionDigits]="0"
                      formControlName="price"></p-inputNumber>
-      <button pButton class="new-ad__create-btn new-ad__input-label" (click)="onCreateBtnClick()">Разместить
+      <button pButton class="new-ad__create-btn new-ad__input-label">Разместить
         объявление
       </button>
       <p class="new-ad__agreement">

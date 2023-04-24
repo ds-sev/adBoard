@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup } from '@angular/forms'
 import { ICategory } from '../../models/category'
+import { AdsService } from '../../services/ads.service'
 
 @Component({
   selector: 'app-navigation',
@@ -9,12 +10,16 @@ import { ICategory } from '../../models/category'
 })
 
 export class NavigationComponent implements OnInit {
+
+  constructor(
+    private _adsService: AdsService
+  ) {
+  }
   onCategoriesBtnClick() {
-    console.log('cat')
   }
 
 
-  categories!: any[];
+  categories!: ICategory[];
 
   selectedCategory: any;
 
@@ -25,71 +30,76 @@ export class NavigationComponent implements OnInit {
       selectedCategory: new FormControl<object | null>(null)
     });
 
-    this.categories = [
-  {
-    name: '{P{P}',
-    code: 'AU',
-    states: [
+    this._adsService.getCategories().subscribe((data) => {
+      this.categories = data
+      console.log(this.categories)
+    })
 
-    ]
-  },
-  {
-    name: 'Недвижимость',
-    code: 'CA',
-    states: [
-      {
-        name: 'Quebec',
-        cities: [
-          { cname: 'Montreal', code: 'C-MO' },
-          { cname: 'Quebec City', code: 'C-QU' }
-        ]
-      },
-      {
-        name: 'Ontario',
-        cities: [
-          { cname: 'Ottawa', code: 'C-OT' },
-          { cname: 'Toronto', code: 'C-TO' }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Работа',
-    code: 'US',
-    states: [
-      {
-        name: 'California',
-        cities: [
-          { cname: 'Los Angeles', code: 'US-LA' },
-          { cname: 'San Diego', code: 'US-SD' },
-          { cname: 'San Francisco', code: 'US-SF' }
-        ]
-      },
-      {
-        name: 'Florida',
-        cities: [
-          { cname: 'Jacksonville', code: 'US-JA' },
-          { cname: 'Miami', code: 'US-MI' },
-          { cname: 'Tampa', code: 'US-TA' },
-          { cname: 'Orlando', code: 'US-OR' }
-        ]
-      },
-      {
-        name: 'Texas',
-        cities: [
-          { cname: 'Austin', code: 'US-AU' },
-          { cname: 'Dallas', code: 'US-DA' },
-          { cname: 'Houston', code: 'US-HO' }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Услуги',
-    code: 'US',
-    states: []
-  }
-];
+//     this.categories = [
+//   {
+//     name: '{P{P}',
+//     code: 'AU',
+//     states: [
+//
+//     ]
+//   },
+//   {
+//     name: 'Недвижимость',
+//     code: 'CA',
+//     states: [
+//       {
+//         name: 'Quebec',
+//         cities: [
+//           { cname: 'Montreal', code: 'C-MO' },
+//           { cname: 'Quebec City', code: 'C-QU' }
+//         ]
+//       },
+//       {
+//         name: 'Ontario',
+//         cities: [
+//           { cname: 'Ottawa', code: 'C-OT' },
+//           { cname: 'Toronto', code: 'C-TO' }
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     name: 'Работа',
+//     code: 'US',
+//     states: [
+//       {
+//         name: 'California',
+//         cities: [
+//           { cname: 'Los Angeles', code: 'US-LA' },
+//           { cname: 'San Diego', code: 'US-SD' },
+//           { cname: 'San Francisco', code: 'US-SF' }
+//         ]
+//       },
+//       {
+//         name: 'Florida',
+//         cities: [
+//           { cname: 'Jacksonville', code: 'US-JA' },
+//           { cname: 'Miami', code: 'US-MI' },
+//           { cname: 'Tampa', code: 'US-TA' },
+//           { cname: 'Orlando', code: 'US-OR' }
+//         ]
+//       },
+//       {
+//         name: 'Texas',
+//         cities: [
+//           { cname: 'Austin', code: 'US-AU' },
+//           { cname: 'Dallas', code: 'US-DA' },
+//           { cname: 'Houston', code: 'US-HO' }
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     name: 'Услуги',
+//     code: 'US',
+//     states: []
+//   }
+// ];
 
 
   }

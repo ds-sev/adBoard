@@ -1,7 +1,7 @@
 export interface ICategory {
   id: string,
-  parentId: string,
+  parentId: string | null,
   name: string,
   isActive: boolean,
-  createdAt: string
+  createdAt: Date
 }

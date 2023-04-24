@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { DialogService } from 'primeng/dynamicdialog'
 import { IAd } from '../../../../models/ad'
 import { AdsService } from '../../../../services/ads.service'
-import { Subscription } from 'rxjs'
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
@@ -12,7 +11,6 @@ import { ActivatedRoute } from '@angular/router'
 })
 export class AdDetailsComponent implements OnInit {
 
-  // adDetailsSubscription!: Subscription
   adData: IAd | undefined
 
   constructor(
@@ -20,11 +18,7 @@ export class AdDetailsComponent implements OnInit {
     private _adsService: AdsService,
     private _route: ActivatedRoute
   ) {
-
   }
-
-  // @Input() adDetailsData!: IAd
-  // @Input() adId!: string
 
   displayModal: boolean = false
 
@@ -39,10 +33,7 @@ export class AdDetailsComponent implements OnInit {
 
     this._adsService.getAd(adIdFromRoute).subscribe((data) => {
       this.adData = data
-      console.log(data.price)
     })
-
-    //
   }
 }
 

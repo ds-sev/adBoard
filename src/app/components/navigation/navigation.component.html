@@ -5,12 +5,12 @@
       <form [formGroup]="formGroup">
         <p-cascadeSelect formControlName="selectedCategory"
                          [options]="categories"
-                         optionLabel="cname"
-                         optionGroupLabel="name"
-                         [optionGroupChildren]="['states', 'cities']"
+                         optionLabel="name"
+
+optionGroupLabel="name"
+                         [optionGroupChildren]="['categories', 'subcategorieså']"
                          [style]="{ minWidth: '14rem' }"
                          placeholder="Все категории"
-                         styleClass=""
         ></p-cascadeSelect>
       </form>
       <form class="navigation__form" method="get">

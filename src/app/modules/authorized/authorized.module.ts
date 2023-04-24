@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { DropdownModule } from 'primeng/dropdown'
 import { InputTextareaModule } from 'primeng/inputtextarea'
 import { InputNumberModule } from 'primeng/inputnumber';
+import { FileUploadModule } from 'primeng/fileupload'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ReactiveFormsModule,
     DropdownModule,
     InputTextareaModule,
-    InputNumberModule
+    InputNumberModule,
+    FileUploadModule
   ],
   // exports: [NewAdComponent]
 })

@@ -19,6 +19,7 @@ export class RecommendationsComponent {
   ngOnInit(): void {
     this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
       this.ads = data
+      console.log(this.ads)
       this.isLoading = false
     })
   }
