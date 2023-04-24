@@ -2,6 +2,8 @@
   <h3 class="ads-section__title">Мои объявления</h3>
   <div class="ad-cards">
     <app-new-ad-card (click)="onNewAdBtnClick()"></app-new-ad-card>
-    <app-ad-card class="ad-card-container" *ngFor="let ad of ads" [ad]="ad"></app-ad-card>
+    <app-ad-card class="ad-card-container" *ngFor="let ad of ads"
+                 [ad]="ad">
+    </app-ad-card>
   </div>
 </section>

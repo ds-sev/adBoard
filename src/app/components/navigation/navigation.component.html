@@ -6,9 +6,8 @@
         <p-cascadeSelect formControlName="selectedCategory"
                          [options]="categories"
                          optionLabel="name"
-
-optionGroupLabel="name"
-                         [optionGroupChildren]="['categories', 'subcategorieså']"
+                         optionGroupLabel="name"
+                         [optionGroupChildren]="['categories', 'subcategories']"
                          [style]="{ minWidth: '14rem' }"
                          placeholder="Все категории"
         ></p-cascadeSelect>

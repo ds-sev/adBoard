@@ -15,24 +15,21 @@ export class NavigationComponent implements OnInit {
     private _adsService: AdsService
   ) {
   }
+
   onCategoriesBtnClick() {
   }
 
-
-  categories!: ICategory[];
-
-  selectedCategory: any;
-
-  formGroup!: FormGroup;
+  categories!: ICategory[]
+  selectedCategory: any
+  formGroup!: FormGroup
 
   ngOnInit() {
     this.formGroup = new FormGroup({
       selectedCategory: new FormControl<object | null>(null)
-    });
+    })
 
     this._adsService.getCategories().subscribe((data) => {
       this.categories = data
-      console.log(this.categories)
     })
 
 //     this.categories = [
@@ -101,28 +98,5 @@ export class NavigationComponent implements OnInit {
 //   }
 // ];
 
-
   }
 }
-
-
-
-
-
-// this.categories = [
-//
-//   {
-//     name: 'Транспорт',
-//     id: 'Транспорт',
-//     parentId: 'string',
-//     isActive: true,
-//     createdAt: 'string'
-//   },
-//   {
-//     name: 'Транспорт',
-//     id: 'Транспорт',
-//     parentId: 'string',
-//     isActive: true,
-//     createdAt: 'string'
-//   }
-// ];

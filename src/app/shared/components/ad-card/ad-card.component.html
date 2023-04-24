@@ -1,10 +1,12 @@
 <div class="ad-card">
-  <div class="ad-card__photo-container" (click)="onAdClick()">
+  <div class="ad-card__photo-container">
+    <button class="delete-ad" style="background-image: url('./assets/images/icons/thrash.svg')"
+            (click)="onDeleteBtnClick()"></button>
     <ng-container *ngIf="ad.imageUrl; else noPhoto">
-      <img src="{{ad.imageUrl}}" alt="{{ad.name}}">
+      <img class="ad-card__photo" src="{{ad.imageUrl}}" alt="{{ad.name}}"  (click)="onAdClick()">
     </ng-container>
     <ng-template #noPhoto>
-      <img src="/assets/images/interface/noPhoto.png" alt="Нет фото">
+      <img class="ad-card__photo" src="/assets/images/interface/noPhoto.png" alt="Нет фото">
     </ng-template>
   </div>
   <div class="ad-card__info">

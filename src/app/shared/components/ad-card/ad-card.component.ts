@@ -3,6 +3,8 @@ import { IAd } from '../../../models/ad'
 import { Router } from '@angular/router'
 import { CurrencyPipe, DatePipe, NgIf } from '@angular/common'
 import { GlobalModule } from '../../../modules/global/global.module'
+import { ButtonModule } from 'primeng/button'
+import { AdsService } from '../../../services/ads.service'
 
 @Component({
   selector: 'app-ad-card',
@@ -12,9 +14,12 @@ import { GlobalModule } from '../../../modules/global/global.module'
 
 export class AdCardComponent {
 
-  targetAdId!: string
+  targetAdId!: string | undefined
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private _adsService: AdsService,
+    ) {
   }
 
   @Input() public ad!: IAd
@@ -23,14 +28,19 @@ export class AdCardComponent {
   onAdClick() {
     this.targetAdId = this.ad.id
     this.router.navigate(['ad', this.ad.id]).then()
-
-    // console.log(this.targetAdId)
   }
+
+  onDeleteBtnClick() {
+
+
+    this._adsService.deleteAd(this.ad.id).subscribe()
+  }
+
 }
 
 @NgModule({
   declarations: [AdCardComponent],
-  imports: [CurrencyPipe, NgIf, DatePipe, GlobalModule],
+  imports: [CurrencyPipe, NgIf, DatePipe, GlobalModule, ButtonModule],
   exports: [AdCardComponent]
 })
 

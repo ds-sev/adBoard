@@ -31,7 +31,6 @@ import { PasswordModule } from 'primeng/password';
 import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
 import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component'
 import { DropdownModule } from 'primeng/dropdown'
-// import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +66,6 @@ import { DropdownModule } from 'primeng/dropdown'
     PasswordModule,
     AddCardComponentModule,
     DropdownModule,
-    // AddCardComponentModule,
   ],
   providers: [DialogService],
   exports: [

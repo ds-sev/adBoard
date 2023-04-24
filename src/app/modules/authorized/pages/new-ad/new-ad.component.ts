@@ -17,6 +17,10 @@ export class NewAdComponent implements OnInit {
   image!: File
   imagePreview: string | ArrayBuffer | null = ''
   categories!: ICategory[]
+  formData!: IAd
+
+
+
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -41,7 +45,7 @@ export class NewAdComponent implements OnInit {
 
     this._adsService.getCategories().subscribe((data) => {
       this.categories = data
-      console.log(this.categories)
+      console.log(this.categories[0].id)
     })
 
     // this.categories = [
@@ -79,7 +83,7 @@ export class NewAdComponent implements OnInit {
   onFileUpload(event: any) {
     const file = event.target.files[0]
     this.image = file
-    console.log('image:' + this.image)
+    // console.log('image:' + this.image)
 
     const reader = new FileReader()
     reader.onload = () => {
@@ -91,23 +95,29 @@ export class NewAdComponent implements OnInit {
   }
 
   onSubmit() {
-    // this._adsService.getAdsList().subscribe((data) => {
-    //   console.log(data)
-    // })
+    //
+    // const formData: any = new FormData()
+    // if (this.form['image'].value) {
+    //   formData.append('imageUrl', this.form['image'].value)
+    // }
+
+
+
+
+    this._adsService.newAd(this.newAdForm.value).subscribe()
+    // this._adsService.newAd(this.newAdForm.value, this.image).subscribe()
+
+    // console.log(this.form['category'].value.id)
+    // console.log(this.form['name'].value)
+    // console.log(this.form['description'].value)
+    // console.log(this.form['address'].value)
+    // console.log(this.image)
+    // console.log(this.form['price'].value)
+
 
     // this.newAdForm.disable()
-
-    // this._adsService.getAdsList()
-    this._adsService.newAd().subscribe((data) => {
-      console.log(data)
-    })
-
-    // console.log(this._authService.userValue)
-    // this._adsService.getAdsList()
-    // console.log(this.form['name'].value)
-    // console.log(this.newAdForm.value)
-
-
+    // this._adsService.newAd().subscribe()
+    // this._adsService.deleteAd('2f505b44-9421-4b4f-8fb8-cfada6900990').subscribe()
   }
 
   // onUploadBtnClick(event: any) {

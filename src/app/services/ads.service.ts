@@ -10,9 +10,6 @@ import { ICategory } from '../models/category'
 })
 export class AdsService {
   constructor(private _http: HttpClient) {
-
-    console.log(this.getAdsList())
-
   }
 
   getAdsList() {
@@ -27,7 +24,7 @@ export class AdsService {
     return this._http.get<ICategory[]>(`${environment.apiUrl}/Category`)
   }
 
-  newAd() {
+  newAd(newAdData: IAd) {
     // const formData = new FormData()
     // if (newAdData.imageUrl) {
     //   formData.append('imageUrl', newAdData.imageUrl)
@@ -38,14 +35,18 @@ export class AdsService {
     // formData.append('price', newAdData.price)
     // formData.append('address', newAdData.address)
 
-    return this._http.post<IAd>(`${environment.apiUrl}/Advert`, {
-      "name": "test",
-      "description": "test description",
-      "categoryId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      "imageUrl": "https://avatars.dzeninfra.ru/get-zen_doc/3323992/pub_6228b62712a9546b1fb891a3_6228c4516fb7261f1984ea56/scale_1200",
-      "price": 333,
-      "address": "г. Севастополь"
+    return this._http.post(`${environment.apiUrl}/Advert`,
+      {
+        "name": newAdData.name,
+        "description": newAdData.description,
+        "categoryId": newAdData.category.id,
+        "price": newAdData.price,
+        "address": newAdData.address
     })
+  }
+
+  deleteAd(adId: string | undefined) {
+    return this._http.delete(`${environment.apiUrl}/Advert/${adId}`)
   }
 
   // getAdDetails() {

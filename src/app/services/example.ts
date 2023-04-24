@@ -9,8 +9,15 @@ export const example: IAd[] = [
     price: 109.95,
     imageUrl: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
     address: 'г. Бобруйск',
-    createdAt: 'Сегодня',
-    isActive: true
+    createdAt: `${Date.now()}`,
+    isActive: true,
+    category: {
+      id: "string",
+      parentId: "string | null",
+      name: "examples",
+      isActive: true,
+      createdAt: `${Date.now()}`
+    }
 
   },
   {
@@ -20,8 +27,15 @@ export const example: IAd[] = [
     price: 20000,
     imageUrl: '/assets/images/cards-examples/guitar.jpg',
     address: 'г. Ейск',
-    createdAt: 'Завтра',
-    isActive: true
+    createdAt: '2007',
+    isActive: true,
+    category: {
+      id: "string",
+      parentId: "string | null",
+      name: "examples",
+      isActive: true,
+      createdAt: `${Date.now()}`
+    }
 
   },
   {
@@ -31,8 +45,15 @@ export const example: IAd[] = [
     price: 109.95,
     imageUrl: '/assets/images/cards-examples/girl.jpg',
     address: 'с. Бельдяшки',
-    createdAt: 'Вчера',
-    isActive: true
+    createdAt: `${Date.now()}`,
+    isActive: true,
+    category: {
+      id: "string",
+      parentId: "string | null",
+      name: "examples",
+      isActive: true,
+      createdAt: `${Date.now()}`
+    }
 
   }
 ]

@@ -46,6 +46,7 @@
   }
 
   &__photo-container {
+    position: relative;
     height: 240px;
     max-width: 100%;
     display: flex;
@@ -62,8 +63,33 @@
     }
   }
 
-  img {
+  //img {
+  //  width: 100%;
+  //  object-fit: contain;
+  //}
+
+  &__photo {
     width: 100%;
-    object-fit: contain;
+   object-fit: cover;
+    position: center;
+
+  }
+}
+
+.delete-ad {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: gray;
+
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+
+  &:hover {
+    transition: ease-in .1s;
+    opacity: .9;
+    cursor: pointer;
   }
 }
