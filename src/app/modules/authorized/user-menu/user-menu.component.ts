@@ -25,7 +25,7 @@ export class UserMenuComponent implements OnInit {
     private messageService: MessageService,
     public dialogService: DialogService,
   ) {
-    // this._auth.user$.subscribe(value => console.log(value))
+    console.log(localStorage.getItem('userName'))
   }
 
   isLoggedIn$ = this._auth.user$

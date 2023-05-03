@@ -14,9 +14,12 @@ export class NavigationComponent implements OnInit {
   constructor(
     private _adsService: AdsService
   ) {
+
+
   }
 
   onCategoriesBtnClick() {
+
   }
 
   categories!: ICategory[]
@@ -24,13 +27,17 @@ export class NavigationComponent implements OnInit {
   formGroup!: FormGroup
 
   ngOnInit() {
+
     this.formGroup = new FormGroup({
       selectedCategory: new FormControl<object | null>(null)
     })
 
     this._adsService.getCategories().subscribe((data) => {
+      console.log(data)
       this.categories = data
     })
+
+
 
 //     this.categories = [
 //   {

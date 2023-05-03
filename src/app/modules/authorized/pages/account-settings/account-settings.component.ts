@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./account-settings.component.scss']
 })
 export class AccountSettingsComponent {
-  name: string = 'Алексей'
+  name: string | null = localStorage.getItem('userName')
   phone: number = 978
   checkVisible: string = 'display: flex'
   address: string = 'г. Севастополь, ул Большая Морская, д 23'

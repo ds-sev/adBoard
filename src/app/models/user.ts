@@ -1,5 +1,12 @@
+import { IClaim } from './claim'
+
 export interface User {
-  email: string
+  id: string
   login: string
-  password: string
+  email: string
+  isBlocked: boolean
+  isAuthenticated: boolean
+  scheme: string | null
+  claims: IClaim | null
+  // password: string
 }

@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
   signInForm!: FormGroup
   submitted = false
   isBtnActive!: boolean
+  checked!: boolean
 
   constructor(
     private _router: Router,
@@ -22,13 +23,19 @@ export class SignInComponent implements OnInit {
     private dialogService: DialogService,
     private readonly _dialogRef: DynamicDialogRef,
     private _authService: AuthService,
-  ) {}
+  ) {
+
+
+  }
 
   ngOnInit() {
     this.signInForm = this._formBuilder.group({
       login: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      rememberMeCheckbox: [false]
     })
+
+
 
     this.signInForm.valueChanges.subscribe(value => {
       if (value.login === '' || value.password === '') {
@@ -63,6 +70,10 @@ export class SignInComponent implements OnInit {
       return
     }
 
+
+
+
+
     this._authService.login(this.form['login'].value, this.form['password'].value)
     .pipe(first())
     .subscribe({
@@ -70,6 +81,8 @@ export class SignInComponent implements OnInit {
         this._router.navigate(['home']).then()
         this._dialogRef.close()
       },
+
+
 
       // error: error => {
       //   this._alertService.error(error)

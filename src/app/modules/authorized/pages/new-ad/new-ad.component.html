@@ -1,5 +1,5 @@
 <section class="_container">
-  <form [formGroup]="newAdForm" class="new-ad__input-label" (submit)="onSubmit()">
+  <form [formGroup]="newAdForm" class="new-ad__input-label">
     <div class="new-ad-container">
       <h2 class="section__title">Новое объявление</h2>
       <div style="padding-bottom: 8px; width: 416px">
@@ -39,10 +39,11 @@
           <img src="/assets/images/icons/new-ad-image-icon.svg" alt="button-icon" style="margin-right: 8px">
           Добавить картинки
         </button>
-<!--         <p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" -->
-<!--                       (onUpload)="onUploadBtnClick($event)" [auto]="true" -->
-<!--                       chooseLabel="Browse"></p-fileUpload> -->
+
+
         <ng-container *ngIf="!imagePreview; else preview">
+
+
         <p>Максимум 10 картинок в формате jpeg, png или heic</p>
         </ng-container>
         <ng-template
@@ -57,7 +58,7 @@
                      currency="RUB"
                      [minFractionDigits]="0"
                      formControlName="price"></p-inputNumber>
-      <button pButton class="new-ad__create-btn new-ad__input-label">Разместить
+      <button pButton class="new-ad__create-btn new-ad__input-label" (click)="onSubmit()">Разместить
         объявление
       </button>
       <p class="new-ad__agreement">

@@ -14,14 +14,14 @@
       <img class="ad-details__image_large" [src]="adData.imageUrl" alt="">
     </div>
     <div class="ad-details__preview-img-container">
-      <img class="ad-details__image_small" src="/src/assets/images/cards-examples/guitar.jpg" alt="">
-      <img class="ad-details__image_small" src="/src/assets/images/cards-examples/guitar.jpg" alt="">
-      <img class="ad-details__image_small" src="/src/assets/images/cards-examples/guitar.jpg" alt="">
-      <img class="ad-details__image_small" src="/src/assets/images/cards-examples/guitar.jpg" alt="">
+      <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
+      <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
+      <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
+      <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
     </div>
   </div>
   <div>
-    <p class="ad-details__text_price">{{adData.price | number:' ':'fr-FR'}} ₽</p>
+    <p class="ad-details__text_price">{{adData.price | number:''}} ₽</p>
     <button class="phone-button" pButton (click)="onPhoneBtnClick()">
       <div class="phone-button__icon"></div>
       Показать номер телефона
@@ -32,10 +32,7 @@
       <div class="link__icon"></div>
     </a>
     <p class="ad-details__text_description-heading">Описание</p>
-    <p class="ad-details__text_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-      voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-      consequatur illum incidunt iure neque
-      repudiandae.</p>
+    <p class="ad-details__text_description">{{adData.description}}</p>
     <p-dialog [(visible)]="displayModal" [modal]="true" [dismissableMask]="true" [header]="'Пользователь'">
       <app-seller-info-modal></app-seller-info-modal>
     </p-dialog>

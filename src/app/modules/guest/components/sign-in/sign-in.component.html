@@ -16,7 +16,8 @@
   </div>
   <div class="auth-form__options-container">
     <div class="auth-form__checkbox">
-      <p-checkbox value="Запомнить меня" inputId="remember-me"></p-checkbox>
+      <p-checkbox value="Запомнить меня" [(ngModel)]="checked" [binary]="true" formControlName="rememberMeCheckbox"
+                  inputId="remember" ></p-checkbox>
       <label>Запомнить меня</label>
     </div>
     <p class="auth-form__tip"><a (click)="show()">Забыли пароль?</a></p>
