@@ -2,11 +2,7 @@
   <div>
     <nav aria-label="Breadcrumb">
       <ul class="ad-details__text_breadcrumbs">
-        <li><a href="#">Город</a></li>
-        <li><a href="#">Категория</a></li>
-        <li><a href="#">Подкатегория</a></li>
-        <li><a href="#">Тип</a></li>
-        <li><span aria-current="page">Выбранное объявление</span></li>
+        <li><a routerLink="#">{{category}}</a></li>
       </ul>
     </nav>
     <h4 class="ad-details__title">{{adData.name}}</h4>
@@ -14,9 +10,6 @@
       <img class="ad-details__image_large" [src]="adData.imageUrl" alt="">
     </div>
     <div class="ad-details__preview-img-container">
-      <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
-      <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
-      <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
       <img class="ad-details__image_small" src="{{adData.imageUrl}}" alt="">
     </div>
   </div>

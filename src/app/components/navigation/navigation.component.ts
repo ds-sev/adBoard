@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup } from '@angular/forms'
 import { ICategory } from '../../models/category'
 import { AdsService } from '../../services/ads.service'
+import { IAd } from '../../models/ad'
+import { retry } from 'rxjs'
+import { provideRouter, Router } from '@angular/router'
+import { FilteredComponent } from '../../modules/global/pages/filtered/filtered.component'
 
 @Component({
   selector: 'app-navigation',
@@ -12,98 +16,48 @@ import { AdsService } from '../../services/ads.service'
 export class NavigationComponent implements OnInit {
 
   constructor(
-    private _adsService: AdsService
+    private _adsService: AdsService,
+    private _router: Router
   ) {
-
-
   }
 
   onCategoriesBtnClick() {
-
   }
 
   categories!: ICategory[]
   selectedCategory: any
-  formGroup!: FormGroup
+  findByCategory!: FormGroup
+  findByName!: FormGroup
+  filteredAds: IAd[] = []
 
   ngOnInit() {
 
-    this.formGroup = new FormGroup({
+    this.findByCategory = new FormGroup({
       selectedCategory: new FormControl<object | null>(null)
     })
 
-    this._adsService.getCategories().subscribe((data) => {
-      console.log(data)
-      this.categories = data
+    this.findByName = new FormGroup({
+      name: new FormControl<string>('')
     })
 
+    this._adsService.getCategories().subscribe((data) => {
+      this.categories = data
+    })
+  }
 
-
-//     this.categories = [
-//   {
-//     name: '{P{P}',
-//     code: 'AU',
-//     states: [
-//
-//     ]
-//   },
-//   {
-//     name: 'Недвижимость',
-//     code: 'CA',
-//     states: [
-//       {
-//         name: 'Quebec',
-//         cities: [
-//           { cname: 'Montreal', code: 'C-MO' },
-//           { cname: 'Quebec City', code: 'C-QU' }
-//         ]
-//       },
-//       {
-//         name: 'Ontario',
-//         cities: [
-//           { cname: 'Ottawa', code: 'C-OT' },
-//           { cname: 'Toronto', code: 'C-TO' }
-//         ]
-//       }
-//     ]
-//   },
-//   {
-//     name: 'Работа',
-//     code: 'US',
-//     states: [
-//       {
-//         name: 'California',
-//         cities: [
-//           { cname: 'Los Angeles', code: 'US-LA' },
-//           { cname: 'San Diego', code: 'US-SD' },
-//           { cname: 'San Francisco', code: 'US-SF' }
-//         ]
-//       },
-//       {
-//         name: 'Florida',
-//         cities: [
-//           { cname: 'Jacksonville', code: 'US-JA' },
-//           { cname: 'Miami', code: 'US-MI' },
-//           { cname: 'Tampa', code: 'US-TA' },
-//           { cname: 'Orlando', code: 'US-OR' }
-//         ]
-//       },
-//       {
-//         name: 'Texas',
-//         cities: [
-//           { cname: 'Austin', code: 'US-AU' },
-//           { cname: 'Dallas', code: 'US-DA' },
-//           { cname: 'Houston', code: 'US-HO' }
-//         ]
-//       }
-//     ]
-//   },
-//   {
-//     name: 'Услуги',
-//     code: 'US',
-//     states: []
-//   }
-// ];
+  onFindBtnClick() {
+    this._adsService.getAdsList()
+    .subscribe((ads) => {
+        ads.filter((ad) => {
+          ad.name.toLowerCase().includes(
+            this.findByName.controls['name'].value.toLowerCase())
+            ? this.filteredAds.push(ad)
+            : ''
+        })
+      }
+    )
+    console.log(this.filteredAds)
+    this._router.navigate(['home']).then()
 
   }
 }

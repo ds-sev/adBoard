@@ -9,7 +9,7 @@ export interface IAd {
   address: string,
   createdAt: string,
   isActive: boolean,
-  category: ICategory
+  categoryId: string
 }
 
 

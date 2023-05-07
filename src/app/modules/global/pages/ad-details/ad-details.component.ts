@@ -3,27 +3,24 @@ import { DialogService } from 'primeng/dynamicdialog'
 import { IAd } from '../../../../models/ad'
 import { AdsService } from '../../../../services/ads.service'
 import { ActivatedRoute } from '@angular/router'
+import { CategoriesService } from '../../../../services/categories.service'
 
 @Component({
   selector: 'app-ad-details',
   templateUrl: './ad-details.component.html',
   styleUrls: ['./ad-details.component.scss']
 })
+
 export class AdDetailsComponent implements OnInit {
-
   adData: IAd | undefined
-
-  constructor(
-    public dialogService: DialogService,
-    private _adsService: AdsService,
-    private _route: ActivatedRoute
-  ) {
-  }
-
+  category!: string
   displayModal: boolean = false
 
-  onPhoneBtnClick() {
-    this.displayModal = true
+  constructor(
+    private _adsService: AdsService,
+    private _category: CategoriesService,
+    private _route: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
@@ -33,7 +30,14 @@ export class AdDetailsComponent implements OnInit {
 
     this._adsService.getAd(adIdFromRoute).subscribe((data) => {
       this.adData = data
+      console.log(data)
+      this._category.getCategoryInfo(data.categoryId).subscribe((data) => {
+        this.category = data.name
+      })
     })
+  }
+  onPhoneBtnClick() {
+    this.displayModal = true
   }
 }
 

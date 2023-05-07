@@ -11,13 +11,7 @@ export const example: IAd[] = [
     address: 'г. Бобруйск',
     createdAt: `${Date.now()}`,
     isActive: true,
-    category: {
-      id: "string",
-      parentId: "string | null",
-      name: "examples",
-      isActive: true,
-      createdAt: `${Date.now()}`
-    }
+    categoryId: "323c7129-7b4d-4876-a553-742099b6829d"
 
   },
   {
@@ -29,13 +23,7 @@ export const example: IAd[] = [
     address: 'г. Ейск',
     createdAt: '2007',
     isActive: true,
-    category: {
-      id: "string",
-      parentId: "string | null",
-      name: "examples",
-      isActive: true,
-      createdAt: `${Date.now()}`
-    }
+    categoryId: "323c7129-7b4d-4876-a553-742099b6829d"
 
   },
   {
@@ -47,13 +35,7 @@ export const example: IAd[] = [
     address: 'с. Бельдяшки',
     createdAt: `${Date.now()}`,
     isActive: true,
-    category: {
-      id: "string",
-      parentId: "string | null",
-      name: "examples",
-      isActive: true,
-      createdAt: `${Date.now()}`
-    }
+    categoryId: "323c7129-7b4d-4876-a553-742099b6829d"
 
   }
 ]

@@ -29,7 +29,7 @@ export class AdsService {
       {
         name: newAdData.name,
         description: newAdData.description,
-        categoryId: newAdData.category.id,
+        categoryId: newAdData.categoryId,
         imageUrl: `${environment.apiUrl}/File/${this.newImageId}`,
         price: newAdData.price,
         address: newAdData.address

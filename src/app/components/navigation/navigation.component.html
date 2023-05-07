@@ -2,7 +2,7 @@
   <div class="navigation__container _container">
     <h1 class="navigation__title"><a style="color: inherit" [routerLink]="''">Доска объявлений</a></h1>
     <div class="navigation__low-res-container">
-      <form [formGroup]="formGroup">
+      <form [formGroup]="findByCategory">
         <p-cascadeSelect formControlName="selectedCategory"
                          [options]="categories"
                          optionLabel="name"
@@ -12,12 +12,13 @@
                          placeholder="Все категории"
         ></p-cascadeSelect>
       </form>
-      <form class="navigation__form" method="get">
+      <form class="navigation__form" method="get" [formGroup]="findByName">
         <input class="navigation__form-field" name="search" placeholder="Поиск по объявлениям" type="search"
-               required>
-        <button type="submit" class="navigation__form-button button">
-          Найти<img src="../../../assets/images/icons/find-icon.svg" alt="find-icon"></button>
+               required formControlName="name">
+        <button class="navigation__form-button button" (click)="onFindBtnClick()">
+          Найти<img ngSrc="/assets/images/icons/find-icon.svg" alt="find-icon" height="16" width="16"></button>
       </form>
     </div>
   </div>
 </section>
+<app-recommendations [filteredAds]="filteredAds" ></app-recommendations>

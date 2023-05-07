@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
 import { RulesComponent } from './pages/rules/rules.component'
+import { FilteredComponent } from './pages/filtered/filtered.component'
 
 // const routes: Routes = [
 //   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
     path: '', children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: RecommendationsComponent},
-      {path: 'rules', component: RulesComponent}
+      {path: 'rules', component: RulesComponent},
+      {path: 'filter', component: FilteredComponent}
     ]
   }
 ];

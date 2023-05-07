@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { ICategory } from '../models/category'
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class CategoriesService {
     return this._http.get<ICategory[]>(this.url)
   }
 
-  getCategory(id: number) {
-    return this._http.get<ICategory>(`$(this.url)/${id}`)
+  getCategoryInfo(id: string) {
+    return this._http.get<ICategory>(`${environment.apiUrl}/Category/${id}`)
   }
 
 }
