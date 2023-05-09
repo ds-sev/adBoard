@@ -40,7 +40,7 @@ export class AdCardComponent {
 
 @NgModule({
   declarations: [AdCardComponent],
-  imports: [CurrencyPipe, NgIf, DatePipe, GlobalModule, ButtonModule],
+  imports: [CurrencyPipe, NgIf, DatePipe, ButtonModule],
   exports: [AdCardComponent]
 })
 

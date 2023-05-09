@@ -41,7 +41,7 @@ import { GlobalModule } from './modules/global/global.module'
     FooterComponent,
     NavigationComponent,
     AccountSettingsComponent,
-    RecommendationsComponent,
+    // RecommendationsComponent,
     UserMenuComponent,
     ModalConfirmComponent,
   ],
@@ -66,13 +66,14 @@ import { GlobalModule } from './modules/global/global.module'
     ToastModule,
     MessagesModule,
     PasswordModule,
-    AddCardComponentModule,
+    // AddCardComponentModule,
     DropdownModule,
     NgOptimizedImage,
     GlobalModule,
   ],
   providers: [DialogService],
   exports: [
+    // RecommendationsComponent
   ],
   bootstrap: [AppComponent]
 })

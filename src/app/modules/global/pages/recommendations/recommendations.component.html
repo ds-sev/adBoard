@@ -1,11 +1,11 @@
 <section class="ads-section _container">
-  <h3 class="section__title">Рекомендации для вас</h3>
+  <h3 class="section__title">{{pageTitle}}</h3>
   <div class="ad-cards">
     <ng-container *ngIf="isLoading">
       <p>Tut budet spinner</p>
     </ng-container>
     <ng-container *ngIf="!isLoading">
-      <app-ad-card class="ad-card-container" *ngFor="let ad of ads; let i = index" [ad]="ad"></app-ad-card>
+      <app-ad-card class="ad-card-container" *ngFor="let ad of adsList; let i = index" [ad]="ad"></app-ad-card>
     </ng-container>
   </div>
   <menu>

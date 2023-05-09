@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
 import { RulesComponent } from './pages/rules/rules.component'
-import { FilteredComponent } from './pages/filtered/filtered.component'
+import { HomeComponent } from './pages/home/home.component'
+import { FilteredAdsComponent } from './pages/filtered-ads/filtered-ads.component'
 
 // const routes: Routes = [
 //   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,9 +16,9 @@ const routes: Routes = [
   {
     path: '', children: [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
-      {path: 'home', component: RecommendationsComponent},
+      {path: 'home', component: HomeComponent},
       {path: 'rules', component: RulesComponent},
-      {path: 'filter', component: FilteredComponent}
+      {path: 'filter', component: FilteredAdsComponent}
     ]
   }
 ];

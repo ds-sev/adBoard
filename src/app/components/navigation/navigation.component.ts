@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Output } from '@angular/core'
 import { FormControl, FormGroup } from '@angular/forms'
 import { ICategory } from '../../models/category'
 import { AdsService } from '../../services/ads.service'
-import { IAd } from '../../models/ad'
-import { retry } from 'rxjs'
-import { provideRouter, Router } from '@angular/router'
-import { FilteredComponent } from '../../modules/global/pages/filtered/filtered.component'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-navigation',
@@ -28,7 +25,7 @@ export class NavigationComponent implements OnInit {
   selectedCategory: any
   findByCategory!: FormGroup
   findByName!: FormGroup
-  filteredAds: IAd[] = []
+  request!: string
 
   ngOnInit() {
 
@@ -46,18 +43,7 @@ export class NavigationComponent implements OnInit {
   }
 
   onFindBtnClick() {
-    this._adsService.getAdsList()
-    .subscribe((ads) => {
-        ads.filter((ad) => {
-          ad.name.toLowerCase().includes(
-            this.findByName.controls['name'].value.toLowerCase())
-            ? this.filteredAds.push(ad)
-            : ''
-        })
-      }
-    )
-    console.log(this.filteredAds)
-    this._router.navigate(['home']).then()
-
+    this.request = this.findByName.controls['name'].value
+    this._router.navigate(['filter'], {queryParams: {request: this.request}}).then()
   }
 }
