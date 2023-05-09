@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { IAd } from '../../../../models/ad'
-import { request } from 'express'
 import { Subscription } from 'rxjs'
 import { ActivatedRoute } from '@angular/router'
 import { AdsService } from '../../../../services/ads.service'
@@ -11,40 +10,48 @@ import { AdsService } from '../../../../services/ads.service'
   styleUrls: ['./filtered-ads.component.scss']
 })
 export class FilteredAdsComponent implements OnInit {
-  adsList: IAd[] = []
   request!: string
   filteredAds: IAd[] = []
+  pageTitle!: string
+  option!: string
+
   private _querySubscription!: Subscription
-  private _routeSubscription!: Subscription
 
   constructor(
     private _route: ActivatedRoute,
-    private _adsService: AdsService
-    ) {
-
-
+    private _adsService: AdsService,
+  ) {
     this._querySubscription = _route.queryParams.subscribe((queryParam: any) => {
+        this.option = queryParam['option']
         this.request = queryParam['request']
-
-
+        this.pageTitle = queryParam['pageTitle']
       }
     )
   }
-
   ngOnInit() {
-    this._adsService.getAdsList()
-    .subscribe((ads) => {
-        ads.filter((ad) => {
-          ad.name.toLowerCase().includes(
-            this.request.toLowerCase())
-            ? this.filteredAds.push(ad)
-            : ''
+    this.option === 'findByText'
+      ?
+      // find ads by text input
+      this._adsService.getAdsList()
+      .subscribe((ads: IAd[]) => {
+          ads.filter((ad: IAd) => {
+            ad.name.toLowerCase().includes(
+              this.request.toLowerCase())
+              ? this.filteredAds.push(ad)
+              : ''
+          })
+        }
+      )
+      :
+      // find ads by category
+      this._adsService.getAdsList().subscribe((ads: IAd[]) => {
+        ads.forEach((ad: IAd) => {
+          this._adsService.getAd(ad.id).subscribe((adData: IAd) => {
+            if (adData.categoryId === this.request) {
+              this.filteredAds.push(adData)
+            }
+          })
         })
-      }
-    )
-    console.log(this.request)
-    console.log(this.filteredAds)
-    // this._routeSubscription = this.route.params.subscribe
-
+      })
   }
 }

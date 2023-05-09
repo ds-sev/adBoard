@@ -1,7 +1,7 @@
 import { ICategory } from './category'
 
 export interface IAd {
-  id?: string,
+  id: string,
   name: string,
   description: string,
   price?: number,

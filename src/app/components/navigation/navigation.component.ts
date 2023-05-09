@@ -22,15 +22,16 @@ export class NavigationComponent implements OnInit {
   }
 
   categories!: ICategory[]
-  selectedCategory: any
+  category!: string
   findByCategory!: FormGroup
   findByName!: FormGroup
-  request!: string
+  request: string = ''
+  selectedCategory!: string
 
   ngOnInit() {
 
     this.findByCategory = new FormGroup({
-      selectedCategory: new FormControl<object | null>(null)
+      category: new FormControl<string>('')
     })
 
     this.findByName = new FormGroup({
@@ -44,6 +45,24 @@ export class NavigationComponent implements OnInit {
 
   onFindBtnClick() {
     this.request = this.findByName.controls['name'].value
-    this._router.navigate(['filter'], {queryParams: {request: this.request}}).then()
+    this._router.navigate(['filter'], {
+      queryParams: {
+        option: 'findByText',
+        request: this.request,
+        pageTitle: `Объявления по запросу «${this.request}»:`
+      }
+    }).then()
+    this.findByName.reset()
+  }
+
+  selectCategory() {
+    this.selectedCategory = this.findByCategory.controls['category'].value.id
+    this._router.navigate(['filter'], {
+      queryParams: {
+        option: 'findByCategory',
+        request: this.selectedCategory,
+        pageTitle: `Объявления в категории «${this.findByCategory.controls['category'].value.name}»:`
+      }}).then()
+    this.findByCategory.reset()
   }
 }

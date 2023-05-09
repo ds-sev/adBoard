@@ -3,11 +3,12 @@
     <h1 class="navigation__title"><a style="color: inherit" [routerLink]="''">Доска объявлений</a></h1>
     <div class="navigation__low-res-container">
       <form [formGroup]="findByCategory">
-        <p-cascadeSelect formControlName="selectedCategory"
+        <p-cascadeSelect formControlName="category"
+                         (onChange)="selectCategory()"
                          [options]="categories"
                          optionLabel="name"
                          optionGroupLabel="name"
-                         [optionGroupChildren]="['categories', 'parentId']"
+                         [optionGroupChildren]="['category', 'parentId']"
                          [style]="{ minWidth: '14rem' }"
                          placeholder="Все категории"
         ></p-cascadeSelect>
