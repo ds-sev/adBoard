@@ -19,8 +19,8 @@ const routes: Routes = [
       {path: 'home', component: HomeComponent},
       {path: 'rules', component: RulesComponent},
       {path: 'filter', component: FilteredAdsComponent}
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({

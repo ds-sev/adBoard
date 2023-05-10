@@ -10,14 +10,13 @@ import { Subscription } from 'rxjs'
 })
 export class RecommendationsComponent {
   isLoading: boolean = false
-  ads!: IAd[]
-  // adsSubscription!: Subscription
+
   @Input() pageTitle!: string
 
   @Input() adsList!: IAd[];
 
   constructor(private _adService: AdsService) {
-    console.log(this.adsList)
+
   }
   // ngOnInit(): void {
   //   this.adsSubscription = this._adService.getAdsList().subscribe((data) => {
@@ -28,5 +27,9 @@ export class RecommendationsComponent {
   // ngOnDestroy() {
   //   if (this.adsSubscription) this.adsSubscription.unsubscribe()
   // }
+  ngOnInit() {
+    console.log(this.adsList)
+    console.log(this.pageTitle)
+  }
 
 }

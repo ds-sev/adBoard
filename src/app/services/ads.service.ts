@@ -3,12 +3,15 @@ import { HttpClient } from '@angular/common/http'
 import { IAd } from '../models/ad'
 import { environment } from '../../environments/environment.development'
 import { ICategory } from '../models/category'
+import { request } from 'express'
+import { Observable, Subscription } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdsService {
   newImageId!: object | null
+  filteredAds: IAd[] = []
   constructor(private _http: HttpClient) {
   }
 // get all adverts from BD
@@ -35,6 +38,7 @@ export class AdsService {
         address: newAdData.address
     })
   }
+  
 // upload new image for advert and get id
   imageUpload(newAdImage: File) {
     const imageData = new FormData()

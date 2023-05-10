@@ -16,7 +16,8 @@
       <form class="navigation__form" method="get" [formGroup]="findByName">
         <input class="navigation__form-field" name="search" placeholder="Поиск по объявлениям" type="search"
                required formControlName="name">
-        <button class="navigation__form-button button" (click)="onFindBtnClick()">
+        <button class="navigation__form-button button" [disabled]="!findByName.valid"
+                (click)="onFindBtnClick()">
           Найти<img ngSrc="/assets/images/icons/find-icon.svg" alt="find-icon" height="16" width="16"></button>
       </form>
     </div>

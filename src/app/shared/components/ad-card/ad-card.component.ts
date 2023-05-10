@@ -5,6 +5,9 @@ import { CurrencyPipe, DatePipe, NgIf } from '@angular/common'
 import { GlobalModule } from '../../../modules/global/global.module'
 import { ButtonModule } from 'primeng/button'
 import { AdsService } from '../../../services/ads.service'
+import { ThousandsSeparatorPipe } from '../../pipes/thousands-separator.pipe'
+import { SharedModule } from '../../shared.module'
+
 
 @Component({
   selector: 'app-ad-card',
@@ -40,7 +43,7 @@ export class AdCardComponent {
 
 @NgModule({
   declarations: [AdCardComponent],
-  imports: [CurrencyPipe, NgIf, DatePipe, ButtonModule],
+  imports: [CurrencyPipe, NgIf, DatePipe, ButtonModule, SharedModule],
   exports: [AdCardComponent]
 })
 

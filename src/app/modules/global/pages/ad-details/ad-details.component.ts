@@ -19,7 +19,8 @@ export class AdDetailsComponent implements OnInit {
   constructor(
     private _adsService: AdsService,
     private _category: CategoriesService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+
   ) {
   }
 

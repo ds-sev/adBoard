@@ -3,6 +3,9 @@
   display: grid;
   grid-template-columns: 8fr 4fr;
   column-gap: 24px;
+  @media screen and (max-width: 714px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .ad-details {
@@ -92,6 +95,8 @@
 }
 
 .phone-button {
+  padding: 0 10px;
+
   margin-top: 16px;
   margin-bottom: 40px;
   display: flex;
@@ -106,12 +111,25 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-
+  background-color: #3b82f6;
   &__icon {
     background-image: url('../../../../../assets/images/icons/phone_icon.svg');
     background-size: cover;
     width: 28px;
     height: 28px;
+  }
+  &__text {
+    color: white;
+    @media screen and (max-width: 1012px) {
+      max-width: 160px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @media screen and (max-width: 714px) {
+      max-width: 100%;
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
 }
 

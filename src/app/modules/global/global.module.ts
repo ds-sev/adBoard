@@ -10,6 +10,9 @@ import { HomeComponent } from './pages/home/home.component'
 import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
 import { AddCardComponentModule } from '../../shared/components/ad-card/ad-card.component';
 import { FilteredAdsComponent } from './pages/filtered-ads/filtered-ads.component'
+import { AppModule } from '../../app.module'
+import { SharedModule } from '../../shared/shared.module'
+
 
 @NgModule({
   declarations: [AdDetailsComponent,
@@ -17,7 +20,7 @@ import { FilteredAdsComponent } from './pages/filtered-ads/filtered-ads.componen
     RulesComponent,
     HomeComponent,
     RecommendationsComponent,
-    FilteredAdsComponent
+    FilteredAdsComponent,
   ],
   exports: [
     AdDetailsComponent,
@@ -32,6 +35,7 @@ import { FilteredAdsComponent } from './pages/filtered-ads/filtered-ads.componen
     DialogModule,
     NgOptimizedImage,
     AddCardComponentModule,
+    SharedModule,
 
   ]
 })

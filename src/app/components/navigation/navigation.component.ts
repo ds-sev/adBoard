@@ -1,8 +1,9 @@
-import { Component, OnInit, Output } from '@angular/core'
-import { FormControl, FormGroup } from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
+import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ICategory } from '../../models/category'
 import { AdsService } from '../../services/ads.service'
 import { Router } from '@angular/router'
+import { BehaviorSubject } from 'rxjs'
 
 @Component({
   selector: 'app-navigation',
@@ -11,31 +12,25 @@ import { Router } from '@angular/router'
 })
 
 export class NavigationComponent implements OnInit {
-
-  constructor(
-    private _adsService: AdsService,
-    private _router: Router
-  ) {
-  }
-
-  onCategoriesBtnClick() {
-  }
-
   categories!: ICategory[]
   category!: string
   findByCategory!: FormGroup
   findByName!: FormGroup
   request: string = ''
   selectedCategory!: string
+  constructor(
+    private _adsService: AdsService,
+    private _router: Router
+  ) {
+  }
 
   ngOnInit() {
-
     this.findByCategory = new FormGroup({
       category: new FormControl<string>('')
     })
 
     this.findByName = new FormGroup({
-      name: new FormControl<string>('')
+      name: new FormControl<string>('', [Validators.minLength(3),Validators.required])
     })
 
     this._adsService.getCategories().subscribe((data) => {
@@ -50,7 +45,7 @@ export class NavigationComponent implements OnInit {
         option: 'findByText',
         request: this.request,
         pageTitle: `Объявления по запросу «${this.request}»:`
-      }
+      },
     }).then()
     this.findByName.reset()
   }

@@ -14,14 +14,20 @@
     </div>
   </div>
   <div>
-    <p class="ad-details__text_price">{{adData.price | number:''}} ₽</p>
-    <button class="phone-button" pButton (click)="onPhoneBtnClick()">
+    <ng-container *ngIf="adData.price || adData.price === 0; else noPrice">
+      <p class="ad-details__text_price">{{adData.price | thousandsSeparator}} ₽</p>
+    </ng-container>
+    <ng-template #noPrice>
+      <p class="ad-details__text_price">Бесплатно</p>
+    </ng-template>
+    <button class="phone-button button" (click)="onPhoneBtnClick()">
       <div class="phone-button__icon"></div>
-      Показать номер телефона
+      <p class="phone-button__text">Показать номер телефона</p>
+
     </button>
     <p class="ad-details__text_description-heading">Адрес</p>
     <p class="ad-details__text_description">{{adData.address}}</p>
-    <a class="link" href="#">Открыть на карте
+    <a class="link" href="https://yandex.ru/maps/" target="_blank">Открыть на карте
       <div class="link__icon"></div>
     </a>
     <p class="ad-details__text_description-heading">Описание</p>

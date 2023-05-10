@@ -32,7 +32,7 @@ import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm
 import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component'
 import { DropdownModule } from 'primeng/dropdown'
 import { NgOptimizedImage } from '@angular/common'
-import { GlobalModule } from './modules/global/global.module'
+import { GlobalModule } from './modules/global/global.module';
 
 @NgModule({
   declarations: [
@@ -69,7 +69,7 @@ import { GlobalModule } from './modules/global/global.module'
     // AddCardComponentModule,
     DropdownModule,
     NgOptimizedImage,
-    GlobalModule,
+    // GlobalModule,
   ],
   providers: [DialogService],
   exports: [
