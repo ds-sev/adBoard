@@ -1,3 +1,5 @@
+import { ICategory } from './category'
+
 export interface IAd {
   id: string,
   name: string,
@@ -7,7 +9,8 @@ export interface IAd {
   address: string,
   createdAt: string,
   isActive: boolean,
-  categoryId: string
+  categoryId: string,
+  category?: ICategory
 }
 
 
