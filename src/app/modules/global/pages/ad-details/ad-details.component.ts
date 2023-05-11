@@ -19,7 +19,6 @@ export class AdDetailsComponent implements OnInit {
     private _adsService: AdsService,
     private _category: CategoriesService,
     private _route: ActivatedRoute,
-
   ) {
   }
 
@@ -30,7 +29,6 @@ export class AdDetailsComponent implements OnInit {
 
     this._adsService.getAd(adIdFromRoute).subscribe((data) => {
       this.adData = data
-      console.log(data)
       this._category.getCategoryInfo(data.categoryId).subscribe((data) => {
         this.category = data.name
       })

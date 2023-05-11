@@ -43,8 +43,6 @@ export class NewAdComponent implements OnInit {
     })
   }
 
-  // get form() { return this.newAdForm.controls }
-
   triggerClick() {
     this.inputRef.nativeElement.click()
   }

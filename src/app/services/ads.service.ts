@@ -21,7 +21,6 @@ export class AdsService {
 
 // create new advert
   newAd(newAdData: IAd) {
-    console.log(newAdData)
     return this._http.post(`${environment.apiUrl}/Advert`,
       {
         name: newAdData.name,

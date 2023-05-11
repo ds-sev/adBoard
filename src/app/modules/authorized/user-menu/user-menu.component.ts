@@ -14,21 +14,18 @@ import { SignInComponent } from '../../guest/components/sign-in/sign-in.componen
 export class UserMenuComponent implements OnInit {
   items!: MenuItem[]
 
-  private _dialogRef!: DynamicDialogRef
-
   name: string | null = localStorage.getItem('userName')
   visible!: boolean
+  isLoggedIn$ = this._auth.user$
+
+  private _dialogRef!: DynamicDialogRef
 
   constructor(
     private router: Router,
     private _auth: AuthService,
-    private messageService: MessageService,
     public dialogService: DialogService,
   ) {
-    console.log(localStorage.getItem('userName'))
   }
-
-  isLoggedIn$ = this._auth.user$
 
   logOut() {
     this.visible = true

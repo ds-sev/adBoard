@@ -9,10 +9,8 @@ import { ILocalUserData } from '../../../../models/local-user-data'
   styleUrls: ['./account-settings.component.scss']
 })
 export class AccountSettingsComponent implements OnInit {
-  checkVisible: string = 'display: flex'
-
+  checkVisible!: string
   localUserData!: ILocalUserData | null
-
   isPassBtnDisabled: boolean = true
 
   accSettingsForm!: FormGroup
@@ -48,8 +46,6 @@ export class AccountSettingsComponent implements OnInit {
         value.oldPass !== '' &&
         value.newPass === value.newPassConfirm);
     })
-
-
   }
   get accForm() {
     return this.accSettingsForm.controls
@@ -60,14 +56,11 @@ export class AccountSettingsComponent implements OnInit {
   }
 
   onAccInfoSubmit() {
-    // console.log({this.accForm['login'].value, this.accForm['phone'].value, this.accForm['address'].value})
     this._userService.saveInfo({
       login: this.accForm['login'].value,
       phone: this.accForm['phone'].value,
       address: this.accForm['address'].value}
     )
-
-
+    this.checkVisible = 'display: flex'
   }
-
 }
