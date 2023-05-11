@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._adsService.getAdsList().subscribe((data) => {
       this.allAds = data.reverse()
-      // this.isLoading = false
     })
   }
 }
