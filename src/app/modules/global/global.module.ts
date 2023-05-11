@@ -10,9 +10,7 @@ import { HomeComponent } from './pages/home/home.component'
 import { RecommendationsComponent } from './pages/recommendations/recommendations.component'
 import { AddCardComponentModule } from '../../shared/components/ad-card/ad-card.component';
 import { FilteredAdsComponent } from './pages/filtered-ads/filtered-ads.component'
-import { AppModule } from '../../app.module'
 import { SharedModule } from '../../shared/shared.module'
-
 
 @NgModule({
   declarations: [AdDetailsComponent,
@@ -36,9 +34,7 @@ import { SharedModule } from '../../shared/shared.module'
     NgOptimizedImage,
     AddCardComponentModule,
     SharedModule,
-
   ]
 })
 
-export class GlobalModule {
-}
+export class GlobalModule { }

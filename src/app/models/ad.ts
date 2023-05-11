@@ -1,5 +1,3 @@
-import { ICategory } from './category'
-
 export interface IAd {
   id: string,
   name: string,

@@ -1,13 +1,10 @@
-import { Component, EventEmitter, Input, NgModule, Output } from '@angular/core'
+import { Component, Input, NgModule } from '@angular/core'
 import { IAd } from '../../../models/ad'
 import { Router } from '@angular/router'
 import { CurrencyPipe, DatePipe, NgIf } from '@angular/common'
-import { GlobalModule } from '../../../modules/global/global.module'
 import { ButtonModule } from 'primeng/button'
 import { AdsService } from '../../../services/ads.service'
-import { ThousandsSeparatorPipe } from '../../pipes/thousands-separator.pipe'
 import { SharedModule } from '../../shared.module'
-
 
 @Component({
   selector: 'app-ad-card',
@@ -16,8 +13,8 @@ import { SharedModule } from '../../shared.module'
 })
 
 export class AdCardComponent {
-
   targetAdId!: string | undefined
+  @Input() public ad!: IAd
 
   constructor(
     private router: Router,
@@ -25,20 +22,14 @@ export class AdCardComponent {
     ) {
   }
 
-  @Input() public ad!: IAd
-  @Output() test = new EventEmitter()
-
   onAdClick() {
     this.targetAdId = this.ad.id
     this.router.navigate(['ad', this.ad.id]).then()
   }
 
   onDeleteBtnClick() {
-
-
     this._adsService.deleteAd(this.ad.id).subscribe()
   }
-
 }
 
 @NgModule({

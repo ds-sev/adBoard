@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./modal-confirm.component.scss']
 })
 export class ModalConfirmComponent {
-
 }

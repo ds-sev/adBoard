@@ -59,14 +59,6 @@ export class UserMenuComponent implements OnInit {
     ]
   }
 
-  // update() {
-  //   this.messageService.add({severity: 'success', summary: 'Success', detail: 'Data Updated'})
-  // }
-  //
-  // delete() {
-  //   this.messageService.add({severity: 'warn', summary: 'Delete', detail: 'Data Deleted'})
-  // }
-
   onConfirmBtnClick() {
     this._auth.signOut()
     this.router.navigate(['home']).then()

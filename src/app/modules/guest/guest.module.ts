@@ -9,12 +9,10 @@ import { CheckboxModule } from 'primeng/checkbox'
 import { ButtonModule } from 'primeng/button'
 import { DialogModule } from 'primeng/dialog'
 
-
 @NgModule({
   declarations: [
     SignInComponent,
     SignUpComponent,
-
   ],
   imports: [
     CommonModule,
@@ -26,4 +24,5 @@ import { DialogModule } from 'primeng/dialog'
     DialogModule
   ]
 })
+
 export class GuestModule { }

@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { ICategory } from '../../models/category'
 import { AdsService } from '../../services/ads.service'
 import { Router } from '@angular/router'
-import { BehaviorSubject } from 'rxjs'
+import { CategoriesService } from '../../services/categories.service'
 
 @Component({
   selector: 'app-navigation',
@@ -18,8 +18,10 @@ export class NavigationComponent implements OnInit {
   findByName!: FormGroup
   request: string = ''
   selectedCategory!: string
+
   constructor(
     private _adsService: AdsService,
+    private _categoryService: CategoriesService,
     private _router: Router
   ) {
   }
@@ -30,10 +32,10 @@ export class NavigationComponent implements OnInit {
     })
 
     this.findByName = new FormGroup({
-      name: new FormControl<string>('', [Validators.minLength(3),Validators.required])
+      name: new FormControl<string>('', [Validators.minLength(3), Validators.required])
     })
 
-    this._adsService.getCategories().subscribe((data) => {
+    this._categoryService.getCategoriesList().subscribe((data) => {
       this.categories = data
     })
   }
@@ -57,7 +59,8 @@ export class NavigationComponent implements OnInit {
         option: 'findByCategory',
         request: this.selectedCategory,
         pageTitle: `Объявления в категории «${this.findByCategory.controls['category'].value.name}»:`
-      }}).then()
+      }
+    }).then()
     this.findByCategory.reset()
   }
 }

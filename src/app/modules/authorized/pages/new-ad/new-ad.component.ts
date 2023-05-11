@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { IAd } from '../../../../models/ad'
 import { AdsService } from '../../../../services/ads.service'
 import { AuthService } from '../../../../services/auth.service'
 import { ICategory } from '../../../../models/category'
+import { CategoriesService } from '../../../../services/categories.service'
 
 @Component({
   selector: 'app-new-ad',
@@ -13,32 +13,37 @@ import { ICategory } from '../../../../models/category'
 export class NewAdComponent implements OnInit {
   @ViewChild('input') inputRef!: ElementRef
   image!: File
+  address!: string | null
   imagePreview: string | ArrayBuffer | null = ''
   categories!: ICategory[]
 
   constructor(
     private _formBuilder: FormBuilder,
     private _adsService: AdsService,
+    private _categoryService: CategoriesService,
     private _authService: AuthService
   ) {
   }
   newAdForm!: FormGroup
 
   ngOnInit() {
+    // @ts-ignore
+    this.address = JSON.parse(localStorage.getItem('userInfo')).address
     this.newAdForm = this._formBuilder.group({
-      category: [''],
+      category: ['', Validators.required],
       name: ['', [Validators.required, Validators.minLength(3)]],
       description: [''],
-      address: [''],
+      address: [`${this.address}` || ''],
       price: [null]
     })
 
-    this._adsService.getCategories().subscribe((data) => {
+    this._categoryService.getCategoriesList().subscribe((data) => {
       this.categories = data
+
     })
   }
 
-  get form() { return this.newAdForm.controls }
+  // get form() { return this.newAdForm.controls }
 
   triggerClick() {
     this.inputRef.nativeElement.click()

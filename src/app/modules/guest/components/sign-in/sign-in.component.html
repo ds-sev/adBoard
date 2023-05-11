@@ -4,20 +4,18 @@
     <input class="auth-form__input" pInputText type="login" name="login" required placeholder="Логин"
            formControlName="login">
     <div *ngIf="submitted && form['login'].errors" class="invalid-field">
-<!--       <span *ngIf="submitted && form['login'].errors['required']">Введите имя, указанное при регистрации</span> -->
     </div>
   </div>
   <div class="auth-form__group">
     <input class="auth-form__input" pInputText type="password" name="password" required placeholder="Пароль"
            formControlName="password">
     <div *ngIf="submitted && form['password'].errors" class="invalid-field">
-<!--       <span *ngIf="submitted && form['password'].errors['required']">Необходимо ввести пароль</span> -->
     </div>
   </div>
   <div class="auth-form__options-container">
     <div class="auth-form__checkbox">
       <p-checkbox value="Запомнить меня" [(ngModel)]="checked" [binary]="true" formControlName="rememberMeCheckbox"
-                  inputId="remember" ></p-checkbox>
+                  inputId="remember"></p-checkbox>
       <label>Запомнить меня</label>
     </div>
     <p class="auth-form__tip"><a (click)="show()">Забыли пароль?</a></p>

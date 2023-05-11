@@ -60,12 +60,8 @@ export class SignUpComponent implements OnInit {
     .pipe(first())
     .subscribe({
       next: () => {
-        // this._alertService.success('Вы зарегистрированы', { keepAfterRouteChange: false})
         this.onLoginClick()
       },
-      // error: error => {
-      //   this._alertService.error(error)
-      // }
     })
   }
 }

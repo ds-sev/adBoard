@@ -7,19 +7,16 @@ import { environment } from '../../environments/environment'
   providedIn: 'root'
 })
 export class CategoriesService {
-  url: string = 'http://80.90.184.170:5000/Category'
-
   constructor(private _http: HttpClient) {
   }
 
   getCategoriesList() {
-    return this._http.get<ICategory[]>(this.url)
+    return this._http.get<ICategory[]>(`${environment.apiUrl}/Category`)
   }
 
   getCategoryInfo(id: string) {
     return this._http.get<ICategory>(`${environment.apiUrl}/Category/${id}`)
   }
-
 }
 
 

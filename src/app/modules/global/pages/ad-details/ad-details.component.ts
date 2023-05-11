@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { DialogService } from 'primeng/dynamicdialog'
 import { IAd } from '../../../../models/ad'
 import { AdsService } from '../../../../services/ads.service'
 import { ActivatedRoute } from '@angular/router'

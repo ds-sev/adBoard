@@ -16,7 +16,6 @@ import { AdsService } from '../../../../services/ads.service'
 export class FilteredAdsComponent implements OnInit {
   request!: string
   filteredAds: IAd[] = []
-  changes: BehaviorSubject<IAd[]> = new BehaviorSubject(this.filteredAds)
   pageTitle!: string
   option!: string
   isLoading: boolean = false

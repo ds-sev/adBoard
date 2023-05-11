@@ -28,6 +28,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: 4px;
 }
 .ad-details__image_small {
@@ -75,10 +76,20 @@
   line-height: 32px;
 }
 .ad-details__text_description {
+  overflow-wrap: anywhere;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  max-width: 100%;
+}
+.ad-details__info-container {
+  overflow: hidden;
+}
+.ad-details__description-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .phone-button {

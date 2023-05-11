@@ -1,7 +1,6 @@
 import { IAd } from '../models/ad'
 
 export const example: IAd[] = [
-
   {
     id: '1543453',
     name: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
@@ -12,7 +11,6 @@ export const example: IAd[] = [
     createdAt: `${Date.now()}`,
     isActive: true,
     categoryId: "323c7129-7b4d-4876-a553-742099b6829d"
-
   },
   {
     id: '155232',
@@ -24,7 +22,6 @@ export const example: IAd[] = [
     createdAt: '2007',
     isActive: true,
     categoryId: "323c7129-7b4d-4876-a553-742099b6829d"
-
   },
   {
     id: '1234234',
@@ -36,7 +33,6 @@ export const example: IAd[] = [
     createdAt: `${Date.now()}`,
     isActive: true,
     categoryId: "323c7129-7b4d-4876-a553-742099b6829d"
-
   }
 ]
 

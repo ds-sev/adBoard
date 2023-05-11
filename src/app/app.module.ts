@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/button';
 import { AccountSettingsComponent } from './modules/authorized/pages/account-settings/account-settings.component'
 import { AppRoutingModule } from './app-routing.module';
-import { RecommendationsComponent } from './modules/global/pages/recommendations/recommendations.component'
 import { HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -29,10 +28,8 @@ import { ToastModule } from 'primeng/toast'
 import { MessagesModule } from 'primeng/messages'
 import { PasswordModule } from 'primeng/password';
 import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
-import { AddCardComponentModule } from './shared/components/ad-card/ad-card.component'
 import { DropdownModule } from 'primeng/dropdown'
 import { NgOptimizedImage } from '@angular/common'
-import { GlobalModule } from './modules/global/global.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +38,6 @@ import { GlobalModule } from './modules/global/global.module';
     FooterComponent,
     NavigationComponent,
     AccountSettingsComponent,
-    // RecommendationsComponent,
     UserMenuComponent,
     ModalConfirmComponent,
   ],
@@ -66,15 +62,10 @@ import { GlobalModule } from './modules/global/global.module';
     ToastModule,
     MessagesModule,
     PasswordModule,
-    // AddCardComponentModule,
     DropdownModule,
     NgOptimizedImage,
-    // GlobalModule,
   ],
   providers: [DialogService],
-  exports: [
-    // RecommendationsComponent
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

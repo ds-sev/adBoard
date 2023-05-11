@@ -17,13 +17,9 @@ import { filter, map, Observable, of } from 'rxjs'
 export class AppComponent implements OnInit {
 
   loading$: Observable<boolean> = of(false)
-
   constructor(private router: Router,) {}
 
-  title = 'adBoard'
-
   ngOnInit() {
-
     this.router.events.pipe(
       filter(
         (e) =>

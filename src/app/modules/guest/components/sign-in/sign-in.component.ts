@@ -1,5 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core'
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog'
 import { SignUpComponent } from '../sign-up/sign-up.component'
 import { AuthService } from '../../../../services/auth.service'
@@ -16,6 +16,8 @@ export class SignInComponent implements OnInit {
   submitted = false
   isBtnActive!: boolean
   checked!: boolean
+  isLogin: boolean = false
+  isForgetModalOpen: boolean = false
 
   constructor(
     private _router: Router,
@@ -24,8 +26,6 @@ export class SignInComponent implements OnInit {
     private readonly _dialogRef: DynamicDialogRef,
     private _authService: AuthService,
   ) {
-
-
   }
 
   ngOnInit() {
@@ -34,8 +34,6 @@ export class SignInComponent implements OnInit {
       password: ['', Validators.required],
       rememberMeCheckbox: [false]
     })
-
-
 
     this.signInForm.valueChanges.subscribe(value => {
       if (value.login === '' || value.password === '') {
@@ -49,11 +47,6 @@ export class SignInComponent implements OnInit {
     return this.signInForm.controls
   }
 
-  isLogin: boolean = false
-  isForgetModalOpen: boolean = false
-  loggedIn!: boolean
-  @Output() registerClick = new EventEmitter()
-
   onRegisterClick() {
     this._dialogRef.close()
     this.dialogService.open(SignUpComponent, {
@@ -65,14 +58,9 @@ export class SignInComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true
-
     if (this.signInForm.invalid) {
       return
     }
-
-
-
-
 
     this._authService.login(this.form['login'].value, this.form['password'].value)
     .pipe(first())
@@ -81,13 +69,6 @@ export class SignInComponent implements OnInit {
         this._router.navigate(['home']).then()
         this._dialogRef.close()
       },
-
-
-
-      // error: error => {
-      //   this._alertService.error(error)
-      //   console.log('error')
-      // }
     })
     this._dialogRef.close()
   }

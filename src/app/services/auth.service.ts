@@ -17,11 +17,8 @@ export class AuthService {
     private _router: Router,
     private _http: HttpClient
   ) {
-
     this._userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!))
     this.user$ = this._userSubject.asObservable()
-
-
   }
 
   public get userValue() {
@@ -43,17 +40,8 @@ export class AuthService {
     return this._http.post(`${environment.apiUrl}/Account/register`, user)
   }
 
-  // saveUserData(userName: string) {
-  //   localStorage.setItem('userName', userName)
-  //   localStorage.setItem('isLogin', 'true')
-  // }
-
   getAuthStatus() {
     return localStorage.getItem('isLogin') === 'true'
-  }
-
-  getUserName() {
-    localStorage.getItem('userName')
   }
 
   signOut() {

@@ -7,9 +7,7 @@ moment.locale('ru');
   standalone: true,
 })
 export class DatePipe implements PipeTransform {
-
   transform(value: string): unknown {
     return moment(value).fromNow()
   }
-
 }

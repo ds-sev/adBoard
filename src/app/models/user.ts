@@ -8,5 +8,4 @@ export interface User {
   isAuthenticated: boolean
   scheme: string | null
   claims: IClaim | null
-  // password: string
 }

@@ -1,37 +1,50 @@
 <section class="_container">
   <div class="settings">
     <h2 class="settings__title">Настройки</h2>
-    <div class="settings__fields-container">
-      <div>
-        <p>Имя</p>
-        <input type="text" pInputText name="name" placeholder="Введите имя" [value]="name">
+    <form class="auth-form" [formGroup]="accSettingsForm" (submit)="onAccInfoSubmit()">
+      <div class="settings__fields-container">
+        <div>
+          <p>Имя</p>
+          <input type="text" pInputText name="name" placeholder="Введите имя" formControlName="login">
+        </div>
+        <div>
+          <p>Номер телефона</p>
+          <input type="tel"
+                 pInputText
+                 name="phone"
+                 placeholder="Номер телефона"
+                 formControlName="phone"
+                 >
+        </div>
       </div>
-      <div>
-        <p>Номер телефона</p>
-        <input type="tel" pInputText name="phone" placeholder="Номер телефона" [value]="phone">
-        <!--         <div class="flex-auto"> -->
-        <!--           <span class="font-bold block mb-2">Phone</span> -->
-        <!--           <p-inputMask mask="(999) 999-9999" [(ngModel)]="name" placeholder="(999) 999-9999"></p-inputMask> -->
-        <!--         </div> -->
-      </div>
-    </div>
-    <p>Адрес <span>(будет указываться в объявлениях по умолчанию)</span></p>
-    <input type="text" pInputText name="address" placeholder="Не указан" [value]="address">
-    <div class="settings__button-container">
-      <button pButton label="Сохранить" class="button" [disabled]="'true'"></button>
-      <div class="data-check__container" [style]="checkVisible">
-        <img class="data-check__icon" src="../../../../assets/images/icons/check-circle.svg" alt="icon"><span
-        class="data-check__text">Изменения
+      <p>Адрес <span>(будет указываться в объявлениях по умолчанию)</span></p>
+      <input type="text" pInputText name="address" placeholder="Не указан" formControlName="address">
+      <div class="settings__button-container">
+        <button pButton label="Сохранить" class="button" [disabled]="false"></button>
+        <div class="data-check__container" [style]="checkVisible">
+          <img class="data-check__icon" src="/assets/images/icons/check-circle.svg" alt="icon"><span
+          class="data-check__text">Изменения
         сохранены</span>
+        </div>
       </div>
-    </div>
-    <div class="settings__password-container">
-      <h2 class="settings__title">Смена пароля</h2>
-      <p>Текущий пароль</p>
-      <input type="password" pInputText placeholder="Введите текущий пароль" name="old-pass">
-      <p>Новый пароль <span>(минимум 8 символов)</span></p>
-      <input type="password" pInputText placeholder="Введите новый пароль" minlength="8" name="new-pass">
-      <button class="button" pButton label="Изменить пароль" [disabled]="'true'"></button>
-    </div>
+    </form>
+    <form class="auth-form" [formGroup]="passSettingsForm">
+      <div class="settings__password-container">
+        <h2 class="settings__title">Смена пароля</h2>
+        <p>Текущий пароль</p>
+        <input type="password"
+               pInputText
+               placeholder="Введите текущий пароль"
+               name="old-pass"
+               formControlName="oldPass">
+        <p>Новый пароль <span>(минимум 6 символов)</span></p>
+        <input type="password" pInputText placeholder="Введите новый пароль" minlength="6" name="new-pass"
+               formControlName="newPass">
+        <p>Подтверждение нового пароля</p>
+        <input type="password" pInputText placeholder="Введите новый пароль еще раз" name="new-pass"
+               formControlName="newPassConfirm">
+        <button class="button" pButton label="Изменить пароль" [disabled]="isPassBtnDisabled"></button>
+      </div>
+    </form>
   </div>
 </section>
