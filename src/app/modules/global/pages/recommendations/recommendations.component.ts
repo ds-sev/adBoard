@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core'
 import { IAd } from '../../../../models/ad'
+import { LoadingService } from '../../../../services/loading.service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-recommendations',
@@ -7,7 +9,13 @@ import { IAd } from '../../../../models/ad'
   styleUrls: ['./recommendations.component.scss'],
 })
 export class RecommendationsComponent {
-  isLoading: boolean = false
+
   @Input() pageTitle!: string
   @Input() adsList!: IAd[];
+  public isLoading!: Observable<LoadingService>
+
+constructor(
+
+) {
+}
 }

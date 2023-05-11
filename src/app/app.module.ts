@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ButtonModule } from 'primeng/button';
 import { AccountSettingsComponent } from './modules/authorized/pages/account-settings/account-settings.component'
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { DialogModule } from 'primeng/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CheckboxModule } from 'primeng/checkbox';
@@ -30,6 +30,8 @@ import { PasswordModule } from 'primeng/password';
 import { ModalConfirmComponent } from './modules/authorized/modals/modal-confirm/modal-confirm.component'
 import { DropdownModule } from 'primeng/dropdown'
 import { NgOptimizedImage } from '@angular/common'
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor'
+import { SpinnerComponent } from './shared/components/spinner/spinner.component'
 
 @NgModule({
   declarations: [
@@ -64,8 +66,14 @@ import { NgOptimizedImage } from '@angular/common'
     PasswordModule,
     DropdownModule,
     NgOptimizedImage,
+    SpinnerComponent,
   ],
-  providers: [DialogService],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    },
+    DialogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

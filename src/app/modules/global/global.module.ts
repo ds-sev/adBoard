@@ -11,6 +11,7 @@ import { RecommendationsComponent } from './pages/recommendations/recommendation
 import { AddCardComponentModule } from '../../shared/components/ad-card/ad-card.component';
 import { FilteredAdsComponent } from './pages/filtered-ads/filtered-ads.component'
 import { SharedModule } from '../../shared/shared.module'
+import { SpinnerComponent } from '../../shared/components/spinner/spinner.component'
 
 @NgModule({
   declarations: [AdDetailsComponent,
@@ -34,6 +35,7 @@ import { SharedModule } from '../../shared/shared.module'
     NgOptimizedImage,
     AddCardComponentModule,
     SharedModule,
+    SpinnerComponent,
   ]
 })
 

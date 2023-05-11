@@ -1,13 +1,8 @@
 <section class="ads-section _container">
   <h3 class="section__title">{{pageTitle}}</h3>
-  <div class="ad-cards">
-    <ng-container *ngIf="isLoading">
-      <p>Tut budet spinner</p>
-    </ng-container>
-    <ng-container *ngIf="!isLoading">
+    <div class="ad-cards">
       <app-ad-card class="ad-card-container" *ngFor="let ad of adsList; let i = index" [ad]="ad"></app-ad-card>
-    </ng-container>
-  </div>
+    </div>
   <menu>
   </menu>
 </section>
