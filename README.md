@@ -1,6 +1,6 @@
 # AdBoard
 
-Angular. SolarLabAcademy academy
+Angular. SolarLab Academy
 
 ## ТЗ 30.03.23:
 
